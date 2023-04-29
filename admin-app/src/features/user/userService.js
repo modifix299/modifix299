@@ -16,7 +16,7 @@ const getAllUsers = async (token) => {
     return response.data;
 }
 
-// Get All Users action
+// Get  User action
 const getOneUser = async (id,token) => {
   const config = {
       headers: {
@@ -55,11 +55,25 @@ const updateUser = async (data,token) => {
   return response.data
 }
 
+// deleteUser action
+const deleteUser = async (data,token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+
+  const response = await axios.patch(API_URL+'delete', data, config)
+
+  return response.data
+}
+
 const userService = {
     getAllUsers,
     getOneUser,
     createUser,
     updateUser,
+    deleteUser
 }
 
 export default userService

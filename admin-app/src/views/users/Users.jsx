@@ -54,6 +54,7 @@ const Users = () => {
                                     <td>{user.role}</td>
                                     <td>
                                         <Link to={`/admin/users/edit/${user._id}`} className='btn btn-md btn-warning'>Edit</Link>
+                                        <Link to={`/admin/users/delete/${user._id}`} className='btn btn-md btn-warning'>Delete</Link>
                                     </td>
                                 </tr>
                             ))}                                

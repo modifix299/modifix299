@@ -13,7 +13,7 @@ import Products from './views/products/Products';
 import CreateProduct from './views/products/createProduct';
 import EditProduct from './views/products/editProduct';
 import EditUser from './views/users/editUser';
-
+import DeleteUser from './views/Dashboard';
 
 
 import Authorized from './components/Authorized';
@@ -35,6 +35,7 @@ function App() {
                             <Route index element={<Users />} />
                             <Route path='new' element={<CreateUser />} />
                             <Route path='edit/:id' element={<EditUser />} />
+                            <Route path='delete/:id' element={<DeleteUser />} />
                         </Route>
 
                         <Route path="products">
