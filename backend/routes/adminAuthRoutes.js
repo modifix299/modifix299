@@ -3,7 +3,7 @@ const router = express.Router()
 const {
   loginUser,
   getMe,
-} = require('../controllers/adminaAuthController')
+} = require('../controllers/adminAuthController')
 const { protect } = require('../middleware/authMiddleware')
 
 router.get('/me', getMe)

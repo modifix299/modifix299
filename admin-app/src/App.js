@@ -13,8 +13,8 @@ import Products from './views/products/Products';
 import CreateProduct from './views/products/createProduct';
 import EditProduct from './views/products/editProduct';
 import EditUser from './views/users/editUser';
-import Orders from './views/orders/Orders';
-import EditOrder from './views/orders/editOrder';
+
+
 
 import Authorized from './components/Authorized';
 import Authenticated from './components/Authenticated';
@@ -43,11 +43,11 @@ function App() {
                             <Route path='edit/:id' element={<EditProduct/>} />
                         </Route>
 
-                        <Route path="orders">
+                        {/* <Route path="orders">
                             <Route index element={<Orders/>} />
                             <Route path='new' element={<CreateProduct />} />
                             <Route path='edit/:id' element={<EditProduct/>} />
-                        </Route>
+                        </Route> */}
 
                        
 
