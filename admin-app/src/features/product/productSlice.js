@@ -32,7 +32,7 @@ export const getProducts = createAsyncThunk('products/getAll', async (_, thunkAP
 export const getProduct = createAsyncThunk('products/getOne', async (id, thunkAPI) => {
   try {
       const token = thunkAPI.getState().auth.user.token;
-      return await productService.getOneProduct(id,token);
+      return await productService.getOneProduct(id, token);
   } catch (error) {
       const message =
       (error.response &&

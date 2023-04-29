@@ -71,16 +71,16 @@ const EditProduct = () => {
                                     <div className="form-group row">
                                         <div className="col-sm-6 mb-3 mb-sm-0">
                                             <input type="number" className="form-control" id="exampleQuantity"
-                                                placeholder="Quantity" onChange={(e) => onFormChange("quantity", e.target.value)} value={formData['firstname'] || ''}/>
+                                                placeholder="Quantity" onChange={(e) => onFormChange("quantity", e.target.value)} value={formData['quantity'] || ''}/>
                                         </div>
                                         <div className="col-sm-6">
                                             <input type="number" step="100" className="form-control" id="examplePrice"
-                                                placeholder="Price" onChange={(e) => onFormChange("price", e.target.value)} value={formData['lastname'] || ''}/>
+                                                placeholder="Price" onChange={(e) => onFormChange("price", e.target.value)} value={formData['price'] || ''}/>
                                         </div>
                                     </div>
                                     <div className="form-group">
                                         <input type="text" className="form-control" id="exampleProductName"
-                                            placeholder="Product Name" onChange={(e) => onFormChange("productname", e.target.value)} value={formData['email'] || ''}/>
+                                            placeholder="Product Name" onChange={(e) => onFormChange("productname", e.target.value)} value={formData['productname'] || ''}/>
                                     </div>
                                     {/* <div className="form-group row">
                                         <div className="col-sm-12 mb-3 mb-sm-0">

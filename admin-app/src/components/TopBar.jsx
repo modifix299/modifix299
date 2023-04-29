@@ -63,7 +63,7 @@ const TopBar = () => {
                         <div className="dropdown-divider"></div>
                         <button className="dropdown-item" onClick={onLogout}>
                             <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Logout
+                            Log Out
                         </button>
                     </ul>
                 </li>
