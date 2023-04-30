@@ -14,6 +14,7 @@ import CreateProduct from './views/products/createProduct';
 import EditProduct from './views/products/editProduct';
 import EditUser from './views/users/editUser';
 import DeleteUser from './views/users/deleteUser';
+import DeleteProduct from './views/products/deleteProduct';
 
 
 import Authorized from './components/Authorized';
@@ -42,6 +43,7 @@ function App() {
                             <Route index element={<Products/>} />
                             <Route path='new' element={<CreateProduct />} />
                             <Route path='edit/:id' element={<EditProduct/>} />
+                            <Route path='delete/:id' element={<DeleteProduct/>} />
                         </Route>
 
                         {/* <Route path="orders">

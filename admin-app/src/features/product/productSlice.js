@@ -7,6 +7,7 @@ const initialState = {
     isError: false,
     isAdded: false,
     isUpdated: false,
+    isDeleted: false,
     isLoading: false,
     message: '',
 }
@@ -79,6 +80,26 @@ export const updateProduct = createAsyncThunk('products/update',async (data, thu
 }
 )
 
+//Delete Product
+export const deleteProduct = createAsyncThunk('products/delete', async (productId, thunkAPI) => {
+  try {
+    const token = thunkAPI.getState().auth.user.token
+    return await productService.deleteProduct(productId, token)
+  } catch (error) {
+    console.log(error)
+    const message =
+      (error.response &&
+        error.response.data &&
+        error.response.data.message) ||
+      error.message ||
+      'Failed to delete product.'
+    return thunkAPI.rejectWithValue(message)
+  }
+})
+
+
+
+
 export const productSlice = createSlice({
     name: 'product',
     initialState,
@@ -87,7 +108,7 @@ export const productSlice = createSlice({
     },
     extraReducers: (builder) => {
       builder
-      //get all users
+      //get all products
         .addCase(getProducts.pending, (state) => {
           state.isLoading = true
         })
@@ -100,7 +121,7 @@ export const productSlice = createSlice({
           state.isError = true
           state.message = action.payload
         })
-      //get one user
+      //get one product
         .addCase(getProduct.pending, (state) => {
           state.isLoading = true
         })
@@ -127,16 +148,16 @@ export const productSlice = createSlice({
           state.isError = true
           state.message = action.payload
         })
-      //update user
-        .addCase(updateProduct.pending, (state) => {
+      //delete product
+        .addCase(deleteProduct.pending, (state) => {
           state.isLoading = true
         })
-        .addCase(updateProduct.fulfilled, (state, action) => {
+        .addCase(deleteProduct.fulfilled, (state, action) => {
           state.isLoading = false
-          state.isUpdated = true
+          state.isDeleted = true
           state.message = action.payload
         })
-        .addCase(updateProduct.rejected, (state, action) => {
+        .addCase(deleteProduct.rejected, (state, action) => {
           state.isLoading = false
           state.isError = true
           state.message = action.payload

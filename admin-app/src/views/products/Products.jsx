@@ -54,6 +54,7 @@ const Products = () => {
                                     <td>{product.quantity}</td>
                                     <td>
                                         <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-warning'>Edit</Link>
+                                        <Link to={`/admin/products/delete/${product._id}`} className='btn btn-md btn-warning'>Delete</Link>
                                     </td>
                                 </tr>
                             ))}                                
