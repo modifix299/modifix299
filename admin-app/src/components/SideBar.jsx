@@ -6,20 +6,20 @@ import { useSelector } from 'react-redux';
 const SideBar = () => {    
     const { user } = useSelector((state) => state.auth);
     const location = useLocation();
-    const [toggle, setToggle] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
+    const [toggle, setToggle] = useState("navbar-nav bg-gradient-dark sidebar sidebar-dark accordion");
 
     const isAdmin = (user.role === "Admin" ? true : false);
 
     const onToggle = () => {        
-        if(toggle === "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"){
-            setToggle("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled");
+        if(toggle === "navbar-nav bg-gradient-dark sidebar sidebar-dark accordion"){
+            setToggle("navbar-nav bg-gradient-dark sidebar sidebar-dark accordion toggled");
         } else {
-            setToggle("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
+            setToggle("navbar-nav bg-gradient-dark sidebar sidebar-dark accordion");
         }
     }
 
-    const userPaths = ['/admin/users','/admin/users/new','/admin/users/update'];
-    const productPaths = ['/admin/products','/admin/products/new','/admin/products/update'];
+    const userPaths = ['/admin/users','/admin/users/new','/admin/users/update','/admin/users/delete'];
+    const productPaths = ['/admin/products','/admin/products/new','/admin/products/update','/admin/products/delete'];
     const orderPaths = ['/admin/orders','/admin/orders/new','/admin/orders/update'];
 
     return (

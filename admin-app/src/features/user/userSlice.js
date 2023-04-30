@@ -80,10 +80,10 @@ export const updateUser = createAsyncThunk('users/update',async (data, thunkAPI)
 )
 
 // Delete User
-export const deleteUser = createAsyncThunk('users/delete',async (data, thunkAPI) => {
+export const deleteUser = createAsyncThunk('users/delete',async (id, thunkAPI) => {
   try {
     const token = thunkAPI.getState().auth.user.token
-    return await userService.deleteUser(data, token)
+    return await userService.deleteUser(id, token)
   } catch (error) {
     const message =
       (error.response &&

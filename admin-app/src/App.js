@@ -13,7 +13,7 @@ import Products from './views/products/Products';
 import CreateProduct from './views/products/createProduct';
 import EditProduct from './views/products/editProduct';
 import EditUser from './views/users/editUser';
-import DeleteUser from './views/Dashboard';
+import DeleteUser from './views/users/deleteUser';
 
 
 import Authorized from './components/Authorized';
