@@ -55,18 +55,19 @@ const updateUser = async (data,token) => {
   return response.data
 }
 
-// deleteUser action
-const deleteUser = async (data,token) => {
+// Delete a user
+const deleteUser = async (id, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   }
 
-  const response = await axios.patch(API_URL+'delete', data, config)
+  const response = await axios.delete(API_URL + 'delete', config)
 
   return response.data
 }
+
 
 const userService = {
     getAllUsers,
