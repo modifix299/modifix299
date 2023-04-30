@@ -63,7 +63,7 @@ const deleteUser = async (id, token) => {
     },
   }
 
-  const response = await axios.delete(API_URL + 'delete', config)
+  const response = await axios.delete(`${API_URL}delete/${id}`, config)
 
   return response.data
 }

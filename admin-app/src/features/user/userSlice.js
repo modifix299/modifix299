@@ -1,9 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import userService from './userService';
+import { useDispatch } from 'react-redux';
+
 
 const initialState = {
   users: [],
   user: {},
+  isFetching: false,
   isError: false,
   isAdded: false,
   isUpdated: false,
@@ -97,11 +100,15 @@ export const deleteUser = createAsyncThunk('users/delete', async (id, thunkAPI) 
 })
 
 
+
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
     reset: (state) => initialState,
+    deleteUser: (state, action) => {
+      state.users = state.users.filter((user) => user.id !== action.payload.id);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -160,22 +167,21 @@ export const userSlice = createSlice({
         state.message = action.payload
       })
 
-       //Delete user
-       .addCase(deleteUser.pending, (state) => {
-        state.isLoading = true
-      })
+    //Delete user
       .addCase(deleteUser.fulfilled, (state, action) => {
-        state.isLoading = false
-        state.isDeleted = true
-        state.message = action.payload
+        state.isFetching = false;
+        state.isUpdated = true;
+        state.isDeleted = true;
+        state.message = 'User deleted';
+        state.user = null;
+        state.users = state.users.filter((user) => user.id !== action.payload.id);
+        
       })
-      .addCase(deleteUser.rejected, (state, action) => {
-        state.isLoading = false
-        state.isError = true
-        state.message = action.payload
-      })
+       
   },
 })
 
 export const { reset } = userSlice.actions
 export default userSlice.reducer
+
+

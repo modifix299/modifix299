@@ -43,7 +43,7 @@ const DeleteUser = () => {
               <div className="p-5">
                 <form className="user">
                   <p>Are you sure you want to delete this user?</p>
-                  <p></p>
+                  <p>{user.firstname}</p>
                   <button
                     type="button"
                     className="btn btn-danger btn-block"
