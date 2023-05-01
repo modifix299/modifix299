@@ -69,8 +69,8 @@ const loginUser = asyncHandler(async (req, res) => {
     // Check for customer email
     const customer = await Customer.findOne({ email })
 
-    if(customer.active)
-    {
+    // if (customer && customer.active)
+    // {
         if (customer && (await bcrypt.compare(password, customer.password)))
         {
             res.json({
@@ -88,10 +88,10 @@ const loginUser = asyncHandler(async (req, res) => {
             res.status(401).json({ message: 'Invalid credentials' })
             throw new Error('Invalid credentials')
         }
-    } else {
-        res.status(401).json({ message: 'User is not active. Please contact you system administrator' })
-        throw new Error('Invalid credentials')
-    }
+    // } else {
+    //     res.status(401).json({ message: 'User is not active. Please contact you system administrator' })
+    //     throw new Error('Invalid credentials')
+    // }
     
 })
   

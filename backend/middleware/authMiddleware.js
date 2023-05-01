@@ -95,6 +95,7 @@ const authCustomer = asyncHandler(async (req, res, next) => {
             } else {
                 next()                
             }
+              
         } catch (error) {
             console.log(error)
             res.status(401).json({
