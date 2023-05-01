@@ -73,6 +73,7 @@ const authAdmin = asyncHandler(async (req, res, next) => {
 })
 
 
+// customer auth
 const authCustomer = asyncHandler(async (req, res, next) => {
     let token
 
@@ -87,7 +88,7 @@ const authCustomer = asyncHandler(async (req, res, next) => {
             // Get user from the token
             const customer = await Customer.findById(decoded.id).select('-password')
 
-            if(customer.active != true){
+            if(customer.active != false){
                 res.status(401).json({
                   message: "Not authorized"
                 })
@@ -108,6 +109,8 @@ const authCustomer = asyncHandler(async (req, res, next) => {
         throw new Error('Not authorized, no token')
     }
 })
+
+
 
 
 module.exports = { protect, authAdmin, authCustomer }

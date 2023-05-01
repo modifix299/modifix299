@@ -21,6 +21,7 @@ app.use('/customers', require('./routes/customerRoutes'));
 app.use('/products', require('./routes/productRoutes'));
 app.use('/admin/auth', require('./routes/adminAuthRoutes.js'));
 app.use('/customer/auth', require('./routes/customerAuthRoutes'));
+app.use('/orders', require('./routes/orderRoutes'));
 
  
 connectDB().then(()=>{

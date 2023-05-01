@@ -40,3 +40,17 @@ const customerSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Customer', customerSchema);
+
+
+
+
+// {
+//     "firstname":"customer",
+//     "lastname":"three",
+//     "mobile":766410882,
+//     "email":"customer3@gmail",
+//     "password":"customer3",
+//     "shippingaddress":"pointpedro",
+//     "city":"jaffna",
+//     "zipcode":40000
+// }
