@@ -29,7 +29,7 @@ export const register = createAsyncThunk('auth/register', async (user, thunkAPI)
 )
 
 // Login user
-export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
+export const login = createAsyncThunk('customer/auth/login', async (user, thunkAPI) => {
   try {
     return await authService.login(user)
   } catch (error) {
@@ -41,7 +41,7 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   }
 })
 
-export const logout = createAsyncThunk('auth/logout', async () => {
+export const logout = createAsyncThunk('customer/auth/logout', async () => {
   await authService.logout()
 })
 

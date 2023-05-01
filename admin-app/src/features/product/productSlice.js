@@ -134,7 +134,7 @@ export const productSlice = createSlice({
           state.isError = true
           state.message = action.payload
         })
-      //create new user
+      //create new product
         .addCase(createProduct.pending, (state) => {
           state.isLoading = true
         })
@@ -148,6 +148,20 @@ export const productSlice = createSlice({
           state.isError = true
           state.message = action.payload
         })
+      //update  product
+      .addCase(updateProduct.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(updateProduct.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isUpdated = true
+        state.message = action.payload
+      })
+      .addCase(updateProduct.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })  
       //delete product
         .addCase(deleteProduct.pending, (state) => {
           state.isLoading = true
