@@ -8,7 +8,7 @@ const About = () => {
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="breadcrumb-text">
-                                <p>We sale fresh fruits</p>
+                                <p>We sale modification parts</p>
                                 <h1>About Us</h1>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ const About = () => {
                                             </div>
                                             <div className="content">
                                                 <h3>Home Delivery</h3>
-                                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                                <p>Home delivery available.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@ const About = () => {
                                             </div>
                                             <div className="content">
                                                 <h3>Best Price</h3>
-                                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                                <p></p>
                                             </div>
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@ const About = () => {
                                             </div>
                                             <div className="content">
                                                 <h3>Custom Box</h3>
-                                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                                <p></p>
                                             </div>
                                         </div>
                                     </div>

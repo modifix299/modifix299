@@ -33,7 +33,7 @@ const Home = () => {
                                 </div>
                                 <div className="content">
                                     <h3>Free Shipping</h3>
-                                    <p>When order over $75</p>
+                                    <p>All Over The Island</p>
                                 </div>
                             </div>
                         </div>
@@ -54,8 +54,8 @@ const Home = () => {
                                     <i className="fas fa-sync"></i>
                                 </div>
                                 <div className="content">
-                                    <h3>Refund</h3>
-                                    <p>Get refund within 3 days!</p>
+                                    <h3>Replace</h3>
+                                    <p>Replacable If Damaged</p>
                                 </div>
                             </div>
                         </div>

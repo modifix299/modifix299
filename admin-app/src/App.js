@@ -15,6 +15,7 @@ import EditProduct from './views/products/editProduct';
 import EditUser from './views/users/editUser';
 import DeleteUser from './views/users/deleteUser';
 import DeleteProduct from './views/products/deleteProduct';
+import Orders from './views/orders/Orders';
 
 
 import Authorized from './components/Authorized';
@@ -46,11 +47,11 @@ function App() {
                             <Route path='delete/:id' element={<DeleteProduct/>} />
                         </Route>
 
-                        {/* <Route path="orders">
+                        <Route path="orders">
                             <Route index element={<Orders/>} />
                             <Route path='new' element={<CreateProduct />} />
                             <Route path='edit/:id' element={<EditProduct/>} />
-                        </Route> */}
+                        </Route>
 
                        
 
