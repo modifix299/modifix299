@@ -32,30 +32,20 @@ const getOneProduct = (async (req, res) => {
 });
 
 //Create new product
-
-
-
-const createNewProduct = (async (req, res) => {
-    
-    const {productname, price, quantity} = req.body;
-
-    
+const createNewProduct = (async (req, res) => {    
+    const {name, price, quantity,} = req.body;    
 
     // Confirm all data fields
-    if ( !productname || !price || !quantity ) {
+    if ( !name || !price || !quantity ) {
         return res.status(400).json({ message: 'All fields are required' })
     }
-
     // // Check for duplicate productid
     // const duplicate = await Product.findById();
-
     // if (duplicate) {
     //     return res.status(409).json({ message: 'Product already exists' });
-    // }    
+    // }     
 
-    
-
-    const productObject = { productname, price, quantity };
+    const productObject = { name, price, quantity };
 
     // Create and store new user 
     const product = await Product.create(productObject);
@@ -69,20 +59,18 @@ const createNewProduct = (async (req, res) => {
 
 // Update a product
 const updateProduct = (async (req, res) => {
-    const { _id, productname, price, quantity } = req.body
+    const { _id, name, price, quantity, } = req.body
 
     // Confirm data 
-    if ( !_id || !productname || !price || !quantity) {
+    if ( !_id || !name || !price || !quantity) {
         return res.status(400).json({ message: 'All fields are required' })
     }
-
     // Does the product exist to update?
     const product = await Product.findById(_id);
 
     if (!product) {
         return res.status(400).json({ message: 'Product not found' })
     }
-
     // Check for duplicate 
     // const duplicate = await Product.findById();
 
@@ -91,12 +79,9 @@ const updateProduct = (async (req, res) => {
     //     return res.status(409).json({ message: 'Duplicate product id' })
     // }
 
-
-    product.productname = productname;
+    product.name = name;
     product.price = price;
-    product.quantity = quantity;
-
- 
+    product.quantity = quantity;   
 
     const updatedProduct = await product.save()
 
@@ -111,7 +96,6 @@ const deleteProduct = (async (req, res) => {
     if (!_id) {
         return res.status(400).json({ message: 'Product ID Required' })
     }
-
     
     // Does the product exist to delete?
     const product = await Product.findById(_id)

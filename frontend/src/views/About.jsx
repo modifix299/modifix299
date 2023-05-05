@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -78,7 +79,7 @@ const About = () => {
                 <div className="container">
                     <h3>December sale is on! <br/> with big <span className="orange-text">Discount...</span></h3>
                     <div className="sale-percent"><span>Sale! <br/> Upto</span>50% <span>off</span></div>
-                    <a href="shop.html" className="cart-btn btn-lg">Shop Now</a>
+                    <Link to="shop.html" className="cart-btn btn-lg">Shop Now</Link>
                 </div>
             </section>
 
@@ -98,9 +99,9 @@ const About = () => {
                                 <div className="team-bg team-bg-1"></div>
                                 <h4>Jimmy Doe <span>Farmer</span></h4>
                                 <ul className="social-link-team">
-                                    {/* <li><a href="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li> */}
+                                    {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
+                                    <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
+                                    <li><Link to="#" target="_blank"><i className="fab fa-instagram"></i></a></li> */}
                                 </ul>
                             </div>
                         </div>
@@ -109,9 +110,9 @@ const About = () => {
                                 <div className="team-bg team-bg-2"></div>
                                 <h4>Marry Doe <span>Farmer</span></h4>
                                 <ul className="social-link-team">
-                                    {/* <li><a href="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li> */}
+                                    {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
+                                    <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
+                                    <li><Link to="#" target="_blank"><i className="fab fa-instagram"></i></a></li> */}
                                 </ul>
                             </div>
                         </div>
@@ -120,9 +121,9 @@ const About = () => {
                                 <div className="team-bg team-bg-3"></div>
                                 <h4>Simon Joe <span>Farmer</span></h4>
                                 <ul className="social-link-team">
-                                    {/* <li><a href="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-instagram"></i></a></li> */}
+                                    {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
+                                    <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
+                                    <li><Link to="#" target="_blank"><i className="fab fa-instagram"></i></a></li> */}
                                 </ul>
                             </div>
                         </div>

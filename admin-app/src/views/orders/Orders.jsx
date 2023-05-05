@@ -35,32 +35,40 @@ const Orders = () => {
                 </div>
                 <div className="card-body">
                     <div className="table-responsive">
-                        <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Order Id</th>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            {/* <tbody>                                    
-                            {!isLoading && orders.map((product) => (
-                                <tr key={product._id}>
-                                    <td>{product.productname}</td>
-                                    <td>{product.productimage}</td>
-                                    <td>{product.price}</td>
-                                    <td>{product.quantity}</td>
-                                    <td>
-                                        <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-warning'>Edit</Link>
-                                        <Link to={`/admin/products/delete/${product._id}`} className='btn btn-md btn-warning'>Delete</Link>
-                                    </td>
-                                </tr>
-                            ))}                                
-                            </tbody> */}
-                        </table>
+                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                        <thead>
+                            <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Products</th>
+                            <th>Total Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {!isLoading && orders.map((order) => (
+                            <tr key={order._id}>
+                                <td>{order._id}</td>
+                                <td>{order.customer.name}</td>
+                                <td>
+                                {order.cartItems.map((item) => (
+                                    <p key={item._id}>
+                                    {item.product.productname} x {item.quantity}
+                                    </p>
+                                ))}
+                                </td>
+                                <td>{order.totalPrice}</td>
+                                <td>{order.status}</td>
+                                <td>
+                                <Link to={`/admin/orders/edit/${order._id}`} className='btn btn-md btn-warning'>Edit</Link>
+                                <Link to={`/admin/orders/delete/${order._id}`} className='btn btn-md btn-warning'>Delete</Link>
+                                </td>
+                            </tr>
+                            ))}
+                        </tbody>
+                    </table>
+
                     </div>
                 </div>
             </div>            

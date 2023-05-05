@@ -1,73 +1,38 @@
-const Order = require('../models/orderModel');
+const Order = require("../models/orderModel");
 
-// Get all orders
+//get all orders
 const getAllOrders = async (req, res) => {
   try {
-    const orders = await Order.find();
-    res.status(200).json(orders);
+    const orders = await Order.find().populate({
+      path: "customer",
+      select: "-password"
+    }).populate("cartItems.productId");
+    res.status(200).json({ orders });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server Error' });
+    res.status(400).json({ error });
   }
 };
 
-// Get one order
-const getOneOrder = async (req, res) => {
-  try {
-    const orderId = req.params.orderId;
-    const order = await Order.findById(orderId);
-    res.status(200).json(order);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server Error' });
-  }
-};
-
-// Update order
-const updateOrder = async (req, res) => {
-  try {
-    const orderId = req.params.orderId;
-    const { status } = req.body;
-    const order = await Order.findById(orderId);
-    if (!order) {
-      return res.status(404).json({ message: 'Order not found' });
-    }
-    // order.product = productId;
-    // order.customer = customerId;
-    // order.orderquantity = orderquantity;
-    // order.totalPrice = totalPrice;
-    order.status = status;
-    await order.save();
-    res.status(200).json(order);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server Error' });
-  }
-};
-
-// Create new order
+//New Order
 const createNewOrder = async (req, res) => {
+  const { customer, totalPrice, cartItems } = req.body;
+  const duplicateorder = await Order.findOne({ customer });
+
+  const order = new Order({
+    customer,
+    totalPrice,
+    cartItems,
+  });
   try {
-    const { productId, customerId, orderquantity, totalPrice, status } = req.body;
-    const order = new Order({
-      product: productId,
-      customer: customerId,
-      orderquantity,
-      totalPrice,
-      status,
-    });
-    await order.save();
-    res.status(201).json(order);
+    const savedOrder = await order.save();
+    res.status(201).json({ message: "Order created successfully", order: savedOrder });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server Error' });
+    res.status(400).json({ error });
   }
 };
-
 
 module.exports = {
-  createNewOrder,
-  updateOrder,
-  getOneOrder,
-  getAllOrders
-}
+  getAllOrders,
+  createNewOrder
+};
+

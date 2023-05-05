@@ -22,6 +22,7 @@ app.use('/products', require('./routes/productRoutes'));
 app.use('/admin/auth', require('./routes/adminAuthRoutes.js'));
 app.use('/customer/auth', require('./routes/customerAuthRoutes'));
 app.use('/orders', require('./routes/orderRoutes'));
+// app.use('/cart', require('./routes/cartRoutes'));
 
  
 connectDB().then(()=>{
