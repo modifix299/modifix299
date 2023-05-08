@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
-    title:{
+    name:{
         type: String,
         trim: true,
         required: true
@@ -22,17 +22,13 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    content:{
-        type: String,
-        required: true
-    },
+    
     images:{
         type: Object,
         required: true
     },
     category:{
-        type: String,
-        required: true
+        type: String
     },
     checked:{
         type: Boolean,

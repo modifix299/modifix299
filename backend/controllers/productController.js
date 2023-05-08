@@ -33,7 +33,7 @@ const getOneProduct = (async (req, res) => {
 
 //Create new product
 const createNewProduct = (async (req, res) => {    
-    const {name, price, quantity,} = req.body;    
+    const { product_id, name, price, quantity, images, description, sold, checked } = req.body;    
 
     // Confirm all data fields
     if ( !name || !price || !quantity ) {
@@ -45,7 +45,7 @@ const createNewProduct = (async (req, res) => {
     //     return res.status(409).json({ message: 'Product already exists' });
     // }     
 
-    const productObject = { name, price, quantity };
+    const productObject = { product_id, name, price, quantity, images, description, sold, checked };
 
     // Create and store new user 
     const product = await Product.create(productObject);
@@ -59,7 +59,7 @@ const createNewProduct = (async (req, res) => {
 
 // Update a product
 const updateProduct = (async (req, res) => {
-    const { _id, name, price, quantity, } = req.body
+    const { _id, name, price, quantity, description, images, sold} = req.body
 
     // Confirm data 
     if ( !_id || !name || !price || !quantity) {
@@ -80,8 +80,11 @@ const updateProduct = (async (req, res) => {
     // }
 
     product.name = name;
+    product.description = description;
     product.price = price;
-    product.quantity = quantity;   
+    product.quantity = quantity;
+    product.images = images;
+    product.sold = sold;   
 
     const updatedProduct = await product.save()
 

@@ -50,9 +50,6 @@ const ProductView = () => {
                                 <h3>{product.productname}</h3>
                                 <p className="single-product-pricing"><span></span> Rs. {product.price}</p>
                                 <div className="single-product-form">
-                                    <form >
-                                        <input type="number" placeholder="0"/>
-                                    </form>
                                     <Link to="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</Link>
                                 </div>
                             </div>

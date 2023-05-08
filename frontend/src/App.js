@@ -23,6 +23,8 @@ function App() {
                 <Route element={<AuthChecker/>}>
                   <Route path='product/:id' element={<ProductView/>} />
                   <Route path='cart' element={<Cart/>} />
+                  <Route path='product/:id/cart.html' element={<Cart/>} />
+                  <Route path='cart/checkout.html' element={<Cart/>} />
                   
                   <Route path='profile' element={<Profile/>} />
                 </Route>
