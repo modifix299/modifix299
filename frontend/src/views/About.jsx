@@ -22,7 +22,7 @@ const About = () => {
                     <div className="row">
                         <div className="col-lg-7">
                             <div className="featured-text">
-                                <h2 className="pb-3">Why <span className="orange-text">Fruitkha</span></h2>
+                                <h2 className="pb-3">Why <span className="orange-text">MODIFIX</span></h2>
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6 mb-4 mb-md-5">
                                         <div className="list-box d-flex">
@@ -63,8 +63,8 @@ const About = () => {
                                                 <i className="fas fa-sync-alt"></i>
                                             </div>
                                             <div className="content">
-                                                <h3>Quick Refund</h3>
-                                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                                <h3>On the Spot Fixing</h3>
+                                                <p>We are ready to service you wherever</p>
                                             </div>
                                         </div>
                                     </div>
@@ -77,9 +77,9 @@ const About = () => {
 
             <section className="shop-banner">
                 <div className="container">
-                    <h3>December sale is on! <br/> with big <span className="orange-text">Discount...</span></h3>
-                    <div className="sale-percent"><span>Sale! <br/> Upto</span>50% <span>off</span></div>
-                    <Link to="shop.html" className="cart-btn btn-lg">Shop Now</Link>
+                    <h3>Big Offers From MODIFIX ! <br/>for<span className="orange-text"> MT-15</span></h3>
+                    {/* <div className="sale-percent"><span>Sale! <br/> Upto</span>50% <span>off</span></div>
+                    <Link to="shop.html" className="cart-btn btn-lg">Shop Now</Link> */}
                 </div>
             </section>
 
@@ -88,8 +88,8 @@ const About = () => {
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="section-title">
-                                <h3>Our <span className="orange-text">Team</span></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                                <h3>Team<span className="orange-text">MODIFIX</span></h3>
+                                <p>About Us</p>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@ const About = () => {
                         <div className="col-lg-4 col-md-6">
                             <div className="single-team-item">
                                 <div className="team-bg team-bg-1"></div>
-                                <h4>Jimmy Doe <span>Farmer</span></h4>
+                                <h4>Achchuthan <span>XXX</span></h4>
                                 <ul className="social-link-team">
                                     {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
                                     <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
@@ -108,7 +108,7 @@ const About = () => {
                         <div className="col-lg-4 col-md-6">
                             <div className="single-team-item">
                                 <div className="team-bg team-bg-2"></div>
-                                <h4>Marry Doe <span>Farmer</span></h4>
+                                <h4>Sarujan <span>XXX</span></h4>
                                 <ul className="social-link-team">
                                     {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
                                     <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
@@ -119,7 +119,7 @@ const About = () => {
                         <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
                             <div className="single-team-item">
                                 <div className="team-bg team-bg-3"></div>
-                                <h4>Simon Joe <span>Farmer</span></h4>
+                                <h4>Jencika <span>XXX</span></h4>
                                 <ul className="social-link-team">
                                     {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
                                     <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>

@@ -10,6 +10,7 @@ const corsOptions = require('./config/corsOptions')
 const PORT = process.env.PORT || 8000
 
 
+ 
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
@@ -19,10 +20,11 @@ app.use(errorHandler)
 app.use('/users', require('./routes/userRoutes'));
 app.use('/customers', require('./routes/customerRoutes'));
 app.use('/products', require('./routes/productRoutes'));
+// app.use('/orders', require('./routes/orderRoutes'));
 app.use('/admin/auth', require('./routes/adminAuthRoutes.js'));
 app.use('/customer/auth', require('./routes/customerAuthRoutes'));
-app.use('/orders', require('./routes/orderRoutes'));
-// app.use('/cart', require('./routes/cartRoutes'));
+
+
 
  
 connectDB().then(()=>{

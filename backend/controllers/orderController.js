@@ -1,38 +1,31 @@
-const Order = require("../models/orderModel");
+const Payments = require('../models/paymentModel');
+const Customers = require('../models/customerModel');
 
-//get all orders
-const getAllOrders = async (req, res) => {
-  try {
-    const orders = await Order.find().populate({
-      path: "customer",
-      select: "-password"
-    }).populate("cartItems.productId");
-    res.status(200).json({ orders });
-  } catch (error) {
-    res.status(400).json({ error });
-  }
-};
+const addToCart =  async (req, res) =>{
+    try {
+        const customer = await Customers.findById(req.customer.id)
+        if(!customer) return res.status(400).json({msg: "customer does not exist."})
 
-//New Order
-const createNewOrder = async (req, res) => {
-  const { customer, totalPrice, cartItems } = req.body;
-  const duplicateorder = await Order.findOne({ customer });
+        await customer.findOneAndUpdate({_id: req.customer.id}, {
+            cart: req.body.cart
+        })
 
-  const order = new Order({
-    customer,
-    totalPrice,
-    cartItems,
-  });
-  try {
-    const savedOrder = await order.save();
-    res.status(201).json({ message: "Order created successfully", order: savedOrder });
-  } catch (error) {
-    res.status(400).json({ error });
-  }
-};
+        return res.json({msg: "Added to cart"})
+    } catch (err) {
+        return res.status(500).json({msg: err.message})
+    }
+}
+const history = async(req, res) =>{
+    try {
+        const history = await Payments.find({customer_id: req.customer.id})
+
+        res.json(history)
+    } catch (err) {
+        return res.status(500).json({msg: err.message})
+    }
+}
 
 module.exports = {
-  getAllOrders,
-  createNewOrder
-};
-
+    addToCart,
+    history
+}

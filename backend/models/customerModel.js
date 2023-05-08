@@ -33,10 +33,11 @@ const customerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    active: {
-        type: Boolean,
-        default: true
-    },
+    cart: {
+        type: Array,
+        default: []
+    }
+    
 });
 
 module.exports = mongoose.model('Customer', customerSchema);
