@@ -88,8 +88,8 @@ const Cart = () => {
                                         <tr className="table-body-row">
                                             <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td>
                                             <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""/></td>
-                                            <td className="product-name">Berry</td>
-                                            <td className="product-price">$70</td>
+                                            <td className="product-name"></td>
+                                            <td className="product-price"></td>
                                             <td className="product-quantity"><input type="number" placeholder="0"/></td>
                                             <td className="product-total">1</td>
                                         </tr>
@@ -152,7 +152,7 @@ const Cart = () => {
 	
 
             {/* logo carousel */}
-            <div className="logo-carousel-section">
+            {/* <div className="logo-carousel-section">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -176,7 +176,7 @@ const Cart = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 	
 
 	        {/* footer */}
