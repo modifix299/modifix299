@@ -73,7 +73,7 @@ const ProductView = () => {
                                         <span className="btn btn-dark plus" onClick={increaseQty}>+</span>
                                     </div>
                                 </form>
-                                <Link to="cart.html" className="cart-btn" disabled={product.stock==0?true:false}
+                                <Link to="cart.html" className="cart-btn" disabled={product.stock===0?true:false}
                                         onClick={()=>{
                                             dispatch(addCartItem(product._id, quantity))
                                             toast('Cart Item Added!',{

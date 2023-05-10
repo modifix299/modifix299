@@ -8,7 +8,7 @@ import { decreaseCartItemQty, increaseCartItemQty,removeItemFromCart } from '../
 
 const Cart = () => {
 
-    // const {items} = useSelector(state => state.cartState)
+    const {items} = useSelector(state => state.cartState)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
