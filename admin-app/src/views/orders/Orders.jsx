@@ -31,7 +31,7 @@ const Orders = () => {
 
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">Orders Table</h6>
+                    <h6 className="m-0 font-weight-bold text-dark">Orders Table</h6>
                 </div>
                 <div className="card-body">
                     <div className="table-responsive">
@@ -61,7 +61,7 @@ const Orders = () => {
                                 <td>{order.totalPrice}</td>
                                 <td>{order.status}</td>
                                 <td>
-                                <Link to={`/admin/orders/edit/${order._id}`} className='btn btn-md btn-warning'>Edit</Link>
+                                <Link to={`/admin/orders/edit/${order._id}`} className='btn btn-md btn-dark'>Edit</Link>
                                 <Link to={`/admin/orders/delete/${order._id}`} className='btn btn-md btn-warning'>Delete</Link>
                                 </td>
                             </tr>

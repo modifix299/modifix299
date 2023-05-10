@@ -4,7 +4,7 @@ const productController = require('../controllers/productController');
 const { protect, authAdmin } = require('../middleware/authMiddleware');
 
 
-router.route('/').get(productController.getAllProducts);
+router.route('/').get( productController.getAllProducts);
 router.route('/getOne/:id').get( productController.getOneProduct);
 router.route('/create').post( protect, authAdmin, productController.createNewProduct);
 router.route('/update').patch(protect, authAdmin, productController.updateProduct);

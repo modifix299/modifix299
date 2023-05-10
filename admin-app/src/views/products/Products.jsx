@@ -25,13 +25,13 @@ const Products = () => {
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Products</h1>
-                <Link to="new" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <Link to="new" className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
                     <i className="fas fa-plus fa-sm "></i> Create New Product</Link>
             </div>
 
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">Products Table</h6>
+                    <h6 className="m-0 font-weight-bold text-dark">Products Table</h6>
                 </div>
                 <div className="card-body">
                     <div className="table-responsive">
@@ -39,21 +39,22 @@ const Products = () => {
                             <thead>
                                 <tr>
                                     <th>Product Name</th>
-                                    <th>Product Image</th>
+                                    {/* <th>Product Image</th> */}
                                     <th>Price</th>
                                     <th>Quantity</th>
+                                    <th>Description</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>                                    
                             {!isLoading && products.map((product) => (
                                 <tr key={product._id}>
-                                    <td>{product.productname}</td>
-                                    <td>{product.productimage}</td>
+                                    <td>{product.name}</td>
                                     <td>{product.price}</td>
-                                    <td>{product.quantity}</td>
+                                    <td>{product.stockquantity}</td>
+                                    <td>{product.description}</td>
                                     <td>
-                                        <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-warning'>Edit</Link>
+                                        <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-dark'>Edit</Link>
                                         <Link to={`/admin/products/delete/${product._id}`} className='btn btn-md btn-warning'>Delete</Link>
                                     </td>
                                 </tr>

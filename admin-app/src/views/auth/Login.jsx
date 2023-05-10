@@ -74,7 +74,7 @@ const Login = () => {
                                             <div className="form-group">
                                                 <input type="password" className="form-control form-control-user" id="password" name='password' value={password} placeholder="Password" onChange={onChange}/>
                                             </div>
-                                            <button type='submit' className="btn btn-primary btn-user btn-block">
+                                            <button type='submit' className="btn btn-dark btn-user btn-block">
                                                 Login
                                             </button>
                                         </form>

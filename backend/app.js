@@ -20,7 +20,7 @@ app.use(errorHandler)
 app.use('/users', require('./routes/userRoutes'));
 app.use('/customers', require('./routes/customerRoutes'));
 app.use('/products', require('./routes/productRoutes'));
-// app.use('/orders', require('./routes/orderRoutes'));
+app.use('/orders', require('./routes/orderRoutes'));
 app.use('/admin/auth', require('./routes/adminAuthRoutes.js'));
 app.use('/customer/auth', require('./routes/customerAuthRoutes'));
 

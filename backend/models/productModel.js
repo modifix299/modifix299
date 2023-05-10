@@ -4,9 +4,7 @@ const mongoose = require('mongoose')
 const productSchema = new mongoose.Schema({
     product_id:{
         type: String,
-        unique: true,
-        trim: true,
-        required: true
+        unique: true
     },
     name:{
         type: String,
@@ -15,7 +13,10 @@ const productSchema = new mongoose.Schema({
     },
     price:{
         type: Number,
-        trim: true,
+        required: true
+    },
+    stockquantity:{
+        type: Number,
         required: true
     },
     description:{
@@ -23,21 +24,21 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     
-    images:{
-        type: Object,
-        required: true
-    },
-    category:{
-        type: String
-    },
-    checked:{
-        type: Boolean,
-        default: false
-    },
-    sold:{
-        type: Number,
-        default: 0
-    }
+    // images:{
+    //     type: Object,
+    //     required: true
+    // },
+    // category:{
+    //     type: String
+    // },
+    // checked:{
+    //     type: Boolean,
+    //     default: false
+    // },
+    // sold:{
+    //     type: Number,
+    //     default: 0
+    // }
 }, {
     timestamps: true //important
 })

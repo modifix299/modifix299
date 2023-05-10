@@ -41,7 +41,7 @@ a {
 }
 
 a:hover {
-  color: #fffd23;
+  color: #f59d53;
   text-decoration: none;
 }
 
@@ -54,7 +54,7 @@ h6, .h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   margin: 0 0 1.25rem 0;
-  color: #fff;
+  color: #030e12;
 }
 
 h1:last-child, .h1:last-child,
@@ -150,7 +150,7 @@ p {
   font-size: 1rem;
   letter-spacing: 0.1px;
   line-height: 1.8;
-  color: #fff;
+  color: #030e12;
   margin: 0 0 1.25rem 0;
 }
 
@@ -205,7 +205,7 @@ p:last-child {
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #fffd23;
+  border-left: 3px solid #f59d53;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
@@ -219,7 +219,7 @@ p:last-child {
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #fffd23;
+  border-left: 3px solid #f59d53;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
@@ -402,7 +402,7 @@ p:last-child {
 }
 
 .orange-text {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .blue-bg {
@@ -412,18 +412,17 @@ p:last-child {
 a.boxed-btn {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
-  background-color: #fffd23;
+  background-color: #fff;
   color: #000;
   padding: 10px 20px;
-  border-style:dotted;
-  border-color: #fffd23;
+  
 }
 
 a.bordered-btn {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
   color: #fff;
-  border: 2px solid #fffd23;
+  border: 2px solid #f59d53;
   padding: 7px 20px;
 }
 
@@ -438,7 +437,7 @@ a.read-more-btn {
 }
 
 a.read-more-btn:hover {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 a.boxed-btn, a.bordered-btn, a.cart-btn {
@@ -459,7 +458,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
   bottom: 0px;
   width: 50px;
   height: 2px;
-  background-color: #fffd23;
+  background-color: #f59d53;
   margin: 0 auto;
 }
 
@@ -481,7 +480,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 }
 
 .breadcrumb-text p {
-  color: #fffd23;
+  color: #f59d53;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -629,7 +628,7 @@ ul.sub-menu li:last-child {
 }
 
 .mean-bar a.meanmenu-reveal {
-  background-color: #fffd23;
+  background-color: #f59d53;
 }
 
 .main-menu-wrap {
@@ -693,11 +692,11 @@ nav.main-menu ul ul.sub-menu li a {
 }
 
 nav.main-menu ul li.current-list-item > a {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 nav.main-menu li:hover > a {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 nav.main-menu li a {
@@ -713,7 +712,7 @@ nav.main-menu li a {
 }
 
 .top-header-area .header-icons a:hover {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .sticky-wrapper {
@@ -787,7 +786,7 @@ a.mobile-show {
   padding: 15px;
   width: 60%;
   background-color: transparent;
-  border-bottom: 1px solid #fffd23;
+  border-bottom: 1px solid #f59d53;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -799,7 +798,7 @@ a.mobile-show {
 
 .search-bar-tablecell button[type=submit] {
   border: none;
-  background-color: #fffd23;
+  background-color: #f59d53;
   padding: 15px 30px;
   cursor: pointer;
   display: inline-block;
@@ -884,7 +883,7 @@ h2.widget-title:after {
   bottom: 0;
   width: 20px;
   height: 2px;
-  background-color: #fffd23;
+  background-color: #f59d53;
   content: "";
 }
 
@@ -924,7 +923,7 @@ h2.widget-title:after {
   width: 20%;
   border: none;
   background-color: #012738;
-  color: #fffd23;
+  color: #f59d53;
   padding: 14px 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -949,7 +948,7 @@ h2.widget-title:after {
 }
 
 .copyright a {
-  color: #fffd23;
+  color: #f59d53;
   font-weight: 700;
 }
 
@@ -991,7 +990,7 @@ h2.widget-title:after {
   content: "\f105";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1017,7 +1016,7 @@ a.boxed-btn {
 
 a.boxed-btn:hover {
   background-color: #051922;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 a.bordered-btn {
@@ -1027,7 +1026,7 @@ a.bordered-btn {
 }
 
 a.bordered-btn:hover {
-  background-color: #fffd23;
+  background-color: #f59d53;
   color: #fff;
 }
 
@@ -1038,7 +1037,7 @@ ul.sub-menu a {
 }
 
 ul.sub-menu li:hover a {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .single-tof-box {
@@ -1060,7 +1059,7 @@ a.video-play-btn {
 
 a.video-play-btn:hover {
   background-color: #333;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .latest-news-bg {
@@ -1086,7 +1085,7 @@ a.tof-btn i {
 }
 
 a.tof-btn:hover {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 a.tof-btn:hover i {
@@ -1125,7 +1124,7 @@ a.tof-btn:hover i {
 }
 
 .footer-box.pages ul li:hover a {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .footer-box.subscribe form button {
@@ -1135,12 +1134,12 @@ a.tof-btn:hover i {
 }
 
 .footer-box.subscribe form button:hover {
-  background-color: #fffd23;
+  background-color: #f59d53;
   color: #051922;
 }
 
 .social-icons ul li:hover a {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .social-icons ul li a {
@@ -1157,7 +1156,7 @@ ul.social-link-team li a {
 
 ul.social-link-team li a:hover {
   background-color: #051922;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .counter-box {
@@ -1180,7 +1179,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #051922;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 div.owl-controls, .owl-controls div {
@@ -1200,7 +1199,7 @@ div.owl-controls div.owl-nav div:hover {
 }
 
 .pagination-wrap ul li:hover a {
-  background-color: #fffd23;
+  background-color: #f59d53;
 }
 
 .icons a i {
@@ -1210,7 +1209,7 @@ div.owl-controls div.owl-nav div:hover {
 }
 
 .icons a:hover i {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .tof-text a.tof-btn {
@@ -1248,7 +1247,7 @@ a.cart-btn {
 
 a.cart-btn:hover {
   background-color: #051922;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .recent-posts ul li {
@@ -1268,7 +1267,7 @@ ul.sub-menu li a {
 }
 
 ul.sub-menu li:hover a {
-  color: #fffd23 !important;
+  color: #f59d53 !important;
 }
 
 .sidebar-section ul li a {
@@ -1288,7 +1287,7 @@ ul.sub-menu li:hover a {
 }
 
 .comment-text-body h4 a:hover {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 ul.product-share li a {
@@ -1298,7 +1297,7 @@ ul.product-share li a {
 }
 
 ul.product-share li:hover a {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .service-menu ul li a {
@@ -1355,7 +1354,7 @@ a.mobile-show.search-bar-icon {
 }
 
 a.mobile-show.search-bar-icon:hover {
-  color: #fffd23;
+  color: #f59d53;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1402,7 +1401,7 @@ html, body {
 }
 
 .hero-text p.subtitle {
-  color: #fffd23;
+  color: #f59d53;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -1459,7 +1458,7 @@ html, body {
 }
 
 input[type="submit"] {
-  background-color: #fffd23;
+  background-color: #f59d53;
   color: #051922;
   font-weight: 700;
   text-transform: uppercase;
@@ -1528,7 +1527,7 @@ input[type="submit"] {
 div.owl-controls, .owl-controls div {
   height: auto;
   top: 50%;
-  color: #fffd23;
+  color: #f59d53;
   font-size: 48px;
 }
 
@@ -1554,7 +1553,7 @@ div.owl-controls, .owl-controls div {
 
 ----------------------------------------------------------------------------- */
 .list-section {
-  background-color: #051922;
+  background-color: #fff;
 }
 
 .list-box {
@@ -1578,12 +1577,12 @@ div.owl-controls, .owl-controls div {
   display: block;
   font-size: 24px;
   margin-right: 15px;
-  color: #fffd23;
+  color: #f59d53;
   width: 65px;
   height: 65px;
   text-align: center;
   line-height: 60px;
-  border: 2px #fffd23 dotted;
+  border: 2px #f59d53 dotted;
   border-radius: 999px;
 }
 
@@ -1702,7 +1701,7 @@ p.excerpt {
 }
 
 .pagination-wrap ul li a.active {
-  background-color: #fffd23;
+  background-color: #f59d53;
 }
 
 .single-artcile-bg {
@@ -1925,7 +1924,7 @@ span.comment-date {
   margin-top: 8px;
   text-align: center;
   border-radius: 50%;
-  background-color: #fffd23;
+  background-color: #f59d53;
 }
 
 .cart-banner .image-column .price-box .inner-price .price {
@@ -1983,7 +1982,7 @@ span.comment-date {
   padding: 8px 20px 14px;
   text-transform: capitalize;
   text-align: center;
-  border: 2px solid #fffd23;
+  border: 2px solid #f59d53;
 }
 
 .time-countdown .counter-column .count {
@@ -1992,7 +1991,7 @@ span.comment-date {
   font-size: 30px;
   line-height: 1.4em;
   padding: 0px 0px;
-  color: #fffd23;
+  color: #f59d53;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -2049,7 +2048,7 @@ p.testimonial-body {
 ----------------------------------------------------------------------------- */
 a.video-play-btn {
   position: absolute;
-  background-color: #fffd23;
+  background-color: #f59d53;
   color: #051922;
   width: 90px;
   height: 90px;
@@ -2136,7 +2135,7 @@ a.video-play-btn {
   position: relative;
   font-size: 60px;
   font-weight: 700;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .shop-banner .sale-percent span {
@@ -2236,7 +2235,7 @@ ul.social-link-team li {
 
 ul.social-link-team li a {
   color: #fff;
-  background-color: #fffd23;
+  background-color: #f59d53;
   width: 32px;
   height: 32px;
   line-height: 32px;
@@ -2301,7 +2300,7 @@ ul.social-link-team li a {
 .contact-form-box h4 i {
   position: absolute;
   left: -13%;
-  color: #fffd23;
+  color: #f59d53;
   top: 2px;
 }
 
@@ -2324,7 +2323,7 @@ ul.social-link-team li a {
 
 .find-location p i {
   margin-right: 10px;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 #form_status span {
@@ -2399,8 +2398,8 @@ ul.social-link-team li a {
 }
 
 .product-filters ul li.active {
-  border: 2px solid #fffd23;
-  background-color: #fffd23;
+  border: 2px solid #f59d53;
+  background-color: #f59d53;
   color: #fff;
 }
 
@@ -2442,7 +2441,7 @@ p.product-price span {
 a.cart-btn {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
-  background-color: #fffd23;
+  background-color: #f59d53;
   color: #fff;
   padding: 10px 20px;
 }
@@ -2688,7 +2687,7 @@ tr.total-data td strong {
   font-weight: 900;
   line-height: 22px;
   margin-top: -11px;
-  color: #fffd23;
+  color: #f59d53;
 }
 
 .billing-address-form form p:last-child {

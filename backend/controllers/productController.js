@@ -21,7 +21,7 @@ const getAllProducts = (async (req, res) => {
 const getOneProduct = (async (req, res) => {
     const id = req.params['id'];
 
-    const product = await Product.findById(id).select('-password');
+    const product = await Product.findById(id);
 
     if (!product) {
         return res.status(400).json({ message: 'Product not found' })
@@ -33,25 +33,21 @@ const getOneProduct = (async (req, res) => {
 
 //Create new product
 const createNewProduct = (async (req, res) => {    
-    const { product_id, name, price, quantity, images, description, sold, checked } = req.body;    
+    const { name, price, stockquantity, description } = req.body;    
 
     // Confirm all data fields
-    if ( !name || !price || !quantity ) {
-        return res.status(400).json({ message: 'All fields are required' })
+    if ( !name || !price || !stockquantity || !description) {
+        return res.status(400).json({ message: 'Required fields are missing' })
     }
-    // // Check for duplicate productid
-    // const duplicate = await Product.findById();
-    // if (duplicate) {
-    //     return res.status(409).json({ message: 'Product already exists' });
-    // }     
+    
 
-    const productObject = { product_id, name, price, quantity, images, description, sold, checked };
+    const productObject = {name, price, stockquantity, description};
 
     // Create and store new user 
     const product = await Product.create(productObject);
 
     if (product) { //created 
-        res.status(201).json({ message: `New product, ID_${productname} created` });
+        res.status(201).json({ message: `New product ${name} created` });
     } else {
         res.status(400).json({ message: 'Invalid data received' });
     }
@@ -59,32 +55,26 @@ const createNewProduct = (async (req, res) => {
 
 // Update a product
 const updateProduct = (async (req, res) => {
-    const { _id, name, price, quantity, description, images, sold} = req.body
+    const { id, name, price, stockquantity, description} = req.body
 
     // Confirm data 
-    if ( !_id || !name || !price || !quantity) {
-        return res.status(400).json({ message: 'All fields are required' })
+    if ( !id || !name || !price || !stockquantity || !description) {
+        return res.status(400).json({ message: 'Required fields are missing' })
     }
     // Does the product exist to update?
-    const product = await Product.findById(_id);
+    const product = await Product.findById(id);
 
     if (!product) {
         return res.status(400).json({ message: 'Product not found' })
     }
-    // Check for duplicate 
-    // const duplicate = await Product.findById();
+   
 
-    // Allow updates to the original product
-    // if (!duplicate) {
-    //     return res.status(409).json({ message: 'Duplicate product id' })
-    // }
-
-    product.name = name;
-    product.description = description;
+    product.name = name;    
     product.price = price;
-    product.quantity = quantity;
-    product.images = images;
-    product.sold = sold;   
+    product.stockquantity = stockquantity;
+    product.description = description;
+    // product.images = images;
+    // product.sold = sold;   
 
     const updatedProduct = await product.save()
 

@@ -1,11 +1,31 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { decreaseCartItemQty, increaseCartItemQty,removeItemFromCart } from '../features/cart/cartSlice';
 
 
 
 
 const Cart = () => {
+
+    // const {items} = useSelector(state => state.cartState)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const increaseQty = (item) => {
+        const count = item.quantity;
+        if(item.stock ==0 ||  count >= item.stock) return;
+        dispatch(increaseCartItemQty(item.product))
+    }
+    const decreaseQty = (item) => {
+        const count = item.quantity;
+        if(count == 1) return;
+        dispatch(decreaseCartItemQty(item.product))
+    }
+
+    const checkoutHandler = () =>{
+        navigate('/login?redirect=shipping')
+    }
 
     return (
     <>
@@ -79,17 +99,17 @@ const Cart = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr className="total-data">
+                                    {/* <tr className="total-data">
                                         <td><strong>Subtotal: </strong></td>
-                                        <td>$500</td>
-                                    </tr>
-                                    <tr className="total-data">
+                                        <td></td>
+                                    </tr> */}
+                                    {/* <tr className="total-data">
                                         <td><strong>Shipping: </strong></td>
-                                        <td>$45</td>
-                                    </tr>
+                                        <td></td>
+                                    </tr> */}
                                     <tr className="total-data">
                                         <td><strong>Total: </strong></td>
-                                        <td>$545</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>

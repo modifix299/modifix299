@@ -57,7 +57,7 @@ const EditProduct = () => {
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Edit Product</h1>
-                <Link to="/admin/products" relative='pa' className="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
+                <Link to="/admin/products" relative='pa' className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
                     <i className="fas fa-arrow-left fa-sm "></i> Back 
                 </Link>
             </div>
@@ -71,7 +71,7 @@ const EditProduct = () => {
                                     <div className="form-group row">
                                         <div className="col-sm-6 mb-3 mb-sm-0">
                                             <input type="number" className="form-control" id="exampleQuantity"
-                                                placeholder="Quantity" onChange={(e) => onFormChange("quantity", e.target.value)} value={formData['quantity'] || ''}/>
+                                                placeholder="Quantity" onChange={(e) => onFormChange("stockquantity", e.target.value)} value={formData['stockquantity'] || ''}/>
                                         </div>
                                         <div className="col-sm-6">
                                             <input type="number" step="100" className="form-control" id="examplePrice"
@@ -80,14 +80,14 @@ const EditProduct = () => {
                                     </div>
                                     <div className="form-group">
                                         <input type="text" className="form-control" id="exampleProductName"
-                                            placeholder="Product Name" onChange={(e) => onFormChange("productname", e.target.value)} value={formData['productname'] || ''}/>
+                                            placeholder="Product Name" onChange={(e) => onFormChange("name", e.target.value)} value={formData['name'] || ''}/>
                                     </div>
-                                    {/* <div className="form-group row">
+                                    <div className="form-group row">
                                         <div className="col-sm-12 mb-3 mb-sm-0">
-                                            <input type="password" className="form-control"
-                                                id="exampleInputPassword" placeholder="Password" onChange={(e) => onFormChange("password", e.target.value)}/>
+                                            <input type="text" className="form-control"
+                                                id="exampleProductDescription" placeholder="Description" onChange={(e) => onFormChange("description", e.target.value)}/>
                                         </div>
-                                    </div> */}
+                                    </div>
                                     {/* <div className="form-group">
                                         <select className="form-control" aria-label="Default select example" defaultValue={"Employee"}  onChange={(e) => onFormChange("role", e.target.value)}>
                                             <option value="Admin">Pending</option>
