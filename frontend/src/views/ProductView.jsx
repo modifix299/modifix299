@@ -5,6 +5,7 @@ import { getProduct } from '../features/product/productSlice';
 import { toast } from "react-toastify";
 import { addCartItem } from "../actions/cartActions";
 
+
 const ProductView = () => {
     const {id} = useParams();
     const navigate = useNavigate();

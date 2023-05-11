@@ -1,40 +1,15 @@
 import React from 'react'
-import {useDispatch, useSelector} from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { decreaseCartItemQty, increaseCartItemQty,removeItemFromCart } from '../features/cart/cartSlice';
+import { Link } from 'react-router-dom';
 
-
-
-
-const Cart = () => {
-
-    const {items} = useSelector(state => state.cartState)
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const increaseQty = (item) => {
-        const count = item.quantity;
-        if(item.stock ==0 ||  count >= item.stock) return;
-        dispatch(increaseCartItemQty(item.product))
-    }
-    const decreaseQty = (item) => {
-        const count = item.quantity;
-        if(count == 1) return;
-        dispatch(decreaseCartItemQty(item.product))
-    }
-
-    const checkoutHandler = () =>{
-        navigate('/login?redirect=shipping')
-    }
-
-    return (
+function Cart() {
+  return (
     <>
         <div className="breadcrumb-section breadcrumb-bg">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2 text-center">
                         <div className="breadcrumb-text">
-                            <p>Custom And Carbon Fibre</p>
+                            <p>Custom & Fibre Made</p>
                             <h1>Cart</h1>
                         </div>
                     </div>
@@ -62,27 +37,27 @@ const Cart = () => {
                                 <tbody>
                                     <tr className="table-body-row">
                                         <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td>
-                                        <td className="product-image"><img src="" alt=""/></td>
+                                        <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""/></td>
                                         <td className="product-name"></td>
                                         <td className="product-price"></td>
                                         <td className="product-quantity"><input type="number" placeholder="0"/></td>
-                                        <td className="product-total">1</td>
+                                        <td className="product-total"></td>
                                     </tr>
                                     <tr className="table-body-row">
                                         <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td>
-                                        <td className="product-image"><img src="" alt=""/></td>
+                                        <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""/></td>
                                         <td className="product-name"></td>
                                         <td className="product-price"></td>
                                         <td className="product-quantity"><input type="number" placeholder="0"/></td>
-                                        <td className="product-total">1</td>
+                                        <td className="product-total"></td>
                                     </tr>
                                     <tr className="table-body-row">
                                         <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td>
-                                        <td className="product-image"><img src="" alt=""/></td>
+                                        <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""/></td>
                                         <td className="product-name"></td>
                                         <td className="product-price"></td>
                                         <td className="product-quantity"><input type="number" placeholder="0"/></td>
-                                        <td className="product-total">1</td>
+                                        <td className="product-total"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -99,17 +74,17 @@ const Cart = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {/* <tr className="total-data">
+                                    <tr className="total-data">
                                         <td><strong>Subtotal: </strong></td>
                                         <td></td>
-                                    </tr> */}
-                                    {/* <tr className="total-data">
+                                    </tr>
+                                    <tr className="total-data">
                                         <td><strong>Shipping: </strong></td>
                                         <td></td>
-                                    </tr> */}
+                                    </tr>
                                     <tr className="total-data">
                                         <td><strong>Total: </strong></td>
-                                        <td></td>
+                                        <td>$545</td>
                                     </tr>
                                 </tbody>
                             </table>

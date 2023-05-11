@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Authenticated from './Authenticated';
-import {useDispatch, useSelector} from 'react-redux';
+
 
 const Header = () => {
-    const { items:cartItems } = useSelector(state => state.cartState)
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
 
 
     return (
@@ -27,7 +24,7 @@ const Header = () => {
                                         <li><Link to="/">Home</Link></li>
                                         <li><Link to="products">Products</Link></li>
                                         <li><Link to="about">About</Link></li>                                                                              
-                                        <li><Link to="cart">Cart{cartItems.length}</Link></li>
+                                        <li><Link to="cart">Cart</Link></li>
                                         <Authenticated/>
                                     </ul>
                                 </nav>
