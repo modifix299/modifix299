@@ -1,8 +1,30 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import { React,  Fragment } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import { decreaseCartItemQty, increaseCartItemQty,removeItemFromCart } from '../features/cart/cartSlice';
 
 function Cart() {
-  return (
+    
+    const {items } = useSelector(state => state.cartState)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const increaseQty = (item) => {
+        const count = item.quantity;
+        if(item.stock ==0 ||  count >= item.stock) return;
+        dispatch(increaseCartItemQty(item.product))
+    }
+    const decreaseQty = (item) => {
+        const count = item.quantity;
+        if(count == 1) return;
+        dispatch(decreaseCartItemQty(item.product))
+    }
+
+    const checkoutHandler = () =>{
+        navigate('/login?redirect=shipping')
+    }
+  
+    return (
     <>
         <div className="breadcrumb-section breadcrumb-bg">
             <div className="container">
@@ -18,10 +40,13 @@ function Cart() {
         </div>
 
         {/* cart */}
+        <Fragment>
         <div className="cart-section mt-150 mb-150">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 col-md-12">
+                        {items.map(item => (
+                        <Fragment key={item.product}>
                         <div className="cart-table-wrap">
                             <table className="cart-table">
                                 <thead className="cart-table-head">
@@ -36,10 +61,10 @@ function Cart() {
                                 </thead>
                                 <tbody>
                                     <tr className="table-body-row">
-                                        <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td>
+                                        <td className="product-remove"><Link to={`/product/${item.product}`}><i className="far fa-window-close"></i></Link></td>
                                         <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""/></td>
-                                        <td className="product-name"></td>
-                                        <td className="product-price"></td>
+                                        <td className="product-name">${item.name}</td>
+                                        <td className="product-price">Rs. ${item.price}</td>
                                         <td className="product-quantity"><input type="number" placeholder="0"/></td>
                                         <td className="product-total"></td>
                                     </tr>
@@ -62,6 +87,9 @@ function Cart() {
                                 </tbody>
                             </table>
                         </div>
+                        </Fragment>
+                        )
+                        )}
                     </div>
 
                     <div className="col-lg-4">
@@ -84,7 +112,7 @@ function Cart() {
                                     </tr>
                                     <tr className="total-data">
                                         <td><strong>Total: </strong></td>
-                                        <td>$545</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -97,6 +125,7 @@ function Cart() {
                 </div>
             </div>
         </div>
+        </Fragment>
         {/* end cart */}
     </>
   )
