@@ -9,7 +9,7 @@ const customerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    mobile: {
+    phone: {
         type: Number,
         required: true
     },
@@ -18,10 +18,6 @@ const customerSchema = new mongoose.Schema({
         required: true
     },
     shippingaddress: {
-        type: String,
-        required: true
-    },
-    city: {
         type: String,
         required: true
     },

@@ -35,7 +35,7 @@
 	@include transition(all, 0.2s, ease-in-out);
 
 	&:hover {
-		color: $primary-color;
+		color: #fffd23;
 		text-decoration: none;
 	}
 }
@@ -43,7 +43,7 @@
 // Hover State
 @mixin boxed-btn-hvr {
 	background-color: #051922;
-    color: #F28123;
+    color: #fffd23;
 	color: $white-color;
 	background-color: darken($primary-color, $darken);
 }

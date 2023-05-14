@@ -2,32 +2,21 @@ import { useEffect, useState } from 'react'
 import { Link ,useParams ,useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { getProduct } from '../features/product/productSlice';
+import { addCartItemSuccess } from "../features/cart/cartSlice";
 import { toast } from "react-toastify";
-import { addCartItem } from "../actions/cartActions";
-
 
 const ProductView = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(1);
-
-    const increaseQty = () => {
-        const count = document.querySelector('.count')
-        if(product.stockquantity ===0 ||  count.valueAsNumber >= product.stockquantity) return;
-        const qty = count.valueAsNumber + 1;
-        setQuantity(qty);
-    }
-    const decreaseQty = () => {
-        const count = document.querySelector('.count')
-        if(count.valueAsNumber === 1 ) return;
-        const qty = count.valueAsNumber - 1;
-        setQuantity(qty);
-    }
+    
 
     const { product, isError, message } = useSelector(
         (state) => state.product
     )
+
+    const { user } = useSelector((state) => state.auth)
 
     useEffect(() => {
         if(id){
@@ -39,6 +28,28 @@ const ProductView = () => {
        
     }, [navigate, dispatch, id, isError, message])   
 
+    const increaseQty = () => {
+        const count = document.querySelector('.count')
+        if(product.stock ==0 ||  count.valueAsNumber >= product.stock) return;
+        const qty = count.valueAsNumber + 1;
+        setQuantity(qty);
+    }
+    const decreaseQty = () => {
+        const count = document.querySelector('.count')
+        if(count.valueAsNumber == 1 ) return;
+        const qty = count.valueAsNumber - 1;
+        setQuantity(qty);
+    }
+
+    const onAddToCart = () => {        
+        const data = {
+            id: product._id,
+            quantity: quantity,
+            user: user._id
+        }
+        dispatch(addCartItemSuccess( data))
+        toast.success('Cart Item Added!')
+    }
     return (
         <>
         	<div className="breadcrumb-section breadcrumb-bg">
@@ -67,35 +78,18 @@ const ProductView = () => {
                                 <h3>{product.productname}</h3>
                                 <p className="single-product-pricing"><span></span> Rs. {product.price}</p>
                                 <div className="single-product-form">
-                                <form action="index.html">
-                                    <div className="stockCounter d-inline">
-                                        <span className="btn btn-dark minus" onClick={decreaseQty} >-</span>
-                                        <input type="number" className="form-control count d-inline" value={quantity} readOnly />
-                                        <span className="btn btn-dark plus" onClick={increaseQty}>+</span>
-                                    </div>
-                                </form>
-                                <Link to="cart.html" className="cart-btn" disabled={product.stock===0?true:false}
-                                        onClick={()=>{
-                                            dispatch(addCartItem(product._id, quantity))
-                                            toast('Cart Item Added!',{
-                                                type: 'success',
-                                                position: toast.POSITION.BOTTOM_CENTER
-                                            })
-                                        }}>
-                                    <i className="fas fa-shopping-cart"></i> Add to Cart</Link>     
-                                {/* <Link to={`/product/${product._id}`}
-                                    <button type="button" id="cart_btn" 
-                                        disabled={product.stock==0?true:false} 
-                                        onClick={()=>{
-                                            dispatch(addCartItem(product._id, quantity))
-                                            toast('Cart Item Added!',{
-                                                type: 'success',
-                                                position: toast.POSITION.BOTTOM_CENTER
-                                                })
-                                            }}
-                                        className="btn btn-dark d-inline ml-4">Add to Cart
-                                    </button>
-                                </Link> */}
+                                <div className="stockCounter d-inline">
+                                    <span className="btn btn-danger minus" onClick={decreaseQty} >-</span>
+
+                                    <input type="number" className="form-control count d-inline" value={quantity} readOnly />
+
+                                    <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
+                                </div>
+                                <button type="button"
+                                    disabled={product.stockquantity===0?true:false} 
+                                    onClick={onAddToCart}
+                                    className="cart-btn btn btn-primary d-inline ml-4"
+                                    ><i className="fas fa-shopping-cart"></i>Add to Cart</button>
                                 </div>
                             </div>
                         </div>

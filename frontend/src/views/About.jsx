@@ -77,9 +77,9 @@ const About = () => {
 
             <section className="shop-banner">
                 <div className="container">
-                    <h3>Big Offers From MODIFIX ! <br/>for<span className="orange-text"> MT-15</span></h3>
-                    {/* <div className="sale-percent"><span>Sale! <br/> Upto</span>50% <span>off</span></div>
-                    <Link to="shop.html" className="cart-btn btn-lg">Shop Now</Link> */}
+                    <h3>Offers From MODIFIX !... <br/>for<span className="orange-text"> Classic Models</span></h3>
+                    <div className="sale-percent"><span>Sale! <br/> Upto</span>50% <span>off</span></div>
+                    <Link to="products" className="cart-btn btn-lg">Shop Now</Link>
                 </div>
             </section>
 

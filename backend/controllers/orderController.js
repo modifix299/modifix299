@@ -8,16 +8,15 @@ const newOrder =  catchAsyncError( async (req, res, next) => {
     const {
         orderItems,
         shippingInfo,
-        itemsPrice,
         totalPrice,
+        user
     } = req.body;
 
     const order = await Order.create({
         orderItems,
         shippingInfo,
-        itemsPrice,
         totalPrice,
-        user: req.user.id
+        user
     })
 
     res.status(200).json({

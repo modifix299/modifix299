@@ -7,9 +7,9 @@ const Customer = require('../models/customerModel')
 // @route   POST /api/users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-    const { firstname, lastname, mobile, email, shippingaddress, city, zipcode ,password } = req.body
+    const { firstname, lastname, phone, email, shippingaddress, zipcode ,password } = req.body
   
-    if ( !firstname || !lastname || !mobile || !email || !shippingaddress || !city || !zipcode || !password) {
+    if ( !firstname || !lastname || !phone || !email || !shippingaddress || !zipcode || !password) {
       res.status(400)
       throw new Error('Please add all fields')
     }
@@ -29,10 +29,9 @@ const registerUser = asyncHandler(async (req, res) => {
     const customer = await Customer.create({
         firstname, 
         lastname, 
-        mobile, 
+        phone, 
         email, 
         shippingaddress, 
-        city, 
         zipcode ,
         password: hashedPassword,
     })
@@ -42,10 +41,9 @@ const registerUser = asyncHandler(async (req, res) => {
         _id: customer.id,
         firstname: customer.firstname,
         lastname: customer.lastname,
-        mobile: customer.mobile,
+        phone: customer.phone,
         email: customer.email,
         shippingaddress: customer.shippingaddress,
-        city: customer.city,
         zipcode: customer.zipcode,
         token: generateToken(customer._id),
       })
@@ -77,10 +75,9 @@ const loginUser = asyncHandler(async (req, res) => {
                 _id: customer.id,
                 firstname: customer.firstname,
                 lastname: customer.lastname,
-                mobile: customer.mobile,
+                phone: customer.phone,
                 email: customer.email,
                 shippingaddress: customer.shippingaddress,
-                city: customer.city,
                 zipcode: customer.zipcode,
                 token: generateToken(customer._id),
             })

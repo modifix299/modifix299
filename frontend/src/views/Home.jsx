@@ -10,10 +10,10 @@ const Home = () => {
                         <div className="col-lg-9 offset-lg-2 text-center">
                             <div className="hero-text">
                                 <div className="hero-text-tablecell">
-                                    <p className="subtitle">Custom & Carbon Fibre</p>
-                                    <h1>Customized Motorbike Parts</h1>
+                                    <p className="subtitle">Custom & Fibre Made</p>
+                                    <h1>Motorbike Modification Parts</h1>
                                     <div className="hero-btns">
-                                        <Link to="products" className="boxed-btn">Products</Link>
+                                        {/* <Link to="products" className="boxed-btn">Products</Link> */}
                                     </div>
                                 </div>
                             </div>
@@ -32,8 +32,8 @@ const Home = () => {
                                     <i className="fas fa-shipping-fast"></i>
                                 </div>
                                 <div className="content">
-                                    <h3>Free Shipping</h3>
-                                    <p>All Over The Island</p>
+                                    <h3 className="h3own" >Free Shipping</h3>
+                                    <p className="h3own" >All Over The Island</p>
                                 </div>
                             </div>
                         </div>
@@ -43,8 +43,8 @@ const Home = () => {
                                     <i className="fas fa-phone-volume"></i>
                                 </div>
                                 <div className="content">
-                                    <h3>24/7 Support</h3>
-                                    <p>Get support all day</p>
+                                    <h3 className="h3own" >24/7 Support</h3>
+                                    <p className="h3own" >Get support all day</p>
                                 </div>
                             </div>
                         </div>
@@ -54,8 +54,8 @@ const Home = () => {
                                     <i className="fas fa-sync"></i>
                                 </div>
                                 <div className="content">
-                                    <h3>Replace</h3>
-                                    <p>Replacable If Damaged</p>
+                                    <h3 className="h3own" >Replace</h3>
+                                    <p className="h3own" >Replacable If Damaged</p>
                                 </div>
                             </div>
                         </div>
