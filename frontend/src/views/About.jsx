@@ -88,8 +88,8 @@ const About = () => {
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="section-title">
-                                <h3>Team<span className="orange-text">MODIFIX</span></h3>
-                                <p>About Us</p>
+                                <h3>Team <span className="orange-text"> MODIFIX</span></h3>
+                                <p>The team with excellence in IT & Business knowledge Which is interested in servicing bike enthusiasts. </p>
                             </div>
                         </div>
                     </div>

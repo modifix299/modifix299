@@ -58,7 +58,7 @@ function Cart() {
                                 </tbody>
                             </table>
                             <div className="cart-buttons d-flex justify-content-end">
-                                <button onClick={goToCheckout} disabled={isDisabled} className="btn btn-primary" >Check Out</button>
+                                <button onClick={goToCheckout} disabled={isDisabled} className="checkoutbtn" >Check Out</button>
                             </div>
                         </div>
                     </div>

@@ -73,10 +73,10 @@ const LoginModal = () => {
                 </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleLoginClose}>
+                <Button variant="dark" onClick={handleLoginClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={handleLogin}>
+                <Button variant="dark" onClick={handleLogin}>
                     Login
                 </Button>
                 </Modal.Footer>

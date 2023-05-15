@@ -30,13 +30,13 @@ const ProductView = () => {
 
     const increaseQty = () => {
         const count = document.querySelector('.count')
-        if(product.stock ==0 ||  count.valueAsNumber >= product.stock) return;
+        if(product.stock ===0 ||  count.valueAsNumber >= product.stock) return;
         const qty = count.valueAsNumber + 1;
         setQuantity(qty);
     }
     const decreaseQty = () => {
         const count = document.querySelector('.count')
-        if(count.valueAsNumber == 1 ) return;
+        if(count.valueAsNumber === 1 ) return;
         const qty = count.valueAsNumber - 1;
         setQuantity(qty);
     }
@@ -79,17 +79,18 @@ const ProductView = () => {
                                 <p className="single-product-pricing"><span></span> Rs. {product.price}</p>
                                 <div className="single-product-form">
                                 <div className="stockCounter d-inline">
-                                    <span className="btn btn-danger minus" onClick={decreaseQty} >-</span>
+                                    <span className="btnminus" onClick={decreaseQty} >-</span>
 
                                     <input type="number" className="form-control count d-inline" value={quantity} readOnly />
 
-                                    <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
+                                    <span className="btnplus" onClick={increaseQty}>+</span>
                                 </div>
                                 <button type="button"
                                     disabled={product.stockquantity===0?true:false} 
                                     onClick={onAddToCart}
-                                    className="cart-btn btn btn-primary d-inline ml-4"
-                                    ><i className="fas fa-shopping-cart"></i>Add to Cart</button>
+                                    className="addtocartbtn"
+                                    ><i className="fas fa-shopping-cart"></i>Add to Cart
+                                </button>
                                 </div>
                             </div>
                         </div>

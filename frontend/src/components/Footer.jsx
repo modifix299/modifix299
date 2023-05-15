@@ -10,7 +10,7 @@ const Footer = () => {
                         <div className="col-lg-4 col-md-4">
                             <div className="footer-box about-widget">
                                 <h2 className="widget-title">About us</h2>
-                                <p></p>
+                                <p>A passionate team on motorbikes and their modifications; Which is ready to service you as your dreams and wishes.</p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-4">
