@@ -1,4 +1,4 @@
- import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import productService from './productService';
 
 const initialState = {
@@ -181,4 +181,4 @@ export const productSlice = createSlice({
   
 export const { reset } = productSlice.actions
 export default productSlice.reducer
-  
+   

@@ -10,7 +10,7 @@ import Login from './views/auth/Login';
 import NotAuthorized from './views/other/401';
 import NotFound from './views/other/404';
 import Products from './views/products/Products';
-import CreateProduct from './views/products/createProduct';
+import CreateNewProduct from './views/products/createProduct';
 import EditProduct from './views/products/editProduct';
 import EditUser from './views/users/editUser';
 import DeleteUser from './views/users/deleteUser';
@@ -42,15 +42,14 @@ function App() {
 
                         <Route path="products">
                             <Route index element={<Products/>} />
-                            <Route path='new' element={<CreateProduct />} />
+                            <Route path='new' element={<CreateNewProduct />} />
                             <Route path='edit/:id' element={<EditProduct/>} />
                             <Route path='delete/:id' element={<DeleteProduct/>} />
                         </Route>
 
                         <Route path="orders">
-                            <Route index element={<Orders/>} />
-                            <Route path='new' element={<CreateProduct />} />
-                            <Route path='edit/:id' element={<EditProduct/>} />
+                            <Route index element={<Orders/>} />                
+                            {/* <Route path='edit/:id' element={<EditOrder/>} /> */}
                         </Route>
 
                        

@@ -1,9 +1,9 @@
 const catchAsyncError = require('../middleware/catchAsyncError');
 const Order = require('../models/orderModel');
 const Product = require('../models/productModel');
-// const ErrorHandler = require('../utils/errorHandler');
 
-//Create New Order - api/v1/order/new
+
+//Create New Order 
 const newOrder =  catchAsyncError( async (req, res, next) => {
     const {
         orderItems,
@@ -25,7 +25,7 @@ const newOrder =  catchAsyncError( async (req, res, next) => {
     })
 })
 
-//Get Single Order - api/v1/order/:id
+//Get Single Order 
 const getSingleOrder = catchAsyncError(async (req, res, next) => {
     const order = await Order.findById(req.params.id).populate('user', 'name email');
     if(!order) {
@@ -48,19 +48,19 @@ const myOrders = catchAsyncError(async (req, res, next) => {
     })
 })
 
-//Admin: Get All Orders - api/v1/orders
-const orders = catchAsyncError(async (req, res, next) => {
+//Get All Orders 
+const getAllOrders = catchAsyncError(async (req, res, next) => {
     const orders = await Order.find();
 
-    let totalAmount = 0;
+    // let totalAmount = 0;
 
-    orders.forEach(order => {
-        totalAmount += order.totalPrice
-    })
+    // orders.forEach(order => {
+    //     totalAmount += order.totalPrice
+    // })
 
     res.status(200).json({
-        success: true,
-        totalAmount,
+        // success: true,
+        // totalAmount,
         orders
     })
 })
@@ -110,7 +110,7 @@ module.exports = {
     newOrder,
     getSingleOrder,
     myOrders,
-    orders,
+    getAllOrders,
     updateOrder,
     deleteOrder
 }

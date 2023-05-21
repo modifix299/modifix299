@@ -40,6 +40,10 @@ const createNewProduct = (async (req, res) => {
         return res.status(400).json({ message: 'Required fields are missing' })
     }
     
+    // Check for duplicate productid
+    const duplicate = await Product.findById();
+
+    
 
     const productObject = {name, price, stockquantity, description};
 

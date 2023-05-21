@@ -7,6 +7,7 @@ const initialState = {
     isError: false,
     isAdded: false,
     isUpdated: false,
+    isDeleted: false,
     isLoading: false,
     message: '',
 }
@@ -28,7 +29,7 @@ export const getAllOrders = createAsyncThunk('orders/getAll', async (_, thunkAPI
     }
 );
 
-// Get One Order reducer
+// Get One Orfders reducer
 export const getOneOrder = createAsyncThunk('orders/getOne', async (id, thunkAPI) => {
   try {
       const token = thunkAPI.getState().auth.user.token;
@@ -45,25 +46,25 @@ export const getOneOrder = createAsyncThunk('orders/getOne', async (id, thunkAPI
 }
 );
 
-// // Create new Order
-// export const createProduct = createAsyncThunk('products/create',async (data, thunkAPI) => {
-//     try {
-//       const token = thunkAPI.getState().auth.user.token
-//       return await orderService.createProduct(data, token)
-//     } catch (error) {
-//       const message =
-//         (error.response &&
-//           error.response.data &&
-//           error.response.data.message) ||
-//         error.message ||
-//         error.toString()
-//       return thunkAPI.rejectWithValue(message)
-//     }
-//   }
-// )
+// Create new order
+export const createOrder = createAsyncThunk('orders/create',async (data, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token
+      return await orderService.createOrder(data, token)
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString()
+      return thunkAPI.rejectWithValue(message)
+    }
+  }
+)
 
-// Update Order
-export const updateOrder = createAsyncThunk('products/update',async (data, thunkAPI) => {
+// Update order
+export const updateOrder = createAsyncThunk('orders/update',async (data, thunkAPI) => {
   try {
     const token = thunkAPI.getState().auth.user.token
     return await orderService.updateOrder(data, token)
@@ -79,8 +80,8 @@ export const updateOrder = createAsyncThunk('products/update',async (data, thunk
 }
 )
 
-// //Delete Product
-// export const deleteProduct = createAsyncThunk('products/delete', async (productId, thunkAPI) => {
+//Delete Product
+// export const deleteProduct = createAsyncThunk('orders/delete', async (productId, thunkAPI) => {
 //   try {
 //     const token = thunkAPI.getState().auth.user.token
 //     return await orderService.deleteProduct(productId, token)
@@ -91,7 +92,7 @@ export const updateOrder = createAsyncThunk('products/update',async (data, thunk
 //         error.response.data &&
 //         error.response.data.message) ||
 //       error.message ||
-//       'Failed to delete product.'
+//       'Failed to delete order.'
 //     return thunkAPI.rejectWithValue(message)
 //   }
 // })
@@ -107,7 +108,7 @@ export const orderSlice = createSlice({
     },
     extraReducers: (builder) => {
       builder
-      //get all products
+      //get all orders
         .addCase(getAllOrders.pending, (state) => {
           state.isLoading = true
         })
@@ -120,7 +121,7 @@ export const orderSlice = createSlice({
           state.isError = true
           state.message = action.payload
         })
-      //get one product
+      //get one order
         .addCase(getOneOrder.pending, (state) => {
           state.isLoading = true
         })
@@ -133,20 +134,20 @@ export const orderSlice = createSlice({
           state.isError = true
           state.message = action.payload
         })
-    //   //create new product
-    //     .addCase(createProduct.pending, (state) => {
-    //       state.isLoading = true
-    //     })
-    //     .addCase(createProduct.fulfilled, (state, action) => {
-    //       state.isLoading = false
-    //       state.isAdded = true
-    //       state.message = action.payload
-    //     })
-    //     .addCase(createProduct.rejected, (state, action) => {
-    //       state.isLoading = false
-    //       state.isError = true
-    //       state.message = action.payload
-    //     })
+      //create new order
+        .addCase(createOrder.pending, (state) => {
+          state.isLoading = true
+        })
+        .addCase(createOrder.fulfilled, (state, action) => {
+          state.isLoading = false
+          state.isAdded = true
+          state.message = action.payload
+        })
+        .addCase(createOrder.rejected, (state, action) => {
+          state.isLoading = false
+          state.isError = true
+          state.message = action.payload
+        })
       //update  order
       .addCase(updateOrder.pending, (state) => {
         state.isLoading = true
@@ -161,23 +162,23 @@ export const orderSlice = createSlice({
         state.isError = true
         state.message = action.payload
       })  
-    //   //delete product
-    //     .addCase(deleteProduct.pending, (state) => {
-    //       state.isLoading = true
-    //     })
-    //     .addCase(deleteProduct.fulfilled, (state, action) => {
-    //       state.isLoading = false
-    //       state.isDeleted = true
-    //       state.message = action.payload
-    //     })
-    //     .addCase(deleteProduct.rejected, (state, action) => {
-    //       state.isLoading = false
-    //       state.isError = true
-    //       state.message = action.payload
-    //     })
+      // //delete order
+      //   .addCase(deleteProduct.pending, (state) => {
+      //     state.isLoading = true
+      //   })
+      //   .addCase(deleteProduct.fulfilled, (state, action) => {
+      //     state.isLoading = false
+      //     state.isDeleted = true
+      //     state.message = action.payload
+      //   })
+      //   .addCase(deleteProduct.rejected, (state, action) => {
+      //     state.isLoading = false
+      //     state.isError = true
+      //     state.message = action.payload
+      //   })
     },
 })
   
 export const { reset } = orderSlice.actions
 export default orderSlice.reducer
-  
+   

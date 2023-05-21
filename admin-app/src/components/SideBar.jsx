@@ -63,7 +63,7 @@ const SideBar = () => {
             </div>
 
             <li className={`nav-item ${productPaths.includes(location.pathname) ? 'active': ''}`}>
-                <Link className="nav-link" to="/admin/products">
+                <Link className="nav-link" to="products">
                     <i className="fas fa-fw fa-boxes"></i>
                     <span>Products</span></Link>
             </li>

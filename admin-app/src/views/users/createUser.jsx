@@ -10,7 +10,7 @@ const CreateUser = () => {
     const [formData, setFormData] = useState({});
 
     const { isAdded , isError, message } = useSelector(
-        (state) => state.user
+        (state) => state.product
     )
 
     function onFormChange(key, value) {

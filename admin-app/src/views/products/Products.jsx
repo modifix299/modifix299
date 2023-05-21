@@ -9,7 +9,7 @@ const Products = () => {
 
     const { products, isLoading, isError, message } = useSelector(
         (state) => state.product
-    )
+    ) 
 
     useEffect(() => {
         if (isError) {

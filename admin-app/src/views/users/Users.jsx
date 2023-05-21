@@ -25,13 +25,13 @@ const Users = () => {
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Users</h1>
-                <Link to="new" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <Link to="new" className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
                     <i className="fas fa-plus fa-sm "></i> Create New User</Link>
             </div>
 
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">Users Table</h6>
+                    <h6 className="m-0 font-weight-bold text-dark">Users Table</h6>
                 </div>
                 <div className="card-body">
                     <div className="table-responsive">
@@ -53,7 +53,7 @@ const Users = () => {
                                     <td>{user.email}</td>
                                     <td>{user.role}</td>
                                     <td>
-                                        <Link to={`/admin/users/edit/${user._id}`} className='btn btn-md btn-warning'>Edit</Link>
+                                        <Link to={`/admin/users/edit/${user._id}`} className='btn btn-md btn-dark'>Edit</Link>
                                         <Link to={`/admin/users/delete/${user._id}`} className='btn btn-md btn-warning'>Delete</Link>
                                     </td>
                                 </tr>

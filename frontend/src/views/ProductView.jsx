@@ -75,7 +75,7 @@ const ProductView = () => {
                         </div>
                         <div className="col-md-7">
                             <div className="single-product-content">
-                                <h3>{product.productname}</h3>
+                                <h3>{product.name}</h3>
                                 <p className="single-product-pricing"><span></span> Rs. {product.price}</p>
                                 <div className="single-product-form">
                                 <div className="stockCounter d-inline">

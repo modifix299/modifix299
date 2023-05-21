@@ -49,7 +49,7 @@ const Products = () => {
                                 <div className="product-image">
                                     <Link to={`/product/${product._id}`}><img src="assets/img/products/product-img-1.jpg" alt=""/></Link>
                                 </div>
-                                <h3>{product.productname}</h3>
+                                <h3>{product.name}</h3>
                                 <p className="product-price"><span></span> Rs. {product.price} </p>
                                 <Link to={`/product/${product._id}`} className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</Link>
                             </div>

@@ -11,7 +11,7 @@ const getAllOrders = async (token) => {
         },
     }
     
-    const response = await axios.get(API_URL, config)
+    const response = await axios.get(API_URL+'getAllOrders', config)
 
     return response.data;
 }
@@ -29,6 +29,18 @@ const getOneOrder = async (id,token) => {
   return response.data;
 }
 
+// Create Order action
+const createOrder = async (data,token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+
+  const response = await axios.post(API_URL+'newOrder', data, config)
+
+  return response.data
+}
 
 
 // Update Order action
@@ -50,6 +62,7 @@ const updateOrder = async (data,token) => {
 const orderService = {
     getAllOrders,
     getOneOrder,
+    createOrder,
     updateOrder
 }
 
