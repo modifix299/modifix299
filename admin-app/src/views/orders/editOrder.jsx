@@ -56,7 +56,7 @@ const EditOrder = () => {
     return (
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Edit Product</h1>
+                <h1 className="h3 mb-0 text-gray-800">Order Status</h1>
                 <Link to="/admin/orders" relative='pa' className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
                     <i className="fas fa-arrow-left fa-sm "></i> Back 
                 </Link>
@@ -87,6 +87,62 @@ const EditOrder = () => {
                     </div>
                 </div>
             </div>
+
+            {/* customer preview */}
+            <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-dark">Orders Items</h6>
+                </div>
+                <div className="card-body">
+                    <div className="table-responsive">
+                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                        <thead>
+                            <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>                                     
+                            </tr>
+                        </thead>
+                        {/* <tbody>
+                            {!isLoading && orders.map((order,key) => (
+                            <tr key = {key} > 
+                                <td>{order.orderStatus}</td>
+                                <td>{order.createdAt}</td>
+                            </tr>
+                            ))}
+                        </tbody> */}
+                    </table>
+                    </div>
+                </div>
+            </div> 
+
+            {/* order preview */}
+            <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-dark">Shipping Info</h6>
+                </div>
+                <div className="card-body">
+                    <div className="table-responsive">
+                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                        <thead>
+                            <tr>
+                            <th>Customer Name</th>
+                            <th>Address</th> 
+                            <th>Address</th> 
+                            <th>Mobile</th>                                     
+                            </tr>
+                        </thead>
+                        {/* <tbody>
+                            {!isLoading && orders.map((order,key) => (
+                            <tr key = {key} > 
+                                <td>{order.orderStatus}</td>
+                                <td>{order.createdAt}</td>
+                            </tr>
+                            ))}
+                        </tbody> */}
+                    </table>
+                    </div>
+                </div>
+            </div> 
         </>
     )
 }
