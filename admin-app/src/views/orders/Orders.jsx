@@ -9,8 +9,7 @@ const Orders = () => {
 
     const { orders, isLoading, isError, message } = useSelector(
         (state) => state.order
-    )
-    console.log(orders)     
+    )    
 
     useEffect(() => {
         if (isError) {
@@ -36,18 +35,28 @@ const Orders = () => {
                 </div>
                 <div className="card-body">
                     <div className="table-responsive">
-                        <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Order1</th>
-                                    <th>Order1</th>
-                                    <th>Order1</th>
-                                    <th>Order1</th>
-                                    <th>Order1</th>
-                                </tr>
-                            </thead>
-                            
-                        </table>
+                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                        <thead>
+                            <tr>               
+                            <th>Total Price</th>
+                            <th>Order Status</th>
+                            <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {!isLoading && orders.map((order,key) => (
+                            <tr key = {key} >                           
+                                <td>{order.totalPrice}</td>
+                                <td>{order.orderStatus}</td>
+                                <td>{order.createdAt}</td>
+                                <td>
+                                <Link to={`/admin/orders/edit/${order._id}`} className='btn btn-md btn-dark'>Edit</Link>
+                                <Link to={`/admin/orders/delete/${order._id}`} className='btn btn-md btn-warning'>Delete</Link>
+                                </td>
+                            </tr>
+                            ))}
+                        </tbody>
+                    </table>
                     </div>
                 </div>
             </div>            

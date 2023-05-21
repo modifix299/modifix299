@@ -51,18 +51,9 @@ const myOrders = catchAsyncError(async (req, res, next) => {
 //Get All Orders 
 const getAllOrders = catchAsyncError(async (req, res, next) => {
     const orders = await Order.find();
-
-    // let totalAmount = 0;
-
-    // orders.forEach(order => {
-    //     totalAmount += order.totalPrice
-    // })
-
-    res.status(200).json({
-        // success: true,
-        // totalAmount,
+    res.status(200).json(
         orders
-    })
+    )
 })
 
 //Admin: Update Order / Order Status - api/v1/order/:id
