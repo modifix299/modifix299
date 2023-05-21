@@ -9,8 +9,7 @@ const Orders = () => {
 
     const { orders, isLoading, isError, message } = useSelector(
         (state) => state.order
-    ) 
-    console.log(orders)   
+    )  
 
     useEffect(() => {
         if (isError) {
