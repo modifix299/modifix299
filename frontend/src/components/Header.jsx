@@ -1,14 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Authenticated from './Authenticated';
-
+import { useState } from 'react';
 
 const Header = () => {
 
+    const [ fix, setFix ] = useState(false)
 
+    function setFixed(){
+        if (window.scrollY >= 290) {
+            setFix(true)
+        } else {
+            setFix(false)
+        }
+    }
+    
+    window.addEventListener("scroll", setFixed)
     return (
         <>
-        	<div className="top-header-area" id="sticker">
+            <div className={fix ? 'top-header-area fixed':'top-header-area'} id="sticker">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 col-sm-12 text-center">

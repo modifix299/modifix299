@@ -592,7 +592,10 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   z-index:2;
   width: 100%;
   padding: 10px 0;
-  background-color: #051922;
+  /* background-color: #051922; */
+}
+.top-header-area.fixed{
+  background-color: #041823;
 }
 
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
