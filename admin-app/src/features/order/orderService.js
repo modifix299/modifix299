@@ -51,7 +51,7 @@ const updateOrder = async (data,token) => {
     },
   }
 
-  const response = await axios.patch(API_URL+'update', data, config)
+  const response = await axios.patch(API_URL+'updateOrder', data, config)
 
   return response.data
 }

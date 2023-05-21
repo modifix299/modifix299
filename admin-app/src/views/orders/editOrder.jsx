@@ -57,7 +57,7 @@ const EditOrder = () => {
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Edit Product</h1>
-                <Link to="/admin/products" relative='pa' className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
+                <Link to="/admin/orders" relative='pa' className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
                     <i className="fas fa-arrow-left fa-sm "></i> Back 
                 </Link>
             </div>
