@@ -92,9 +92,7 @@ const updateOrder =  catchAsyncError(async (req, res, next) => {
     // order.deliveredAt = Date.now();
     // await order.save();
 
-    res.status(200).json({
-        success: true
-    })
+    res.status(200).json()
     
 });
 

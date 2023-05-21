@@ -11,9 +11,11 @@ const EditOrder = () => {
     const [formData, setFormData] = useState({});
   
 
-    const {order, isUpdated , isError, message } = useSelector(
+    const { order, isUpdated, isLoading, isError, message } = useSelector(
         (state) => state.order
     )
+    
+    console.log(typeof(order))
 
 
     function onFormChange(key, value) {
@@ -103,10 +105,10 @@ const EditOrder = () => {
                             </tr>
                         </thead>
                         {/* <tbody>
-                            {!isLoading && orders.map((order,key) => (
+                            {!isLoading && order.map((user,key) => (
                             <tr key = {key} > 
-                                <td>{order.orderStatus}</td>
-                                <td>{order.createdAt}</td>
+                                <td>{user.orderStatus}</td>
+                                <td>{user.createdAt}</td>
                             </tr>
                             ))}
                         </tbody> */}
@@ -115,7 +117,7 @@ const EditOrder = () => {
                 </div>
             </div> 
 
-            {/* order preview */}
+            {/* shipping info */}
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
                     <h6 className="m-0 font-weight-bold text-dark">Shipping Info</h6>
