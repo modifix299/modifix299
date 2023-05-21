@@ -10,6 +10,6 @@ router.route('/myorders').get(protect, authCustomer, orderController.myOrders);
 
 //Admin Routes
 router.route('/getAllOrders').get(protect, authAdmin, orderController.getAllOrders);
-router.route('/getOneOrder/:id/update').patch(protect, authAdmin, orderController.updateOrder);
+router.route('/getOneOrder/:id').get(protect, authAdmin, orderController.updateOrder);
 
 module.exports = router;

@@ -16,6 +16,7 @@ import EditUser from './views/users/editUser';
 import DeleteUser from './views/users/deleteUser';
 import DeleteProduct from './views/products/deleteProduct';
 import Orders from './views/orders/Orders';
+import EditOrder from './views/orders/editOrder';
 
 
 import Authorized from './components/Authorized';
@@ -49,7 +50,7 @@ function App() {
 
                         <Route path="orders">
                             <Route index element={<Orders/>} />                
-                            {/* <Route path='edit/:id' element={<EditOrder/>} /> */}
+                            <Route path='edit/:id' element={<EditOrder/>} />
                         </Route>
 
                        

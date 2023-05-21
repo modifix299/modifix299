@@ -24,7 +24,7 @@ const getOneOrder = async (id,token) => {
       },
   }
   
-  const response = await axios.get(API_URL+'getOne/'+id, config)
+  const response = await axios.get(API_URL+'getOneOrder/'+id, config)
 
   return response.data;
 }

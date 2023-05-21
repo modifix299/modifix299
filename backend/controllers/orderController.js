@@ -56,6 +56,20 @@ const getAllOrders = catchAsyncError(async (req, res, next) => {
     )
 })
 
+// Get One Order
+const getOneOrder = (async (req, res) => {
+    const id = req.params['id'];
+
+    const order = await Order.findById(id);
+
+    if (!order) {
+        return res.status(400).json({ message: 'Order not found' })
+    } else {
+        return res.status(201).json(order);
+    } 
+
+});
+
 //Admin: Update Order / Order Status - api/v1/order/:id
 const updateOrder =  catchAsyncError(async (req, res, next) => {
     const order = await Order.findById(req.params.id);
@@ -103,5 +117,6 @@ module.exports = {
     myOrders,
     getAllOrders,
     updateOrder,
-    deleteOrder
+    deleteOrder,
+    getOneOrder
 }
