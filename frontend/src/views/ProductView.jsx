@@ -30,7 +30,7 @@ const ProductView = () => {
 
     const increaseQty = () => {
         const count = document.querySelector('.count')
-        if(product.stock ===0 ||  count.valueAsNumber >= product.stock) return;
+        if(product.stockquantity ===0 ||  count.valueAsNumber >= product.stockquantity) return;
         const qty = count.valueAsNumber + 1;
         setQuantity(qty);
     }
@@ -80,9 +80,7 @@ const ProductView = () => {
                                 <div className="single-product-form">
                                 <div className="stockCounter d-inline">
                                     <span className="btnminus" onClick={decreaseQty} >-</span>
-
                                     <input type="number" className="form-control count d-inline" value={quantity} readOnly />
-
                                     <span className="btnplus" onClick={increaseQty}>+</span>
                                 </div>
                                 <button type="button"

@@ -9,6 +9,7 @@ const newOrder =  catchAsyncError( async (req, res, next) => {
         orderItems,
         shippingInfo,
         totalPrice,
+        orderStatus,
         user
      } = req.body;
 
@@ -16,6 +17,7 @@ const newOrder =  catchAsyncError( async (req, res, next) => {
         orderItems,
         shippingInfo,
         totalPrice,
+        orderStatus,
         user
 })
 
@@ -73,14 +75,22 @@ const getOneOrder = (async (req, res) => {
 });
 
 //Admin: Update Order / Order Status - api/v1/order/:id
-const updateOrder =  catchAsyncError(async (req, res, next) => {
-    const { id, shippingInfo, user, orderItems, totalPrice, orderStatus, createdAt } = req.body
+const updateOrder = catchAsyncError(async (req, res, next) => {
+    const { id, orderStatus } = req.body;
     
-    // Confirm data 
-    if ( !orderStatus ) {
-        return res.status(400).json({ message: 'Order Status required' })
+    // Confirm data
+    if (!id || !orderStatus) {
+      return res.status(400).json({ message: 'Order Status & ID required' });
     }
-    const order = await Order.findById(req.params.id);
+      const order = await Order.findById(id);
+  
+      if (!order) {
+        return res.status(404).json({ message: 'Order not found' });
+      }
+  
+      order.orderStatus = orderStatus;
+      const updatedOrder = await order.save();
+  
 
     // if(order.orderStatus == 'Delivered') {
     //     return next(new ErrorHandler('Order has been already delivered!', 400))

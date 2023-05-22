@@ -12,11 +12,9 @@ const EditOrder = () => {
     const [formData, setFormData] = useState({});
 
   
-    const { order, isUpdated, isLoading, isError, message } = useSelector(
+    const { orders, order, isUpdated, isLoading, isError, message } = useSelector(
         (state) => state.order
     )
-
-        console.log(order)
 
     function onFormChange(key, value) {
         setFormData({ ...formData, [key]: value })
@@ -69,7 +67,7 @@ const EditOrder = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="p-5">
-                                <form className="order" onSubmit={onFormSumbit}>                              
+                                <form className="order" onSubmit={onFormSumbit}>                       
                                     
                                     
                                     <div className="form-group">

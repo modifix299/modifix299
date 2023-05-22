@@ -74,12 +74,14 @@ export const cartSlice = createSlice({
                 localStorage.setItem('cartItems', JSON.stringify(state.items));
             }
             return state
+            
         })
         .addCase(addCartItemSuccess.rejected, (state, action) => {
           state.isLoading = false
           state.isError = true
           state.message = action.payload
         })
+    
     //removeAllItemsFromCart
         .addCase(removeAllItemsFromCart.pending, (state) => {
             state.isLoading = true
