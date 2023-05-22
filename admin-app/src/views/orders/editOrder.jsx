@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link,useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
-import { getOneOrder, updateOrder, reset } from '../../features/order/orderSlice'
+import {getOneOrder, updateOrder, reset } from '../../features/order/orderSlice'
 import { toast } from 'react-toastify';
 
 const EditOrder = () => {
@@ -9,14 +9,13 @@ const EditOrder = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({});
-  
 
+  
     const { order, isUpdated, isLoading, isError, message } = useSelector(
         (state) => state.order
     )
-    
-    console.log(typeof(order))
 
+        console.log(order)
 
     function onFormChange(key, value) {
         setFormData({ ...formData, [key]: value })
@@ -80,7 +79,7 @@ const EditOrder = () => {
                                             <option value="Delivered">Delivered</option>
                                         </select>
                                     </div>
-                                    <button type='submit' className="btn btn-primary btn-block">
+                                    <button type='submit' className="btn btn-dark btn-block">
                                         Save
                                     </button>
                                 </form>
@@ -105,10 +104,9 @@ const EditOrder = () => {
                             </tr>
                         </thead>
                         {/* <tbody>
-                            {!isLoading && order.map((user,key) => (
+                            {!isLoading && order.map((order,key) => (
                             <tr key = {key} > 
-                                <td>{user.orderStatus}</td>
-                                <td>{user.createdAt}</td>
+                                <td>{order._id}</td>
                             </tr>
                             ))}
                         </tbody> */}
@@ -134,7 +132,7 @@ const EditOrder = () => {
                             </tr>
                         </thead>
                         {/* <tbody>
-                            {!isLoading && orders.map((order,key) => (
+                            {!isLoading && order.map((order,key) => (
                             <tr key = {key} > 
                                 <td>{order.orderStatus}</td>
                                 <td>{order.createdAt}</td>
