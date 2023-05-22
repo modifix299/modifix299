@@ -26,12 +26,14 @@ const Checkout = () => {
 
   function onFormChange(key, value) {
     setShippingData({ ...shippingData, [key]: value })
-  }
+  } 
+  
 
   let totalPrice = 0;
-  userItems.forEach(function (arrayItem) {
-    totalPrice = totalPrice + arrayItem.price;
-  });
+userItems.forEach(function (arrayItem) {
+  totalPrice = totalPrice + (arrayItem.price * arrayItem.quantity);
+});
+
 
 
   function onFormSumbit(e) {
