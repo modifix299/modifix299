@@ -96,13 +96,13 @@ const updateOrder = catchAsyncError(async (req, res, next) => {
     //     return next(new ErrorHandler('Order has been already delivered!', 400))
     // }
     //Updating the product stockquantity of each order item
-    // order.orderItems.forEach(async orderItem => {
-    //     await updateStock(orderItem.product, orderItem.quantity)
-    // })
+    order.orderItems.forEach(async orderItem => {
+        await updateStock(orderItem.product, orderItem.quantity)
+    })
 
     // order.orderStatus = req.body.orderStatus;
-    // order.deliveredAt = Date.now();
-    // await order.save();
+    order.deliveredAt = Date.now();
+    await order.save();
 
     res.status(200).json()
     
@@ -133,5 +133,6 @@ module.exports = {
     myOrders,
     getAllOrders,
     updateOrder,
-    getOneOrder
+    getOneOrder,
+    updateStock
 }
