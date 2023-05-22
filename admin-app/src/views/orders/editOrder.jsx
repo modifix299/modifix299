@@ -3,6 +3,7 @@ import { Link,useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import {getOneOrder, updateOrder, reset } from '../../features/order/orderSlice'
 import { toast } from 'react-toastify';
+import { Fragment } from 'react'
 
 const EditOrder = () => {
     const {id} = useParams();
@@ -103,13 +104,18 @@ const EditOrder = () => {
                             <th>Quantity</th>                                     
                             </tr>
                         </thead>
-                        {/* <tbody>
-                            {!isLoading && order.map((order,key) => (
-                            <tr key = {key} > 
-                                <td>{order._id}</td>
-                            </tr>
+                        <tbody>
+                        {!isLoading && order.map((order, key) => (
+                            <Fragment key={key}>
+                            {order.orderItems.map((item, index) => (
+                                <tr key={`${key}-${index}`}>
+                                <td>{item.name}</td>
+                                <td>{item.quantity}</td>
+                                </tr>
                             ))}
-                        </tbody> */}
+                            </Fragment>
+                        ))}
+                        </tbody>
                     </table>
                     </div>
                 </div>
@@ -127,18 +133,20 @@ const EditOrder = () => {
                             <tr>
                             <th>Customer Name</th>
                             <th>Address</th> 
-                            <th>Address</th> 
+                            <th>ZIP Code</th> 
                             <th>Mobile</th>                                     
                             </tr>
                         </thead>
-                        {/* <tbody>
+                        <tbody>
                             {!isLoading && order.map((order,key) => (
                             <tr key = {key} > 
-                                <td>{order.orderStatus}</td>
-                                <td>{order.createdAt}</td>
+                                <td>{order.shippingInfo[0].name}</td>
+                                <td>{order.shippingInfo[0].shippingaddress}</td>
+                                <td>{order.shippingInfo[0].zipcode}</td>
+                                <td>{order.shippingInfo[0].phone}</td>
                             </tr>
                             ))}
-                        </tbody> */}
+                        </tbody>
                     </table>
                     </div>
                 </div>
