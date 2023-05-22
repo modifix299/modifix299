@@ -1655,6 +1655,22 @@ div.owl-controls, .owl-controls div {
   border-radius: 999px;
 }
 
+/* video gallery and content */
+.container-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.container-video{
+  display: grid;
+  width: 20vh;
+
+}
+
+
+
 /* -----------------------------------------------------------------------------
 
 # News Styles
