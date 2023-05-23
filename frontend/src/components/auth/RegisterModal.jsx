@@ -88,7 +88,7 @@ const handleRegister = () => {
                 <Form.Label for="password">Password:</Form.Label>
                 <Form.Control type="password" class="form-control" id="password" placeholder="Enter password"/>
               </div>
-              <button type="submit" class="btn btn-primary" onClick={handleRegister}>Register</button>
+              <button type="submit" class="btn btn-primary" style={{backgroundColor : "gray"}} onClick={handleRegister}>Register</button>
 
             </Form>
           </Modal.Body>
