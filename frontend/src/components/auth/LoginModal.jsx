@@ -53,7 +53,7 @@ const LoginModal = () => {
     return (
         <>
             <li>
-                <Button style={{color: "black", backgroundColor: "gray" , borderColor: "black"}} onClick={handleLoginShow} ><i className="fas fa-user"></i></Button>                
+                <Button style={{color: "black", backgroundColor: "gray" , borderColor: "black"  }} onClick={handleLoginShow} ><i className="fas fa-user"></i></Button>                
             </li>
 
             <Modal show={loginShow} onHide={handleLoginClose} centered={true}>
