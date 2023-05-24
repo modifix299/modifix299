@@ -1,10 +1,23 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Authenticated from './Authenticated';
 
 
 const Header = () => {
+
+    const [ fix, setFix ] = useState(false)
+
+    function setFixed(){
+        if (window.scrollY >= 290) {
+            setFix(true)
+        } else {
+            setFix(false)
+        }
+    }
+    
+    window.addEventListener("scroll", setFixed)
 
     return (
         <>
