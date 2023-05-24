@@ -45,40 +45,40 @@ const Dashboard = () => {
                 <div className="card-body">
                 <div className="row pr-4">
                             <div className="col-xl-4 col-sm-6 mb-3">
-                                <div className="card text-white bg-dark o-hidden h-100">
+                                <div className="card text-white bg-gradient-dark o-hidden h-100">
                                     <div className="card-body">
                                         <div className="text-center card-font-size">Products<br /> <b>{products.length}</b></div>
                                     </div>
                                     <Link className="card-footer text-white clearfix small z-1" to="/admin/products">
                                         <span className="float-left">View Details</span>
                                         <span className="float-right">
-                                            <i className="fa fa-angle-right"></i>
+                                            <i className="fa fa-angle-down"></i>
                                         </span>
                                     </Link>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-sm-6 mb-3">
-                                <div className="card text-white bg-dark o-hidden h-100">
+                                <div className="card text-white bg-gradient-dark o-hidden h-100">
                                     <div className="card-body">
                                         <div className="text-center card-font-size">Orders<br /> <b>{orders.length}</b></div>
                                     </div>
                                     <Link className="card-footer text-white clearfix small z-1" to="/admin/orders">
                                         <span className="float-left">View Details</span>
                                         <span className="float-right">
-                                            <i className="fa fa-angle-right"></i>
+                                            <i className="fa fa-angle-down"></i>
                                         </span>
                                     </Link>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-sm-6 mb-3">
-                                <div className="card text-white bg-dark o-hidden h-100">
+                                <div className="card text-white bg-gradient-dark o-hidden h-100">
                                     <div className="card-body">
                                         <div className="text-center card-font-size">Users<br /> <b>{users.length}</b></div>
                                     </div>
                                     <Link className="card-footer text-white clearfix small z-1" to="/admin/users">
                                         <span className="float-left">View Details</span>
                                         <span className="float-right">
-                                            <i className="fa fa-angle-right"></i>
+                                            <i className="fa fa-angle-down"></i>
                                         </span>
                                     </Link>
                                 </div>

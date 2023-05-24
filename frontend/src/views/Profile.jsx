@@ -8,6 +8,7 @@ const Profile = () => {
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="breadcrumb-text">
+                                <p>Let's Ride Your Dream</p>    
                                 <h1>Profile</h1>
                             </div>
                         </div>
@@ -20,8 +21,8 @@ const Profile = () => {
                     <div className="row">
                         <div className="col-lg-12 mb-5 mb-lg-0">
                             <div className="form-title">
-                                <h2>Have you any question?</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
+                                <h2>Profile Updation</h2>
+                                <p>Embarking on a two-wheeled journey is more than a mere passion for bike fanatics. It's an enchanting world where dreams take flight. Beyond the revving engines and adrenaline rushes, lies a realm of freedom, self-expression, and exploration. In pursuit of these dreams, bikers find themselves immersed in thrilling adventures, forging unforgettable memories along the way.</p>
                             </div>
                             <div id="form_status"></div>
                             <div className="contact-form">
