@@ -43,6 +43,8 @@ export const removeAllItemsFromCart = createAsyncThunk('cartItem/removeAll', asy
 }
 );
 
+
+
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
