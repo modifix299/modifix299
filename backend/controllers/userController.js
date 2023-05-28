@@ -84,15 +84,13 @@ const updateUser = (async (req, res) => {
     // Allow updates to the original product
     if (duplicate.id != id ) {
         return res.status(409).json({ message: 'Duplicate user id' })
-    }
-
-  
+    } 
 
     user.firstname = firstname;
     user.lastname = lastname;
     user.email = email;
     user.role = role;
-    user.active = active;
+    user.active = active;    
 
     if (password) {
         // Hash password for update

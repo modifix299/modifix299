@@ -1,7 +1,9 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 import Authenticated from './Authenticated';
-import { useState } from 'react';
+
 
 const Header = () => {
 
@@ -16,9 +18,10 @@ const Header = () => {
     }
     
     window.addEventListener("scroll", setFixed)
+
     return (
         <>
-            <div className={fix ? 'top-header-area fixed':'top-header-area'} id="sticker">
+        	<div className="top-header-area" id="sticker">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 col-sm-12 text-center">

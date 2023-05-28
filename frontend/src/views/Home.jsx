@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import video from "../../src/img/modifix.mp4"
 
+
 const Home = () => {
     return (
         <>
@@ -24,36 +25,33 @@ const Home = () => {
             </div>
 
             <section className="container container-section">
-        <div className="container-video">
-        <video width="440" height="360" controls>            <source src={video} type="video/mp4" />
-          </video>
-        </div>
-        <div className="content">
-          <h2 className="subtitle">
-            Story of <span style={{ color: "orange" }}>Modifix</span>{" "}
-          </h2>
-          <p className="para">
-          Sri Lanka's economic crisis, imports have been banned or limited, and high taxes have made vehicle spare parts unreasonably priced and of poor quality. 
-          To address this, we turned our focus to manufacturing motorbike fairings using fiberglass instead of plastic. Raw materials are easily accessible in Jaffna, 
-          where we obtained quotations for manufacturing costs. The stark price difference between locally made fiberglass parts and imported ones proves our affordability. 
-          Moreover, our commitment to quality ensures customers receive a superior product. With easy online accessibility, bike enthusiasts can now purchase affordable and high-quality fairings.
-           
-          </p>
-        </div>
-      </section>
+                <div className="container-video">
+                    <video width="440" height="360" controls autoPlay>
+                        <source src={video} type="video/mp4" autoplay />
+                    </video>
+                </div>      
 
-              <section className="shop-banner">
+                <div className="content">
+                    <h2 className="subtitle">Story of <span style={{ color: "orange" }}>Modifix</span>{" "}</h2>
+                    <p className="para">
+                    Sri Lanka's economic crisis, imports have been banned or limited, and high taxes have made vehicle spare parts unreasonably priced and of poor quality. 
+                    To address this, we turned our focus to manufacturing motorbike fairings using fiberglass instead of plastic. Raw materials are easily accessible in Jaffna, 
+                    where we obtained quotations for manufacturing costs. The stark price difference between locally made fiberglass parts and imported ones proves our affordability. 
+                    Moreover, our commitment to quality ensures customers receive a superior product. With easy online accessibility, bike enthusiasts can now purchase affordable and high-quality fairings.       
+                    </p>
+                </div>
+            </section>
+            
+            <section className="shop-banner">
                 <div className="container">
                     <h3>Offers From MODIFIX !... <br/>for<span className="orange-text"> Classic Models</span></h3>
                     <div className="sale-percent"><span>Sale! <br/> Upto</span>50% <span>off</span></div>
                     <Link to="products" className="cart-btn btn-lg">Shop Now</Link>
                 </div>
-            </section>    
-        
+            </section>
 
             <div className="list-section pt-80 pb-80">
                 <div className="container">
-
                     <div className="row">
                         <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <div className="list-box d-flex align-items-center">
@@ -92,6 +90,34 @@ const Home = () => {
 
                 </div>
             </div>
+
+            {/* logo carousel */}
+            <div class="logo-carousel-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="logo-carousel-inner">
+                                <div class="single-logo-item">
+                                    <img src="assets/img/company-logos/1.png" alt=""/>
+                                </div>
+                                <div class="single-logo-item">
+                                    <img src="assets/img/company-logos/2.png" alt=""/>
+                                </div>
+                                <div class="single-logo-item">
+                                    <img src="assets/img/company-logos/3.png" alt=""/>
+                                </div>
+                                <div class="single-logo-item">
+                                    <img src="assets/img/company-logos/4.png" alt=""/>
+                                </div>
+                                <div class="single-logo-item">
+                                    <img src="assets/img/company-logos/5.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* end logo carousel */}
         </>
     )
 }

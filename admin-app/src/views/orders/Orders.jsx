@@ -9,7 +9,8 @@ const Orders = () => {
 
     const { orders, isLoading, isError, message } = useSelector(
         (state) => state.order
-    )    
+    )
+    console.log(orders)
 
     useEffect(() => {
         if (isError) {
@@ -23,11 +24,11 @@ const Orders = () => {
     
     return (
         <>
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
+            {/* <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Orders</h1>
                 <Link to="new" className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
                     <i className="fas fa-plus fa-sm "></i> Create New Product</Link>
-            </div>
+            </div> */}
 
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
@@ -37,21 +38,26 @@ const Orders = () => {
                     <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
-                            <tr>               
+                            <tr>
+                            <th>Order ID</th>
+                            <th>Customer Name</th>                                         
                             <th>Total Price</th>
                             <th>Order Status</th>
                             <th>Created At</th>
+                            <th>More Info</th>
+                            
                             </tr>
                         </thead>
                         <tbody>
                             {!isLoading && orders.map((order,key) => (
-                            <tr key = {key} >                           
+                            <tr key = {key} > 
+                                <td>{order._id}</td>
+                                <td>{order.shippingInfo[0].name}</td>                         
                                 <td>{order.totalPrice}</td>
                                 <td>{order.orderStatus}</td>
-                                <td>{order.createdAt}</td>
+                                <td>{order.createdAt}</td>                                
                                 <td>
-                                <Link to={`/admin/orders/edit/${order._id}`} className='btn btn-md btn-dark'>Edit</Link>
-                                <Link to={`/admin/orders/delete/${order._id}`} className='btn btn-md btn-warning'>Delete</Link>
+                                <Link to={`/admin/orders/edit/${order._id}`} className='btn btn-md btn-dark'>View</Link>
                                 </td>
                             </tr>
                             ))}

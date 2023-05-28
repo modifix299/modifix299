@@ -3,7 +3,7 @@ import orderService from './orderService';
 
 const initialState = {
     orders: [],
-    order: {},
+    order: [],
     isError: false,
     isAdded: false,
     isUpdated: false,
@@ -29,7 +29,7 @@ export const getAllOrders = createAsyncThunk('orders/getAll', async (_, thunkAPI
     }
 );
 
-// Get One Orfders reducer
+// Get One Orders reducer
 export const getOneOrder = createAsyncThunk('orders/getOne', async (id, thunkAPI) => {
   try {
       const token = thunkAPI.getState().auth.user.token;

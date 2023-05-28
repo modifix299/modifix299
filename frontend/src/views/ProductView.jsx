@@ -30,7 +30,7 @@ const ProductView = () => {
 
     const increaseQty = () => {
         const count = document.querySelector('.count')
-        if(product.stock ===0 ||  count.valueAsNumber >= product.stock) return;
+        if(product.stockquantity ===0 ||  count.valueAsNumber >= product.stockquantity) return;
         const qty = count.valueAsNumber + 1;
         setQuantity(qty);
     }
@@ -76,13 +76,14 @@ const ProductView = () => {
                         <div className="col-md-7">
                             <div className="single-product-content">
                                 <h3>{product.name}</h3>
+                                <h6>{product.description}</h6>
+                                <p>MODIFIX now offers convenient home delivery and modification services right at your doorstep. To ensure the utmost safety of our products during shipping, each item is carefully wrapped in a custom-designed box. </p>
                                 <p className="single-product-pricing"><span></span> Rs. {product.price}</p>
+                                
                                 <div className="single-product-form">
                                 <div className="stockCounter d-inline">
                                     <span className="btnminus" onClick={decreaseQty} >-</span>
-
                                     <input type="number" className="form-control count d-inline" value={quantity} readOnly />
-
                                     <span className="btnplus" onClick={increaseQty}>+</span>
                                 </div>
                                 <button type="button"
