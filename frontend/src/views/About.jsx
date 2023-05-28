@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import video from "../../src/img/modifixx.mp4"
 
 const About = () => {
     return (
@@ -71,6 +72,12 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="container-video">
+                    
+                    <video width="600" height="360" controls autoPlay style={{objectFit: 'cover'}}>
+                        <source src={video} type="video/mp4" autoplay />
+                    </video>
+                </div>    
                     </div>
                 </div>
             </div>

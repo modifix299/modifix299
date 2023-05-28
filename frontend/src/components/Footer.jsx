@@ -14,7 +14,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-4">
-                            <div className="footer-box get-in-touch">
+                            <div className="footer-box get-in-touch" style={{marginLeft :"200px"}}>
                                 <h2 className="widget-title">Get in Touch</h2>
                                 <ul>
                                     <li>Chankaanai,Jaffna,SriLanka.</li>
@@ -24,7 +24,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-4">
-                            <div className="footer-box pages">
+                            <div className="footer-box pages" style={{marginLeft :"250px"}}>
                                 <h2 className="widget-title">Pages</h2>
                                 <ul>
                                     <li><Link to="index">Home</Link></li>
