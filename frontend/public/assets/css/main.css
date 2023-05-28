@@ -30,6 +30,7 @@ body {
 
 body img {
   max-width: 90%;
+  margin-top: -20px;
 }
 
 a {
@@ -613,9 +614,9 @@ a.navbar-brand img {
 }
 
 nav.main-menu ul {
-  margin: 0;
+  /* margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: none; */
 }
 
 nav.main-menu ul li {
@@ -626,8 +627,9 @@ nav.main-menu ul li a {
   color: #fff;
   font-size: 20px;
   display: block;
-  padding: 15px;
-  padding-left: 50px;
+  /* padding: 15px;
+  padding-left: 50px; */
+  
 
 }
 
@@ -2844,4 +2846,40 @@ table.order-details tbody td {
   width: 100%;
 }
 
+.about{
+  margin-left: 210px;
 
+}
+.products{
+  margin-left: 210px;
+  
+}
+.home{
+  margin-left: 210px;
+  
+}
+
+
+
+
+ .add{
+  margin-left: 200px;
+} 
+
+.customer{
+  margin-right: -200px;
+} 
+
+/* profile update */
+#email{
+  margin-left: 20px;
+}
+#address{
+  margin-left: 20px;
+  
+}
+#zipcode{
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

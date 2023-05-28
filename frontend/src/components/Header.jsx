@@ -26,16 +26,19 @@ const Header = () => {
                                 <div className="site-logo1">
                                     <Link to="/">
                                         <img src="img/modifix.png" alt=""/>
+                                        
                                     </Link>
                                 </div>
 
                                 <nav className="main-menu">
                                     <ul>
-                                        <li><Link to="/">Home</Link></li>
-                                        <li><Link to="products">Products</Link></li>
-                                        <li><Link to="about">About</Link></li> 
+                                         
+                                        <li className='nav home'><Link to="/" >Home</Link></li>
+                                        <li className='nav products '><Link to="products">Products</Link></li>
+                                        <li className='nav about'><Link to="about">About</Link></li> 
+                                         
                                         {/* <li><Link to="/cart">Contact Us</Link></li>                                                                              */}
-                                        <li><Link to="/cart">Cart</Link></li>
+                                        <li className='add'><Link to="/cart"  className="fas fa-shopping-cart "></Link></li>
                                         <Authenticated/>
                                     </ul>
                                 </nav>
