@@ -87,7 +87,7 @@ a:hover {
 }
 .btnminus{
   background-color: #030e12;
-  color: f48006;
+  color: #fffd23;
   height:20px;
   margin-right: 10px;
   padding-left: 10px;
@@ -98,7 +98,7 @@ a:hover {
 }
 .btnplus{
   background-color: #030e12;
-  color: f48006;
+  color: #fffd23;
   height:10px;
   margin-left: 10px;
   padding-top: 5px;
@@ -2963,4 +2963,10 @@ table.order-details tbody td {
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+/* icon */
+
+.button{
+  margin-right: -200px;
 }

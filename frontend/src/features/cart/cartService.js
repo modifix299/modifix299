@@ -31,9 +31,11 @@ const removeAllItemsFromCart = async(user) => {
     }
 }
 
+
 const cartService = {
     addCartItem,
-    removeAllItemsFromCart
+    removeAllItemsFromCart,
+    
 }
 
 export default cartService;

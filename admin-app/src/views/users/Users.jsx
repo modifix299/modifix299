@@ -31,7 +31,7 @@ const Users = () => {
 
             <div className="card shadow mb-4 ">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-white ">Users Table</h6>
+                    <h6 className="m-0 font-weight-bold text-dark ">Users Table</h6>
                 </div>
                 <div className="card-body">
                     <div className="table-responsive">

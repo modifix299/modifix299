@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 // to query the database with invalid or unknown fields
 mongoose.set('strictQuery', false);
 

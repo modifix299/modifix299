@@ -34,10 +34,34 @@ userItems.forEach(function (arrayItem) {
   totalPrice = totalPrice + (arrayItem.price * arrayItem.quantity);
 });
 
+function validatePhoneNumber(phoneNumber) {
+  // Remove any non-digit characters from the phone number
+  const digitsOnly = phoneNumber.replace(/\D/g, '');
+
+  // Check if the phone number is either 10 digits starting with '07' or '+947'
+  const isValid =
+    (digitsOnly.length === 10 && digitsOnly.startsWith('07')) ||
+    digitsOnly.startsWith('+947');
+
+  if (!isValid) {
+    return false;
+  }
+  
+  return true;
+}
+
 
 
   function onFormSumbit(e) {
     e.preventDefault();
+
+    const phoneNumber = shippingData.phone;
+    const isPhoneNumberValid = validatePhoneNumber(phoneNumber);
+  
+    if (!isPhoneNumberValid) {
+      toast.error('Invalid Phone Number');
+      return;
+    }
 
     let submitShippingData = { ...shippingData };
     let submitFormData = {
@@ -51,6 +75,7 @@ userItems.forEach(function (arrayItem) {
     dispatch(createOrder(submitFormData));
 
   }
+
 
   useEffect(() => {
     if (isError) {
@@ -66,6 +91,8 @@ userItems.forEach(function (arrayItem) {
 
     dispatch(reset());
   }, [navigate, dispatch, isAdded, isError])
+
+
 
   return (
     <>
@@ -103,8 +130,8 @@ userItems.forEach(function (arrayItem) {
                       <div className="card-body">
                         <div className="billing-address-form">
                           <form action="index.html">
-                            <p><input type="text" defaultValue={user.firstname + user.lastname} onChange={(e) => onFormChange("name", e.target.value)} placeholder="Name" /></p>
-                            <p><input type="tel" defaultValue={user.phone} onChange={(e) => onFormChange("phone", e.target.value)} placeholder="phone" /></p>
+                            <p><input type="text" defaultValue={user.firstname + user.lastname} disabled placeholder="Name" /></p>
+                            <p><input type="tel" defaultValue={user.phone} onChange={(e) => onFormChange("phone", e.target.value)} placeholder="phone" onBlur={(e) => validatePhoneNumber(e.target.value)} /></p>
                             <p><input type="text" defaultValue={user.shippingaddress} onChange={(e) => onFormChange("shippingaddress", e.target.value)} placeholder="shippingaddress" /></p>
                             <p><input type="text" defaultValue={user.zipcode} onChange={(e) => onFormChange("zipcode", e.target.value)} placeholder="zipcode" /></p>
                           </form>
