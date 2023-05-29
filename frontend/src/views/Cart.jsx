@@ -2,12 +2,15 @@ import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 
+
+
 function Cart() {
     const { items } = useSelector(state => state.cart)
     const { user } = useSelector(state => state.auth)
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const userItems = items.filter(item => item.user === user._id);
+
 
     const isDisabled = items.length === 0 ? true : false;
     const goToCheckout = () => {
@@ -37,8 +40,8 @@ function Cart() {
                             <table className="cart-table">
                                 <thead className="cart-table-head">
                                     <tr className="table-head-row">
-                                        <th className="product-remove"></th>
-                                        {/* <th className="product-image">Product Image</th> */}
+                                        {/* <th className="product-remove"></th> */}
+                                        <th className="product-image">Product Image</th>
                                         <th className="product-name">Name</th>
                                         <th className="product-price">Price</th>
                                         <th className="product-quantity">Quantity</th>
@@ -48,12 +51,11 @@ function Cart() {
                                 <tbody>
                                     {userItems?.map((item,key) => (
                                             <tr className="table-body-row" key={key}>
-                                                <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td>
-                                                {/* <td className="product-image"><img src="" alt=""/></td> */}
+                                                {/* <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td> */}
+                                                <td class="product-image"><img src="../assets/img/products/product-img-1.jpg" alt=""/></td>
                                                 <td className="product-name">{item.name}</td>
-                                                <td className="product-price">Rs. {item.price}</td>
-                                                <td className="product-quantity"><input type="number" value={item.quantity}/></td>
-                                                {/* <td className="product-total">{item.quantity}</td> */}
+                                                <td className="product-price">Rs. {item.price}</td>                                             
+                                                <td className="product-total">{item.quantity}</td>
                                             </tr>
                                     ))}
                                 </tbody>

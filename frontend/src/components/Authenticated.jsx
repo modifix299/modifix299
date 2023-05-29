@@ -25,7 +25,7 @@ const Authenticated = () => {
                 <Link className="shopping-cart customer  ">{user.firstname} {user.lastname}</Link>
                 <ul className="sub-menu">
                 
-                    <li><Link to="profile">Profile</Link></li>
+                    {/* <li><Link to="profile">Profile</Link></li> */}
                     <li><Link onClick={handleLogout}>Logout</Link></li>
                 </ul>
             </li>
