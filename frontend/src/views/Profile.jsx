@@ -68,7 +68,7 @@ const Profile = () => {
                     <div className="row">
                         <div className="col-lg-12 mb-5 mb-lg-0">
                             <div className="form-title">
-                                {/* Form title code */}
+                                <h2>Profile Update</h2>
                             </div>
                             <div id="form_status"></div>
                             <div className="contact-form">
@@ -132,7 +132,6 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-    
         </>
     );
 };

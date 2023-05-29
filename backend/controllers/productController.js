@@ -33,10 +33,10 @@ const getOneProduct = (async (req, res) => {
 
 //Create new product
 const createNewProduct = (async (req, res) => {    
-    const { name, price, stockquantity, description } = req.body;    
+    const { name, price, stockquantity, description, image } = req.body;    
 
     // Confirm all data fields
-    if ( !name || !price || !stockquantity || !description) {
+    if ( !name || !price || !stockquantity || !description || !image) {
         return res.status(400).json({ message: 'Required fields are missing' })
     }
     
@@ -45,7 +45,7 @@ const createNewProduct = (async (req, res) => {
 
     
 
-    const productObject = {name, price, stockquantity, description};
+    const productObject = {name, price, stockquantity, description, image};
 
     // Create and store new user 
     const product = await Product.create(productObject);
