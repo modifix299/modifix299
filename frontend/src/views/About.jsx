@@ -73,19 +73,19 @@ const About = () => {
                             </div>
                         </div>
                         <div className="container-video">
-                    
-                    <video width="600" height="360" controls autoPlay style={{objectFit: 'cover'}}>
-                        <source src={video} type="video/mp4" autoplay />
-                    </video>
-                </div>    
+
+                            <video width="450" height="360" controls autoPlay style={{ objectFit: 'cover' }}>
+                                <source src={video} type="video/mp4" autoplay />
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <section className="shop-banner">
                 <div className="container">
-                    <h3>Offers From MODIFIX !... <br/>for<span className="orange-text"> Classic Models</span></h3>
-                    <div className="sale-percent"><span>Sale! <br/> Upto</span>50% <span>off</span></div>
+                    <h3>Offers From MODIFIX !... <br />for<span className="orange-text"> Classic Models</span></h3>
+                    <div className="sale-percent"><span>Sale! <br /> Upto</span>50% <span>off</span></div>
                     <Link to="products" className="cart-btn btn-lg">Shop Now</Link>
                 </div>
             </section>
@@ -137,7 +137,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-         
+
         </>
     )
 }
