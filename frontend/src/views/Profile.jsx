@@ -34,7 +34,7 @@ const Profile = () => {
 
     const validateZipcode = (zipcode) => {
         // Regular expression for zipcode validation (5 digits)
-        const zipcodeRegex = /^[0-4][0-9]{4}$/;
+        const zipcodeRegex = /^[0-9]{5}$/;
         return zipcodeRegex.test(zipcode);
     };
 
@@ -61,17 +61,6 @@ const Profile = () => {
         <>
             <div className="breadcrumb-section breadcrumb-bg">
                 {/* Breadcrumb code */}
-        	<div className="breadcrumb-section breadcrumb-bg">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 offset-lg-2 text-center">
-                            <div className="breadcrumb-text">
-                                <p>Let's Ride Your Dream</p>    
-                                <h1>Profile</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div className="contact-from-section mt-150 mb-150">
@@ -80,8 +69,6 @@ const Profile = () => {
                         <div className="col-lg-12 mb-5 mb-lg-0">
                             <div className="form-title">
                                 {/* Form title code */}
-                                <h2>Profile Updation</h2>
-                                <p>Embarking on a two-wheeled journey is more than a mere passion for bike fanatics. It's an enchanting world where dreams take flight. Beyond the revving engines and adrenaline rushes, lies a realm of freedom, self-expression, and exploration. In pursuit of these dreams, bikers find themselves immersed in thrilling adventures, forging unforgettable memories along the way.</p>
                             </div>
                             <div id="form_status"></div>
                             <div className="contact-form">
