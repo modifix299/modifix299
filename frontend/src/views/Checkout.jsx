@@ -44,15 +44,24 @@ function validatePhoneNumber(phoneNumber) {
     digitsOnly.startsWith('+947');
 
   if (!isValid) {
-    toast.error('Invalid Phone Number');
+    return false;
   }
+  
+  return true;
 }
-
 
 
 
   function onFormSumbit(e) {
     e.preventDefault();
+
+    const phoneNumber = shippingData.phone;
+    const isPhoneNumberValid = validatePhoneNumber(phoneNumber);
+  
+    if (!isPhoneNumberValid) {
+      toast.error('Invalid Phone Number');
+      return;
+    }
 
     let submitShippingData = { ...shippingData };
     let submitFormData = {
