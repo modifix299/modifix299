@@ -26,12 +26,13 @@ const Home = () => {
 
             <section className="container container-section">
                 <div className="container-video">
-                    <video width="440" height="360" controls autoPlay>
+                    
+                    <video width="600" height="360" controls autoPlay style={{objectFit: 'cover'}}>
                         <source src={video} type="video/mp4" autoplay />
                     </video>
                 </div>      
 
-                <div className="content">
+                <div className="content-para-main">
                     <h2 className="subtitle">Story of <span style={{ color: "orange" }}>Modifix</span>{" "}</h2>
                     <p className="para">
                     Sri Lanka's economic crisis, imports have been banned or limited, and high taxes have made vehicle spare parts unreasonably priced and of poor quality. 
@@ -52,6 +53,7 @@ const Home = () => {
 
             <div className="list-section pt-80 pb-80">
                 <div className="container">
+
                     <div className="row">
                         <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <div className="list-box d-flex align-items-center">
@@ -64,7 +66,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <div className="col-lg-3 col-md-6 mb-4 mb-lg-0" style={{marginLeft :"60px"}}>
                             <div className="list-box d-flex align-items-center">
                                 <div className="list-icon">
                                     <i className="fas fa-phone-volume"></i>
@@ -75,7 +77,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-6">
+                        <div className="col-lg-3 col-md-6" style={{marginLeft: "130px"}}>
                             <div className="list-box d-flex justify-content-start align-items-center">
                                 <div className="list-icon">
                                     <i className="fas fa-sync"></i>
@@ -91,32 +93,55 @@ const Home = () => {
                 </div>
             </div>
 
+
             {/* logo carousel */}
-            <div class="logo-carousel-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="logo-carousel-inner">
-                                <div class="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png" alt=""/>
-                                </div>
-                                <div class="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png" alt=""/>
-                                </div>
-                                <div class="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png" alt=""/>
-                                </div>
-                                <div class="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png" alt=""/>
-                                </div>
-                                <div class="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+            <img src="assets/img/company-logos/1.png" alt=""/>
             </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/2.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/3.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/4.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/5.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/6.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/7.png" alt=""/>
+            </div>
+
+            <div class="slide">
+            <img src="assets/img/company-logos/8.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/1.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/2.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/3.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/4.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/5.png" alt=""/>
+            </div>
+            <div class="slide">
+            <img src="assets/img/company-logos/6.png" alt=""/>
+            </div>
+        </div>
+    </div>
             {/* end logo carousel */}
         </>
     )

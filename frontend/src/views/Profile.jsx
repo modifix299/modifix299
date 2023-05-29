@@ -1,8 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Profile = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        zipcode: ''
+    });
+
+    const { name, email, phone, address, zipcode } = formData;
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Perform additional form submission logic if needed
+    };
+
+    const validateEmail = (email) => {
+        // Regular expression for email validation
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        return emailRegex.test(email);
+    };
+
+    const validatePhone = (phone) => {
+        // Regular expression for phone number validation
+        const phoneRegex = /^[0-9]{10}$/;
+        return phoneRegex.test(phone);
+    };
+
+    const validateZipcode = (zipcode) => {
+        // Regular expression for zipcode validation (5 digits)
+        const zipcodeRegex = /^[0-4][0-9]{4}$/;
+        return zipcodeRegex.test(zipcode);
+    };
+
+    const isFormValid = () => {
+        if (name.trim() === '') {
+            return false;
+        }
+        if (!validateEmail(email)) {
+            return false;
+        }
+        if (!validatePhone(phone)) {
+            return false;
+        }
+        if (address.trim() === '') {
+            return false;
+        }
+        if (!validateZipcode(zipcode)) {
+            return false;
+        }
+        return true;
+    };
+
     return (
         <>
+            <div className="breadcrumb-section breadcrumb-bg">
+                {/* Breadcrumb code */}
         	<div className="breadcrumb-section breadcrumb-bg">
                 <div className="container">
                     <div className="row">
@@ -21,31 +79,75 @@ const Profile = () => {
                     <div className="row">
                         <div className="col-lg-12 mb-5 mb-lg-0">
                             <div className="form-title">
+                                {/* Form title code */}
                                 <h2>Profile Updation</h2>
                                 <p>Embarking on a two-wheeled journey is more than a mere passion for bike fanatics. It's an enchanting world where dreams take flight. Beyond the revving engines and adrenaline rushes, lies a realm of freedom, self-expression, and exploration. In pursuit of these dreams, bikers find themselves immersed in thrilling adventures, forging unforgettable memories along the way.</p>
                             </div>
                             <div id="form_status"></div>
                             <div className="contact-form">
-                                <form  id="fruitkha-contact" >
+                                <form id="fruitkha-contact" onSubmit={handleSubmit}>
                                     <p>
-                                        <input type="text" placeholder="Name" name="name" id="name"/>
-                                        <input type="email" placeholder="Email" name="email" id="email"/>
+                                        <input
+                                            type="text"
+                                            placeholder="Name"
+                                            name="name"
+                                            id="name"
+                                            value={name}
+                                            onChange={handleChange}
+                                        />
+                                        <input
+                                            type="email"
+                                            placeholder="Email"
+                                            name="email"
+                                            id="email"
+                                            value={email}
+                                            onChange={handleChange}
+                                        />
                                     </p>
                                     <p>
-                                        <input type="tel" placeholder="Phone" name="phone" id="phone"/>
-                                        <input type="text" placeholder="Subject" name="subject" id="subject"/>
+                                        <input
+                                            type="tel"
+                                            placeholder="Phone"
+                                            name="phone"
+                                            id="phone"
+                                            value={phone}
+                                            onChange={handleChange}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="Address"
+                                            name="address"
+                                            id="address"
+                                            value={address}
+                                            onChange={handleChange}
+                                        />
                                     </p>
-                                    <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
+                                    <p>
+                                        <input
+                                            name="zipcode"
+                                            id="zipcode"
+                                            placeholder="Zipcode"
+                                            value={zipcode}
+                                            onChange={handleChange}
+                                        />
+                                    </p>
                                     <input type="hidden" name="token" value="FsWga4&@f6aw" />
-                                    <p><input type="submit" value="Submit"/></p>
+                                    <p>
+                                        <input
+                                            type="submit"
+                                            value="Submit"
+                                            disabled={!isFormValid()}
+                                        />
+                                    </p>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </>
-    )
-}
+    );
+};
 
-export default Profile
+export default Profile;
