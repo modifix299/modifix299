@@ -19,6 +19,9 @@ const Header = () => {
 
     window.addEventListener("scroll", setFixed)
 
+    const { items } = useSelector(state => state.cart)
+    const cartcount = items.length === 0 ? false : true;
+
     return (
         <>
 
@@ -43,6 +46,8 @@ const Header = () => {
 
                                         {/* <li><Link to="/cart">Contact Us</Link></li>                                                                              */}
                                         <li className='add'><Link to="/cart" className="fas fa-shopping-cart "></Link></li>
+                                        <span className="ml-1" id="cart_count">{cartcount}</span>
+                                        console.log({cartcount})
                                         <Authenticated />
                                     </ul>
                                 </nav>
