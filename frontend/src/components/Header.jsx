@@ -1,27 +1,34 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Authenticated from './Authenticated';
 
-
 const Header = () => {
-
-    const [fix, setFix] = useState(false)
+    const [fix, setFix] = useState(false);
+    const cartItems = useSelector(state => state.cart.items);
 
     function setFixed() {
         if (window.scrollY >= 290) {
-            setFix(true)
+            setFix(true);
         } else {
-            setFix(false)
+            setFix(false);
         }
     }
 
-    window.addEventListener("scroll", setFixed)
+    useEffect(() => {
+        window.addEventListener("scroll", setFixed);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener("scroll", setFixed);
+        };
+    }, []);
+
+    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     return (
         <>
-
             <div className={fix ? 'top-header-area fixed' : 'top-header-area'} id="sticker">
                 <div className="container">
                     <div className="row">
@@ -30,31 +37,29 @@ const Header = () => {
                                 <div className="site-logo1">
                                     <Link to="/">
                                         <img src="img/modifix.png" alt="" />
-
                                     </Link>
                                 </div>
 
                                 <nav className="main-menu">
                                     <ul>
-
-                                        <li className='nav home'><Link to="/" >Home</Link></li>
+                                        <li className='nav home'><Link to="/">Home</Link></li>
                                         <li className='nav products '><Link to="products">Products</Link></li>
                                         <li className='nav about'><Link to="about">About</Link></li>
-
-                                        {/* <li><Link to="/cart">Contact Us</Link></li>                                                                              */}
-                                        <li className='add'><Link to="/cart" className="fas fa-shopping-cart "></Link></li>
+                                        <li className='add'>
+                                            <Link to="/cart" className="fas fa-shopping-cart">
+                                                {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+                                            </Link>
+                                        </li>
                                         <Authenticated />
                                     </ul>
                                 </nav>
-                                {/* <Link className="mobile-show search-bar-icon" to="#"><i className="fas fa-search"></i></Link>
-                                <div className="mobile-menu"></div> */}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </>
-    )
+    );
 }
 
-export default Header
+export default Header;
