@@ -1,4 +1,5 @@
 const Product = require('../models/productModel');
+const PORT = process.env.PORT || 8000
 
 
 
@@ -33,10 +34,26 @@ const getOneProduct = (async (req, res) => {
 
 //Create new product
 const createNewProduct = (async (req, res) => {    
-    const { name, price, stockquantity, description, image } = req.body;    
+    const { name, price, stockquantity, description } = req.body;  
+
+    let images = []
+    let BACK_END = process.env.BACKEND_URL;
+    
+    if(req.files.length > 0) {
+        req.files.forEach( file => {
+            let url = `${process.env.PORT}backend/uploads${file.originalname}`;
+            images.push({ image: url })
+        })
+    }
+
+    req.body.images = images;
+
+    // req.body.user = req.user.id;
+    
+    
 
     // Confirm all data fields
-    if ( !name || !price || !stockquantity || !description || !image) {
+    if ( !name || !price || !stockquantity || !description) {
         return res.status(400).json({ message: 'Required fields are missing' })
     }
     
@@ -45,7 +62,7 @@ const createNewProduct = (async (req, res) => {
 
     
 
-    const productObject = {name, price, stockquantity, description, image};
+    const productObject = {name, price, stockquantity, description};
 
     // Create and store new user 
     const product = await Product.create(productObject);
