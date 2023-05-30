@@ -118,7 +118,7 @@ const Profile = () => {
                                             onChange={handleChange}
                                         />
                                     </p>
-                                    <input type="hidden" name="token" value="FsWga4&@f6aw" />
+                                    
                                     <p>
                                         <input
                                             type="submit"

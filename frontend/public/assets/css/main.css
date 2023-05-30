@@ -593,7 +593,11 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   z-index:2;
   width: 100%;
   padding: 10px 0;
+  
   /* background-color: #051922; */
+}
+#sticker{
+  padding-bottom: 1px;
 }
 .top-header-area.fixed{
   background-color: #041823;
@@ -2928,7 +2932,7 @@ table.order-details tbody td {
 }
 
 .about{
-  margin-left: 210px;
+  margin-left: 180px;
 
 }
 .products{
@@ -2936,7 +2940,7 @@ table.order-details tbody td {
   
 }
 .home{
-  margin-left: 210px;
+  margin-left: 180px;
   
 }
 
@@ -2944,11 +2948,12 @@ table.order-details tbody td {
 
 
  .add{
-  margin-left: 200px;
+  margin-left: 150px;
 } 
 
 .customer{
-  margin-right: -200px;
+  margin-right: -130px;
+  margin-top: -6px;
 } 
 
 /* profile update */
@@ -2968,7 +2973,7 @@ table.order-details tbody td {
 /* icon */
 
 .button{
-  margin-right: -200px;
+  margin-right: -100px;
 }
 
 /* cart count */
@@ -2976,10 +2981,35 @@ table.order-details tbody td {
   background-color: #fffd23;
   color:black;
   border-radius: 50%;
-  padding: 4px 8px;
+  padding: 2px 4px;
   font-size: 15px;
   position: absolute;
   top: -8px;
   right: -8px;
   margin-top: -5px;
+}
+/* profile icon */
+/* .profile-icon {
+  
+  
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .profile-icon.online {
+  background-color:white;
+} */
+
+.profile-icon.offline {
+  background-color: red;
+}
+
+.profile-icon svg {
+  color: #fffd23;
+  font-size: 20px;
+  margin-top: 12px;
+  margin-left: -150px;
 }
