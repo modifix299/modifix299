@@ -980,9 +980,10 @@ a.mobile-show {
 .slider1 .slide-track1 {
   display: flex;
   animation: scroll 120s linear infinite;
-  -webkit-animation: scroll 80s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
   width: calc(200px * 14);
-  margin: 30px;
+  margin: 60px;
+  margin-bottom: 41px;
 
 }
 
@@ -1574,7 +1575,7 @@ html, body {
 
 .hero-area div {
   height: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 .hero-area div.hero-text {
