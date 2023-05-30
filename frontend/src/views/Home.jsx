@@ -27,7 +27,7 @@ const Home = () => {
             <section className="container container-section">
                 <div className="container-video">
                     
-                    <video width="600" height="360" controls autoPlay style={{objectFit: 'cover'}}>
+                    <video width="600" height="360" controls autoPlay muted style={{objectFit: 'cover'}}>
                         <source src={video} type="video/mp4" autoplay />
                     </video>
                 </div>      
