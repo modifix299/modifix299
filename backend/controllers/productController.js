@@ -1,6 +1,5 @@
 const Product = require('../models/productModel');
-const PORT = process.env.PORT || 8000
-
+require('dotenv').config();
 
 
 //Get all products
@@ -14,7 +13,6 @@ const getAllProducts = (async (req, res) => {
     }
 
     res.json(products);
-
 });
 
 
@@ -33,36 +31,31 @@ const getOneProduct = (async (req, res) => {
 });
 
 //Create new product
-const createNewProduct = (async (req, res) => {    
-    const { name, price, stockquantity, description } = req.body;  
+const createNewProduct = (async (req, res) => {  
 
-    let images = []
+    let photos = []
     let BACK_END = process.env.BACKEND_URL;
-    
-    if(req.files.length > 0) {
-        req.files.forEach( file => {
-            let url = `${process.env.PORT}backend/uploads${file.originalname}`;
-            images.push({ image: url })
-        })
-    }
 
-    req.body.images = images;
+        if(req.files.length > 0) {
+        req.files.forEach( file => {
+
+            let url = `${BACK_END}uploads/${file.originalname}`;
+            photos.push({ image: url })
+        })
+    }    
 
     // req.body.user = req.user.id;
+    const { name, price, stockquantity, description} = req.body;
+    const images = photos; 
     
-    
-
     // Confirm all data fields
-    if ( !name || !price || !stockquantity || !description) {
+    if ( !name || !price || !stockquantity || !description || !images) {
         return res.status(400).json({ message: 'Required fields are missing' })
     }
     
     // Check for duplicate productid
-    const duplicate = await Product.findById();
-
-    
-
-    const productObject = {name, price, stockquantity, description};
+    const duplicate = await Product.findById();   
+    const productObject = {name, price, stockquantity, description, images};
 
     // Create and store new user 
     const product = await Product.create(productObject);
@@ -73,6 +66,7 @@ const createNewProduct = (async (req, res) => {
         res.status(400).json({ message: 'Invalid data received' });
     }
 });
+
 
 // Update a product
 const updateProduct = (async (req, res) => {
