@@ -8,13 +8,37 @@ const CreateProduct = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({});
+    const [images, setImages] = useState([]);
+    const [imagesPreview, setImagesPreview] = useState([]);
 
     const { isAdded , isError, message } = useSelector(
         (state) => state.product
     )
 
+    const onImagesChange = (e) => {
+        const files = Array.from(e.target.files);
+
+        files.forEach(file => {
+            
+            const reader = new FileReader();
+
+            reader.onload = () => {
+                if(reader.readyState === 2 ) {
+                    setImagesPreview(oldArray => [...oldArray, reader.result])
+                    setImages(oldArray => [...oldArray, file])
+                }
+            }
+
+            reader.readAsDataURL(file)
+
+
+        })
+
+    }
+
     function onFormChange(key, value) {
         setFormData({ ...formData, [key]: value })
+        
     }
 
     function onFormSumbit(e) {
@@ -71,7 +95,7 @@ const CreateProduct = () => {
                                     </div>
                                     <div className="form-group row">
                                         <div className="col-sm-12 mb-3 mb-sm-0">
-                                        {/* <input type="file" lable="Image" name="myFile" id='file-upload' accept='.jpeg, .png, .jpg' onFormChange={(e) => handleFileUpload(e)}/> */}
+                                        <input type='file' name='product_images' className='form-control' id='customFile' multiple  onChange={onImagesChange}/>
                                         </div>
                                     </div>
                                     <div className="form-group">

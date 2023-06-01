@@ -36,12 +36,11 @@ const createNewProduct = (async (req, res) => {
     let photos = []
     let BACK_END = process.env.BACKEND_URL;
 
-        if(req.files.length > 0) {
-        req.files.forEach( file => {
-
+    if (req.files && req.files.length > 0) {
+        req.files.forEach(file => {
             let url = `${BACK_END}uploads/${file.originalname}`;
-            photos.push({ image: url })
-        })
+            photos.push({ image: url });
+        });
     }    
 
     // req.body.user = req.user.id;
