@@ -17,25 +17,22 @@ const CreateProduct = () => {
 
     const onImagesChange = (e) => {
         const files = Array.from(e.target.files);
-
+    
         files.forEach(file => {
             
             const reader = new FileReader();
-
+    
             reader.onload = () => {
-                if(reader.readyState === 2 ) {
-                    setImagesPreview(oldArray => [...oldArray, reader.result])
-                    setImages(oldArray => [...oldArray, file])
+                if (reader.readyState === 2) {
+                    setImagesPreview(oldArray => [...(oldArray || []), reader.result])
+                    setImages(oldArray => [...(oldArray || []), file])
                 }
             }
-
+    
             reader.readAsDataURL(file)
-
-
         })
-
     }
-
+    
     function onFormChange(key, value) {
         setFormData({ ...formData, [key]: value })
         
@@ -43,7 +40,9 @@ const CreateProduct = () => {
 
     function onFormSumbit(e) {
         e.preventDefault();
-
+        images.forEach (image => {
+            formData.append('images', image)
+        })
         let submitFormData = { ...formData}
         console.log(submitFormData);
         
@@ -95,7 +94,7 @@ const CreateProduct = () => {
                                     </div>
                                     <div className="form-group row">
                                         <div className="col-sm-12 mb-3 mb-sm-0">
-                                        <input type='file' name='product_images' className='form-control' id='customFile' multiple  onChange={onImagesChange}/>
+                                        <input type='file' name='images' className='form-control' id='customFile' multiple  onChange={onImagesChange}/>
                                         </div>
                                     </div>
                                     <div className="form-group">

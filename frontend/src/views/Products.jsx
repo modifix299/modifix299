@@ -47,7 +47,9 @@ const Products = () => {
                         <div className="col-lg-4 col-md-6 text-center strawberry" key={product._id}>
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <Link to={`/product/${product._id}`}><img src="assets/img/products/product-img-1.jpg" alt=""/></Link>
+                                { product.images[0] ? (
+                                    <Link to={`/product/${product._id}`}><img src={product.images[0].image} alt=""/></Link>
+                                    ):(<span>No Image</span>)}
                                 </div>
                                 <h3>{product.name}</h3>
                                 <p className="product-price"><span></span> Rs. {product.price} </p>
