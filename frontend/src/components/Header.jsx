@@ -48,19 +48,11 @@ const Header = () => {
                                         <li className='nav home'><Link to="/">Home</Link></li>
                                         <li className='nav products '><Link to="products">Products</Link></li>
                                         <li className='nav about'><Link to="about">About</Link></li>
-<<<<<<< HEAD
-                                        <li className='add'>
-                                            <Link to="/cart" className="fas fa-shopping-cart">
-                                                {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-                                            </Link>
-                                        </li>
-=======
 
                                         {/* <li><Link to="/cart">Contact Us</Link></li>                                                                              */}
                                         <li className='add'><Link to="/cart" className="fas fa-shopping-cart "></Link></li>
                                         <span className="ml-1" id="cart_count">{cartcount}</span>
                                         console.log({cartcount})
->>>>>>> 4bef39b1c069bd4962de4ddcaa32c71df0ecf402
                                         <Authenticated />
                                     </ul>
                                 </nav>

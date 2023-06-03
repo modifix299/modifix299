@@ -39,6 +39,15 @@ const Home = () => {
                     <div class="slide1">
                         <img src="assets/img/modifix-pics/f12.jpg" alt="" />
                     </div>
+                    <div class="slide1">
+                        <img src="assets/img/modifix-pics/f11.jpg" alt="" />
+                    </div>
+                    <div class="slide1">
+                        <img src="assets/img/modifix-pics/f13.jpg" alt="" />
+                    </div>
+                    <div class="slide1">
+                        <img src="assets/img/modifix-pics/f12.jpg" alt="" />
+                    </div>
                 </div>
             </div>
             </div>
