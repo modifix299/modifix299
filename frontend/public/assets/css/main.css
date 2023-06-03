@@ -977,7 +977,7 @@ a.mobile-show {
 }
 /* 2nd carousel */
 .slider1 {
-  width: 59vw;
+  width: 250vw;
   height: auto;
   margin: auto;
   overflow: hidden;
@@ -986,15 +986,15 @@ a.mobile-show {
 .slider1 .slide-track1 {
   display: flex;
   animation: scroll 120s linear infinite;
-  -webkit-animation: scroll 40s linear infinite;
-  width: calc(200px * 14);
+  -webkit-animation: scroll 50s linear infinite;
+  width: calc(200px * 9);
   margin: 60px;
   margin-bottom: 41px;
 
 }
 
 .slider1 .slide1 {
-  width: 800px;
+  width: 100px;
 }
 
 .slider1 .slide1 img {
@@ -2991,6 +2991,7 @@ table.order-details tbody td {
   right: -8px;
   margin-top: -5px;
 }
+
 /* profile icon */
 /* .profile-icon {
   
