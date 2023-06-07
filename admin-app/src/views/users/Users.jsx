@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link,useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { getUsers } from '../../features/user/userSlice'
-
+import "./users.css";
 const Users = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const Users = () => {
                                     <td>{user.lastname}</td>
                                     <td>{user.email}</td>
                                     <td>{user.role}</td>
-                                    <td>
+                                    <td class="button-cell">
                                         <Link to={`/admin/users/edit/${user._id}`} className='btn btn-md btn-dark'>Edit</Link>
                                         <Link to={`/admin/users/delete/${user._id}`} className='btn btn-md btn-warning'>Delete</Link>
                                     </td>

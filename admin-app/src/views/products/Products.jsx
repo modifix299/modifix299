@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link,useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { getProducts } from '../../features/product/productSlice'
-
+import "./products.css";
 const Products = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -39,10 +39,10 @@ const Products = () => {
                             <thead>
                                 <tr>
                                     <th>Product Name</th>
+                                    <th> Price</th>
+                                    <th> Quantity</th>
+                                    <th> Description</th>
                                     <th>Product Image</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Description</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -54,9 +54,9 @@ const Products = () => {
                                     <td>{product.stockquantity}</td>
                                     <td>{product.description}</td>
                                     <td>{product.image}</td>
-                                    <td>
-                                        <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-dark'>Edit</Link>
-                                        <Link to={`/admin/products/delete/${product._id}`} className='btn btn-md btn-warning'>Delete</Link>
+                                    <td class="button-cell">
+                                        <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-dark' >Edit</Link>
+                                        <Link to={`/admin/products/delete/${product._id}`} className='btn btn-md btn-warning '>Delete</Link>
                                     </td>
                                 </tr>
                             ))}                                

@@ -108,11 +108,26 @@ const updateOrder = catchAsyncError(async (req, res, next) => {
     
 });
 
-async function updateStock (productId, quantity){
-    const product = await Product.findById(productId);
-    product.stockquantity = product.stockquantity - quantity;
-    product.save({validateBeforeSave: false})
-}
+const updateStock = async (productId, quantity) => {
+    try {
+      const product = await Product.findById(productId);
+  
+      if (!product) {
+        throw new Error('Product not found');
+      }
+  
+      if (product.stockquantity < quantity) {
+        throw new Error('Insufficient stock');
+      }
+  
+      product.stockquantity -= quantity;
+  
+      await product.save();
+    } catch (error) {
+      throw error;
+    }
+  };
+  
 
 //Admin: Delete Order - api/v1/order/:id
 // const deleteOrder = catchAsyncError(async (req, res, next) => {
@@ -126,6 +141,7 @@ async function updateStock (productId, quantity){
 //         success: true
 //     })
 // })
+
 
 module.exports = {
     newOrder,

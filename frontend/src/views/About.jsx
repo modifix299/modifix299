@@ -18,6 +18,8 @@ const About = () => {
                 </div>
             </div>
 
+
+            <div style={{backgroundColor: "#dfddde" , padding: "30px"}}>
             <div className="feature-bg">
                 <div className="container">
                     <div className="row">
@@ -74,12 +76,13 @@ const About = () => {
                         </div>
                         <div className="container-video">
 
-                            <video width="450" height="360" controls autoPlay muted style={{ objectFit: 'cover' }}>
+                            <video width="530" height="360" controls autoPlay muted style={{ objectFit: 'cover' }}>
                                 <source src={video} type="video/mp4" autoplay />
                             </video>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
             <section className="shop-banner">

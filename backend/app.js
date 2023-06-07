@@ -16,6 +16,7 @@ app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 app.use(errorHandler)
+app.use('/uploads', express.static('uploads'));
 
 //Routes
 app.use('/users', require('./routes/userRoutes'));
