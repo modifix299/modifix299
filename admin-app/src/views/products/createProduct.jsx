@@ -69,9 +69,9 @@ const CreateProduct = () => {
                                                 placeholder="Price" onChange={(e) => onFormChange("price", e.target.value)}/>
                                         </div>                                        
                                     </div>
-                                    <div className="form-group row">
-                                        <div className="col-sm-12 mb-3 mb-sm-0">
-                                        {/* <input type="file" lable="Image" name="myFile" id='file-upload' accept='.jpeg, .png, .jpg' onFormChange={(e) => handleFileUpload(e)}/> */}
+                                    <div className="form-group">
+                                        <div className="form-control" >
+                                        <input type="file" lable="Image" name="myFile" id='file-upload' accept='.jpeg, .png, .jpg' />
                                         </div>
                                     </div>
                                     <div className="form-group">

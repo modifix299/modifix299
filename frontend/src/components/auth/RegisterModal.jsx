@@ -23,7 +23,7 @@ const RegisterModal = () => {
 
   const handleRegisterShow = () => setRegisterShow(true);
 
-  function onLoginFormChange(key, value) {
+  function onRegisterFormChange(key, value) {
     setRegisterformData({ ...registerformData, [key]: value })
 }
 
@@ -44,6 +44,8 @@ const handleRegister = () => {
     dispatch(reset())
 }, [user, isError, isSuccess, message, navigate, dispatch])
 
+console.log(registerformData)
+
     return (
         <>
         <Button variant='primary' onClick={handleRegisterShow} >Register</Button>          
@@ -58,19 +60,19 @@ const handleRegister = () => {
             <Form>
               <div class="form-group">
                 <Form.Label for="first-name">First Name:</Form.Label>
-                <Form.Control type="text" class="form-control" id="first-name" placeholder="Enter first name"/>
+                <Form.Control type="text" class="form-control" id="first-name" placeholder="Enter first name" onChange={(e) => onRegisterFormChange("email", e.target.value)}/>
               </div>
               <div class="form-group">
                 <Form.Label for="last-name">Last Name:</Form.Label>
-                <Form.Control type="text" class="form-control" id="last-name" placeholder="Enter last name"/>
+                <Form.Control type="text" class="form-control" id="last-name" placeholder="Enter last name" onChange={(e) => onRegisterFormChange("email", e.target.value)}/>
               </div>
               <div class="form-group">
                 <Form.Label for="mobile-number">Mobile Number:</Form.Label>
-                <Form.Control type="tel" class="form-control" id="mobile-number" placeholder="Enter mobile number"/>
+                <Form.Control type="tel" class="form-control" id="mobile-number" placeholder="Enter mobile number" onChange={(e) => onRegisterFormChange("email", e.target.value)}/>
               </div>
               <div class="form-group">
                 <Form.Label for="email">Email:</Form.Label>
-                <Form.Control type="email" class="form-control" id="email" placeholder="Enter email"/>
+                <Form.Control type="email" class="form-control" id="email" placeholder="Enter email" onChange={(e) => onRegisterFormChange("email", e.target.value)}/>
               </div>
               <div class="form-group">
                 <Form.Label for="shipping-address">Shipping Address:</Form.Label>
@@ -78,15 +80,15 @@ const handleRegister = () => {
               </div>
               <div class="form-group">
                 <Form.Label for="city">City:</Form.Label>
-                <Form.Control type="text" class="form-control" id="city" placeholder="Enter city"/>
+                <Form.Control type="text" class="form-control" id="city" placeholder="Enter city" onChange={(e) => onRegisterFormChange("email", e.target.value)}/>
               </div>
               <div class="form-group">
                 <Form.Label for="zipcode">Zipcode:</Form.Label>
-                <Form.Control type="text" class="form-control" id="zipcode" placeholder="Enter zipcode"/>
+                <Form.Control type="text" class="form-control" id="zipcode" placeholder="Enter zipcode" onChange={(e) => onRegisterFormChange("email", e.target.value)}/>
               </div>
               <div class="form-group">
                 <Form.Label for="password">Password:</Form.Label>
-                <Form.Control type="password" class="form-control" id="password" placeholder="Enter password"/>
+                <Form.Control type="password" class="form-control" id="password" placeholder="Enter password" onChange={(e) => onRegisterFormChange("email", e.target.value)}/>
               </div>
               <button type="submit" class="btn btn-primary" style={{backgroundColor : "gray"}} onClick={handleRegister}>Register</button>
 
