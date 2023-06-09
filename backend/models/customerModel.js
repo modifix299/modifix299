@@ -29,10 +29,10 @@ const customerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    cart: {
-        type: Array,
-        default: []
-    }
+    // cart: {
+    //     type: Array,
+    //     default: []
+    // }
     
 });
 

@@ -36,7 +36,7 @@ userItems.forEach(function (arrayItem) {
 
 function validatePhoneNumber(phoneNumber) {
   // Remove any non-digit characters from the phone number
-  const digitsOnly = phoneNumber.replace(/\D/g, '');
+  const digitsOnly = String(phoneNumber).replace(/\D/g, '');
 
   // Check if the phone number is either 10 digits starting with '07' or '+947'
   const isValid =
