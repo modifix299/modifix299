@@ -593,7 +593,11 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   z-index:2;
   width: 100%;
   padding: 10px 0;
+  
   /* background-color: #051922; */
+}
+#sticker{
+  padding-bottom: 1px;
 }
 .top-header-area.fixed{
   background-color: #041823;
@@ -937,15 +941,18 @@ a.mobile-show {
   width: 59vw;
   height: auto;
   margin: auto;
+  margin-top: 70px;
   overflow: hidden;
+  padding-top: 60px;
 }
 
 .slider .slide-track {
   display: flex;
   animation: scroll 120s linear infinite;
-  -webkit-animation: scroll 80s linear infinite;
-  width: calc(200px * 14);
+  -webkit-animation: scroll 60s linear infinite;
+  width: calc(180px * 14);
   margin: 30px;
+  
 
 }
 
@@ -954,6 +961,43 @@ a.mobile-show {
 }
 
 .slider .slide img {
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+  }
+  100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+  }
+  
+}
+/* 2nd carousel */
+.slider1 {
+  width: 250vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider1 .slide-track1 {
+  display: flex;
+  animation: scroll 120s linear infinite;
+  -webkit-animation: scroll 50s linear infinite;
+  width: calc(400px * 9);
+  margin: 60px;
+  margin-bottom: 41px;
+
+}
+
+.slider1 .slide1 {
+  width: 500px;
+}
+
+.slider1 .slide1 img {
   width: 100%;
 }
 
@@ -1016,7 +1060,7 @@ h2.widget-title:after {
   margin-bottom: 0;
 }
 
-.footer-box.subscribe form input[type=email] {
+.footer-box.subscribe form input[type="email"] {
   border: none;
   background-color: #012738;
   width: 78%;
@@ -1362,7 +1406,7 @@ a.cart-btn {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-}
+} 
 
 a.cart-btn:hover {
   background-color: #051922;
@@ -1438,6 +1482,7 @@ ul.product-share li:hover a {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  
 }
 
 .single-product-item:hover {
@@ -1537,7 +1582,7 @@ html, body {
 
 .hero-area div {
   height: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 120px;
 }
 
 .hero-area div.hero-text {
@@ -1675,6 +1720,7 @@ div.owl-controls, .owl-controls div {
 ----------------------------------------------------------------------------- */
 .list-section {
   background-color: #fff;
+  
 }
 
 .list-box {
@@ -1686,7 +1732,8 @@ div.owl-controls, .owl-controls div {
   display: block;
   line-height: 22px;
   font-size: 18px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+ 
 }
 
 .content-para-main{
@@ -1902,7 +1949,7 @@ p.excerpt {
 .comment-text-body {
   padding-left: 80px;
   margin-bottom: 40px;
-}
+} 
 
 .comment-text-body h4 {
   font-size: 18px;
@@ -2263,7 +2310,7 @@ a.video-play-btn {
   background-color: #f5f5f5;
   background-image: url(../img/2560x1600-131557-boneshaker-79-custom-bike-hd.jpg);
   background-size:cover;
-  padding: 100px 0px 900px;
+  padding: 100px 0px 600px;
 }
 
 .shop-banner h3 {
@@ -2497,6 +2544,8 @@ ul.social-link-team li a {
   color: #fff;
   margin-bottom: 10px;
 }
+
+
 
 /* -----------------------------------------------------------------------------
 
@@ -2889,7 +2938,7 @@ table.order-details tbody td {
 }
 
 .about{
-  margin-left: 210px;
+  margin-left: 180px;
 
 }
 .products{
@@ -2897,7 +2946,7 @@ table.order-details tbody td {
   
 }
 .home{
-  margin-left: 210px;
+  margin-left: 180px;
   
 }
 
@@ -2905,11 +2954,12 @@ table.order-details tbody td {
 
 
  .add{
-  margin-left: 200px;
+  margin-left: 150px;
 } 
 
 .customer{
-  margin-right: -200px;
+  margin-right: -130px;
+  margin-top: -6px;
 } 
 
 /* profile update */
@@ -2924,4 +2974,49 @@ table.order-details tbody td {
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+/* icon */
+
+.button{
+  margin-right: -100px;
+}
+
+/* cart count */
+.cart-count {
+  background-color: #fffd23;
+  color:black;
+  border-radius: 50%;
+  padding: 2px 4px;
+  font-size: 15px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  margin-top: -5px;
+}
+
+/* profile icon */
+/* .profile-icon {
+  
+  
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+ 
+/* .profile-icon.online {
+  background-color:white;
+} */
+
+.profile-icon.offline {
+  background-color: red;
+}
+
+.profile-icon svg {
+  color: #fffd23;
+  font-size: 20px;
+  margin-top: 12px;
+  margin-left: -150px;
 }

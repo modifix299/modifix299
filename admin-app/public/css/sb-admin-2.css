@@ -2348,6 +2348,7 @@ textarea.form-control {
 
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
+  margin-left: 20px;
 }
 
 a.btn.disabled,
@@ -11278,4 +11279,9 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
+}
+.button-cell {
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
 }
