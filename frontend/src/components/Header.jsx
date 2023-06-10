@@ -7,6 +7,7 @@ import Authenticated from './Authenticated';
 const Header = () => {
     const [fix, setFix] = useState(false);
     const cartItems = useSelector(state => state.cart.items);
+    console.log(cartItems)
 
     function setFixed() {
         if (window.scrollY >= 290) {
@@ -25,7 +26,8 @@ const Header = () => {
         };
     }, []);
 
-    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);   
+    
 
     return (
         <>
