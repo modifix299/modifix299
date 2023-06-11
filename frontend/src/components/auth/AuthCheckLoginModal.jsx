@@ -46,7 +46,7 @@ const AuthCheckLoginModal = (props) => {
         dispatch(reset())
     }, [user, isError, isSuccess, message, dispatch])
 
-    const onClickRegisterModal = () => {
+    function onClickRegisterModal() {
         setLoginShow(false);
     }
 
@@ -78,6 +78,7 @@ const AuthCheckLoginModal = (props) => {
                     Login
                 </Button>
                 </Modal.Footer>
+                <RegisterModal onClick={onClickRegisterModal}/>
             </Modal>
         </>
     )

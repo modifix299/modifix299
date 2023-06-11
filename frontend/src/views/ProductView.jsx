@@ -41,15 +41,20 @@ const ProductView = () => {
         setQuantity(qty);
     }
 
-    const onAddToCart = () => {        
+    const onAddToCart = () => {
+        if (!product || !product._id || !user || !user._id) {
+          console.error('Product or user data is missing or invalid.');
+          return;
+        }      
         const data = {
-            id: product._id,
-            quantity: quantity,
-            user: user._id
-        }
-        dispatch(addCartItemSuccess( data))
-        toast.success('Cart Item Added!')
-    }
+          id: product._id,
+          quantity: quantity,
+          user: user._id
+        };      
+        dispatch(addCartItemSuccess(data));
+        toast.success('Cart Item Added!');
+      };
+      
     return (
         <>
         	<div className="breadcrumb-section breadcrumb-bg">

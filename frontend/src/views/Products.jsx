@@ -58,21 +58,6 @@ const Products = () => {
                         </div>
                         ))}
                     </div>
-                    
-
-                    {/* <div className="row">
-                        <div className="col-lg-12 text-center">
-                            <div className="pagination-wrap">
-                                <ul>
-                                    <li><Link to="#">Prev</Link></li>
-                                    <li><Link to="#">1</Link></li>
-                                    <li><Link className="active" to="#">2</Link></li>
-                                    <li><Link to="#">3</Link></li>
-                                    <li><Link to="#">Next</Link></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> */}
 
                 </div>
             </div>
