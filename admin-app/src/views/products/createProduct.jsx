@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, React } from 'react'
 import { Link,useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { createProduct, reset } from '../../features/product/productSlice'
@@ -17,14 +17,18 @@ const CreateProduct = () => {
         setFormData({ ...formData, [key]: value })
     }
 
-    function onFormSumbit(e) {
+    function onFormSubmit(e) {
         e.preventDefault();
-
-        let submitFormData = { ...formData}
-        console.log(submitFormData);
-        
-        dispatch(createProduct(submitFormData));
-    }
+    
+        let submitFormData = { ...formData };
+        const formDataObj = new FormData();
+    
+        Object.entries(submitFormData).forEach(([key, value]) => {
+          formDataObj.append(key, value);
+        });
+    
+        dispatch(createProduct(formDataObj));
+      }
 
 
     useEffect(() => {
@@ -54,7 +58,7 @@ const CreateProduct = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="p-5">
-                                <form className="user" onSubmit={onFormSumbit}>                                    
+                                <form className="user" onSubmit={onFormSubmit}>                                    
                                     <div className="form-group">
                                         <input type="text" className="form-control" id="exampleProductName"
                                             placeholder="Product Name" onChange={(e) => onFormChange("name", e.target.value)}/>
@@ -68,12 +72,12 @@ const CreateProduct = () => {
                                             <input type="number" step="100" className="form-control" id="examplePrice"
                                                 placeholder="Price" onChange={(e) => onFormChange("price", e.target.value)}/>
                                         </div>                                        
-                                    </div>
+                                    </div>                            
                                     <div className="form-group">
                                         <div className="form-control" >
-                                        <input type="file" lable="Image" name="myFile" id='file-upload' accept='.jpeg, .png, .jpg' />
+                                        <input type="file" lable="Image" name="myFile" id='file-upload' accept='.jpeg, .png, .jpg' onChange={(e) => onFormChange('images', e.target.files[0])} />
                                         </div>
-                                    </div>
+                                    </div>                                   
                                     <div className="form-group">
                                     <input type="text" className="form-control" id="exampleProductDescription"
                                                 placeholder="Product Description" onChange={(e) => onFormChange("description", e.target.value)}/>

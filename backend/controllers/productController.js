@@ -38,7 +38,7 @@ const createNewProduct = (async (req, res) => {
 
     if (req.files && req.files.length > 0) {
         req.files.forEach(file => {
-            let url = `${BACK_END}/uploads/${file.originalname}`;
+            let url = `${BACK_END}/uploads/${file.filename}`;
             photos.push({ image: url });
         });
     }    
