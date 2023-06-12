@@ -41,7 +41,8 @@ function validatePhoneNumber(phoneNumber) {
   // Check if the phone number is either 10 digits starting with '07' or '+947'
   const isValid =
     (digitsOnly.length === 10 && digitsOnly.startsWith('07')) ||
-    digitsOnly.startsWith('+947');
+    digitsOnly.startsWith('+947') ||
+    digitsOnly.startsWith('7');
 
   if (!isValid) {
     return false;
