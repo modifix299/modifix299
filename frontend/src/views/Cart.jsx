@@ -41,7 +41,7 @@ function Cart() {
                                 <thead className="cart-table-head">
                                     <tr className="table-head-row">
                                         {/* <th className="product-remove"></th> */}
-                                        <th className="product-image">Product Image</th>
+                                        {/* <th className="product-image">Product Image</th> */}
                                         <th className="product-name">Name</th>
                                         <th className="product-price">Price</th>
                                         <th className="product-quantity">Quantity</th>
@@ -52,7 +52,7 @@ function Cart() {
                                     {userItems?.map((item,key) => (
                                             <tr className="table-body-row" key={key}>
                                                 {/* <td className="product-remove"><Link to="#"><i className="far fa-window-close"></i></Link></td> */}
-                                                <td class="product-image"><img src={item.images} alt=""/></td>
+                                                {/* <td class="product-image"><img src={item.images} alt=""/></td> */}
                                                 <td className="product-name">{item.name}</td>
                                                 <td className="product-price">Rs. {item.price}</td>                                             
                                                 <td className="product-total">{item.quantity}</td>

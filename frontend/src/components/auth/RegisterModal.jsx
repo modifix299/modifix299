@@ -84,7 +84,7 @@ const handleRegister = () => {
                 <Form.Label for="password">Password:</Form.Label>
                 <Form.Control type="password" className="form-control" id="password" placeholder="Enter password" onChange={(e) => onRegisterFormChange("password", e.target.value)}/>
               </div>
-              <button type="submit" className="btn btn-primary" style={{backgroundColor : "gray"}} onClick={handleRegister}>Register</button>
+              <button type="submit" className="btn btn-primary" onClick={handleRegister}>Register</button>
 
             </Form>
           </Modal.Body>
