@@ -4,7 +4,6 @@ const API_URL = `${process.env.REACT_APP_API_BASE_URL}products/`;
 
 const addCartItem = async(id, quantity, user) => {
     try {
-        // dispatch(addCartItemRequest())
         const {data } = await axios.get(API_URL+'getOne/'+id)        
         const dataItems = {
             product: data._id,
@@ -21,7 +20,6 @@ const addCartItem = async(id, quantity, user) => {
     }
 }
 
-
 //after order success
 const removeAllItemsFromCart = async(user) => {
     try {
@@ -32,11 +30,20 @@ const removeAllItemsFromCart = async(user) => {
     }
 }
 
+//cartitemdelete
+const removeItemFromCart = async (item_id, user) => {
+    try {
+      const user_id = user;
+      return user_id;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 const cartService = {
     addCartItem,
     removeAllItemsFromCart,
-    
+    removeItemFromCart    
 }
 
 export default cartService;

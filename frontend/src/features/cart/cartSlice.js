@@ -43,7 +43,23 @@ export const removeAllItemsFromCart = createAsyncThunk('cartItem/removeAll', asy
 }
 );
 
-
+export const removeItemFromCart = createAsyncThunk(
+    'cartItem/remove',
+    async (item_id, thunkAPI) => {
+      try {
+        const user_id = thunkAPI.getState().auth.user._id;
+        return await cartService.removeItemFromCart(item_id, user_id);
+      } catch (error) {
+        const message =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+        return thunkAPI.rejectWithValue(message);
+      }
+    }
+  );
 
 export const cartSlice = createSlice({
     name: 'cart',
@@ -53,7 +69,7 @@ export const cartSlice = createSlice({
     },
     extraReducers: (builder) => {
       builder
-      //addCartItemSuccess
+        //addCartItemSuccess
         .addCase(addCartItemSuccess.pending, (state) => {
           state.isLoading = true
         })
@@ -84,7 +100,7 @@ export const cartSlice = createSlice({
           state.message = action.payload
         })
     
-    //removeAllItemsFromCart
+        //removeAllItemsFromCart
         .addCase(removeAllItemsFromCart.pending, (state) => {
             state.isLoading = true
         })
@@ -104,6 +120,25 @@ export const cartSlice = createSlice({
         state.isError = true
         state.message = action.payload
         })
+
+        //removeItemsFromcart
+        .addCase(removeItemFromCart.pending, (state) => {
+            state.isLoading = true;
+        })
+        .addCase(removeItemFromCart.fulfilled, (state, action) => {
+            const itemId = action.payload;
+            const filterItems = state.items.filter(item => item.id !== itemId);
+            localStorage.setItem('cartItems', JSON.stringify(filterItems));
+            return {
+                ...state,
+                items: filterItems
+            };
+        })
+        .addCase(removeItemFromCart.rejected, (state, action) => {
+            state.isLoading = false;
+            state.isError = true;
+            state.message = action.payload;
+        });        
     },
 })
 
