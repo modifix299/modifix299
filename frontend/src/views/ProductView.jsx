@@ -102,16 +102,11 @@ const ProductView = () => {
                         </div>
                     </div>
                 </div>
-            </div>       
-        
+            </div>   
         </>
     );
 }
 
-
-
 export default ProductView
-
-
 
                      

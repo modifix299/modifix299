@@ -3,8 +3,6 @@ import { Link,useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { getProducts } from '../features/product/productSlice';
 
-
-
 const Products = () => {
 
     const navigate = useNavigate();
