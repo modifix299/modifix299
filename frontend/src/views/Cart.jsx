@@ -1,18 +1,20 @@
 import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { removeItemFromCart } from "../features/cart/cartSlice";
 
 function Cart() {
+
     const { items } = useSelector(state => state.cart)
     const { user } = useSelector(state => state.auth)
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const userItems = items.filter(item => item.user === user._id);
 
+    const userItems = items.filter(item => item.user === user._id);
     const isDisabled = items.length === 0 ? true : false;
+
     const goToCheckout = () => {
         navigate('/checkout');
-    }
+    }  
+    
   
     return (
     <>
@@ -27,8 +29,7 @@ function Cart() {
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <div className="cart-section mt-150 mb-150">
             <div className="container">
                 <div className="row">
@@ -37,7 +38,7 @@ function Cart() {
                             <table className="cart-table">
                                 <thead className="cart-table-head">
                                     <tr className="table-head-row">
-                                        <th className="product-remove"></th>
+                                        {/* <th className="product-remove"></th> */}
                                         <th className="product-image">Product Image</th>
                                         <th className="product-name">Name</th>
                                         <th className="product-price">Price</th>
@@ -48,7 +49,7 @@ function Cart() {
                                 <tbody>
                                     {userItems?.map((item,key) => (
                                             <tr className="table-body-row" key={key}>
-                                                <td className="product-remove"><i id="delete_cart_item" onClick={() => dispatch(removeItemFromCart(item.product))} className="fa fa-trash btn btn-danger"></i></td>
+                                                {/* <td className="product-remove"><i id="delete_cart_item" className="fa fa-trash btn btn-danger"></i></td> */}
                                                 <td class="product-image"><img src={item.image[0].image} alt=""/></td>
                                                 <td className="product-name">{item.name}</td>
                                                 <td className="product-price">Rs. {item.price}</td>                                             

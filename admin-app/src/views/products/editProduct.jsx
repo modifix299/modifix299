@@ -95,7 +95,7 @@ const EditProduct = () => {
                                             <option value="Employee">Confirmed</option>
                                         </select>
                                     </div> */}
-                                    <button type='submit' className="btn btn-primary btn-block">
+                                    <button type='submit' className="btn btn-dark btn-block">
                                         Save
                                     </button>
                                 </form>

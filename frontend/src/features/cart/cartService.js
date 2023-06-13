@@ -30,20 +30,9 @@ const removeAllItemsFromCart = async(user) => {
     }
 }
 
-//cartitemdelete
-const removeItemFromCart = async (item_id, user) => {
-    try {
-      const user_id = user;
-      return user_id;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
 const cartService = {
     addCartItem,
-    removeAllItemsFromCart,
-    removeItemFromCart    
+    removeAllItemsFromCart, 
 }
 
 export default cartService;
