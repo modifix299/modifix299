@@ -47,7 +47,7 @@ const Header = () => {
                                 <nav className="main-menu">
                                     <ul>
                                         <li className='nav home'><Link to="/">Home</Link></li>
-                                        <li className='nav products '><Link to="products">Products</Link></li>
+                                        <li className='nav products '><Link to="products">Parts</Link></li>
                                         <li className='nav about'><Link to="about">About</Link></li>
                                         {cartItems.length > 0 && (
                                         <li className='add'>

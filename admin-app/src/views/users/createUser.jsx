@@ -44,7 +44,7 @@ const CreateUser = () => {
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Create New User</h1>
-                <Link to="/admin/users" relative='pa' className="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
+                <Link to="/admin/users" relative='pa' className="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
                     <i className="fas fa-arrow-left fa-sm "></i> Back 
                 </Link>
             </div>
@@ -80,7 +80,7 @@ const CreateUser = () => {
                                             <option value="Employee">Employee</option>
                                         </select>
                                     </div>
-                                    <button type='submit' className="btn btn-primary btn-block">
+                                    <button type='submit' className="btn btn-dark btn-block">
                                         Save
                                     </button>
                                 </form>

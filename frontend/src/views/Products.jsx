@@ -30,7 +30,7 @@ const Products = () => {
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="breadcrumb-text">
                                 <p>Custom and Carbon Fibre</p>
-                                <h1>Products</h1>
+                                <h1>Parts</h1>
                             </div>
                         </div>
                     </div>

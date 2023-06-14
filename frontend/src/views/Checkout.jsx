@@ -104,7 +104,7 @@ function validatePhoneNumber(phoneNumber) {
             <div className="col-lg-8 offset-lg-2 text-center">
               <div className="breadcrumb-text">
                 <p>Custom And Carbon Fibre</p>
-                <h1>Check Out Product</h1>
+                <h1>Check Out Parts</h1>
               </div>
             </div>
           </div>
