@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { createOrder, reset } from "../features/order/orderSlice";
 import { removeAllItemsFromCart } from "../features/cart/cartSlice";
 import { toast } from "react-toastify";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -169,6 +171,9 @@ function validatePhoneNumber(phoneNumber) {
                     </tr>
                   </tbody>
                 </table>
+                <div class="coupon-section">
+                <h3><span className="warningicon"><FontAwesomeIcon icon={faTriangleExclamation}/></span> Cash On Delivery Only Available</h3>
+                </div>
                 <button onClick={onFormSumbit} className="boxed-btn">Place Order</button>
               </div>
             </div>
