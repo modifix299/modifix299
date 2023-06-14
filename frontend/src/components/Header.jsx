@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Authenticated from './Authenticated';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     const [fix, setFix] = useState(false);
@@ -47,11 +49,18 @@ const Header = () => {
                                         <li className='nav home'><Link to="/">Home</Link></li>
                                         <li className='nav products '><Link to="products">Products</Link></li>
                                         <li className='nav about'><Link to="about">About</Link></li>
+                                        {cartItems.length > 0 && (
                                         <li className='add'>
-                                            <Link to="/cart" className="fas fa-shopping-cart">
-                                                {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-                                            </Link>
+                                        <Link to="/cart" className="ml-3">
+                                            <span id="cart">
+                                               <FontAwesomeIcon icon={faShoppingCart} />
+                                            </span>
+                                            <span className="ml-1" id="cart_count">
+                                               {cartItems.length}
+                                            </span>
+                                        </Link>
                                         </li>
+                                        )}
                                         <Authenticated />
                                     </ul>
                                 </nav>
