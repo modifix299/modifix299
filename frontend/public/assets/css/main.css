@@ -2729,7 +2729,8 @@ tr.table-head-row th:last-child {
 }
 
 td.product-image img {
-  max-width: 50px;
+  max-width: 150px;
+  max-height: 150px;
   -webkit-box-shadow: none;
   box-shadow: none;
   margin-bottom: 0;
@@ -2969,13 +2970,13 @@ table.order-details tbody td {
   background-color: #fffd23;
   color:black;
   color: black;
-  border-radius: 50%;
-  padding: 2px 4px;
-  font-size: 15px;
+  border-radius: 100%;
+  padding: 1px 8px;
+  font-size: 12px;
   font: bold;
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -5px;
+  right: -10px;
 }
 
 /* profile update */
@@ -3033,6 +3034,6 @@ table.order-details tbody td {
 .profile-icon svg {
   color: #fffd23;
   font-size: 20px;
-  margin-top: 12px;
-  margin-left: -150px;
+  margin-top: 7px;
+  margin-left: -130px;
 }
