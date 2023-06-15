@@ -75,7 +75,7 @@ const ProductView = () => {
                     <div className="row">
                         <div className="col-md-5">
                             <div className="single-product-img">
-                                <img src={product.images} alt=""/>
+                                <img src={product.images[0].image} alt=""/>
                             </div>
                         </div>
                         <div className="col-md-7">

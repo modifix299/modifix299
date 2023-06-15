@@ -39,7 +39,7 @@ const Orders = () => {
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                            <th>Order ID</th>
+                            {/* <th>Order ID</th> */}
                             <th>Customer Name</th>                                         
                             <th>Total Price</th>
                             <th>Order Status</th>
@@ -51,7 +51,7 @@ const Orders = () => {
                         <tbody>
                             {!isLoading && orders.map((order,key) => (
                             <tr key = {key} > 
-                                <td>{order._id}</td>
+                                {/* <td>{order._id}</td> */}
                                 <td>{order.shippingInfo[0].name}</td>                         
                                 <td>{order.totalPrice}</td>
                                 <td>{order.orderStatus}</td>
