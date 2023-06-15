@@ -63,10 +63,11 @@ const deleteProduct = async (productId, token) => {
     },
   }
 
-  const response = await axios.delete(API_URL + `products/${productId}`, config)
+  const response = await axios.delete(API_URL+`delete/${productId}`, config)
 
   return response.data
 }
+
 
 
 const productService = {

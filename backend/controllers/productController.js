@@ -113,7 +113,7 @@ const deleteProduct = (async (req, res) => {
 
     const result = await product.deleteOne()
 
-    const reply = `Product ${result.productname} deleted`
+    const reply = `Product ${result.name} deleted`
 
     res.json(reply)
 })

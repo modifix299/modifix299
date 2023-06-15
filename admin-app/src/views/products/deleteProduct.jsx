@@ -48,7 +48,7 @@ const DeleteProduct = () => {
                     type="button"
                     className="btn btn-danger btn-block"
                     onClick={onDelete}
-                    disabled={isDeleting}
+                    disabled={isDeleting}               
                   >
                     {isDeleting ? 'Deleting...' : 'Delete'}
                   </button>
