@@ -225,10 +225,10 @@ p:last-child {
   color: #f48006;
 }
 
-.deleteicon{
+.delbut{
   color: #f48006;
-  
-  width:100px;
+  background-color: #fff;
+  border-style: none;
 }
 
 /* -----------------------------------------------------------------------------

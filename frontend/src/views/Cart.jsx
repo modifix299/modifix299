@@ -1,6 +1,8 @@
 import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import {removeAllItemsFromCart} from '../features/cart/cartSlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Cart() {
 
@@ -50,7 +52,7 @@ function Cart() {
                                 <tbody>
                                     {userItems?.map((item,key) => (
                                             <tr className="table-body-row" key={key}>
-                                                <td className="product-remove"><i id="delete_cart_item" onClick={() => dispatch(removeAllItemsFromCart(item.product))} className="fa fa-trash btn btn-danger"></i></td>
+                                                <td className="product-remove"><button className="delbut" onClick={() => dispatch(removeAllItemsFromCart(item.product))}><FontAwesomeIcon icon={faTrash}/></button></td>
                                                 <td class="product-image"><img src={item.image[0].image} alt=""/></td>
                                                 <td className="product-name">{item.name}</td>
                                                 <td className="product-price">Rs. {item.price}</td>                                             
