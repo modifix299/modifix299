@@ -133,7 +133,7 @@ function validatePhoneNumber(phoneNumber) {
                       <div className="card-body">
                         <div className="billing-address-form">
                           <form action="index.html">
-                            <p><input type="text" defaultValue={user.firstname + user.lastname} disabled placeholder="Name" /></p>
+                            <p><input type="text" defaultValue={user.firstname +' '+ user.lastname} disabled placeholder="Name" /></p>
                             <p><input type="tel" defaultValue={user.phone} onChange={(e) => onFormChange("phone", e.target.value)} placeholder="phone" onBlur={(e) => validatePhoneNumber(e.target.value)} /></p>
                             <p><input type="text" defaultValue={user.shippingaddress} onChange={(e) => onFormChange("shippingaddress", e.target.value)} placeholder="shippingaddress" /></p>
                             <p><input type="text" defaultValue={user.zipcode} onChange={(e) => onFormChange("zipcode", e.target.value)} placeholder="zipcode" /></p>

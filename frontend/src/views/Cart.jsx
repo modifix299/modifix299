@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import {removeAllItemsFromCart} from '../features/cart/cartSlice';
 
 function Cart() {
 
@@ -38,7 +39,7 @@ function Cart() {
                             <table className="cart-table">
                                 <thead className="cart-table-head">
                                     <tr className="table-head-row">
-                                        {/* <th className="product-remove"></th> */}
+                                        <th className="product-remove"></th>
                                         <th className="product-image">Product Image</th>
                                         <th className="product-name">Name</th>
                                         <th className="product-price">Price</th>
@@ -49,7 +50,7 @@ function Cart() {
                                 <tbody>
                                     {userItems?.map((item,key) => (
                                             <tr className="table-body-row" key={key}>
-                                                {/* <td className="product-remove"><i id="delete_cart_item" className="fa fa-trash btn btn-danger"></i></td> */}
+                                                <td className="product-remove"><i id="delete_cart_item" onClick={() => dispatch(removeAllItemsFromCart(item.product))} className="fa fa-trash btn btn-danger"></i></td>
                                                 <td class="product-image"><img src={item.image[0].image} alt=""/></td>
                                                 <td className="product-name">{item.name}</td>
                                                 <td className="product-price">Rs. {item.price}</td>                                             
