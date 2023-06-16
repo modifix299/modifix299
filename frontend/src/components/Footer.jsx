@@ -33,13 +33,13 @@ const Footer = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="footer-box pages">
-                                <h2 class="widget-title">Subscribe</h2>
+                        <div className="col-lg-3 col-md-4">
+                            <div className="footer-box pages">
+                                <h2 className="widget-title">Subscribe</h2>
                                 <p>Subscribe to our mailing list to get the latest updates.</p>
                                 <form action="index.html">
                                     <input type="email" placeholder="Email" />
-                                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                                        <button type="submit"><i className="fas fa-paper-plane"></i></button>
                                 </form>
                             </div>
                         </div>

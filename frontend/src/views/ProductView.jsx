@@ -10,7 +10,6 @@ const ProductView = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(1);
-    
 
     const { product, isError, message } = useSelector(
         (state) => state.product
@@ -24,8 +23,7 @@ const ProductView = () => {
         }
         if (isError) {
             console.log(message)
-        }    
-       
+        }           
     }, [navigate, dispatch, id, isError, message])   
 
     const increaseQty = () => {
@@ -75,7 +73,10 @@ const ProductView = () => {
                     <div className="row">
                         <div className="col-md-5">
                             <div className="single-product-img">
-                                <img src={product.images[0].image} alt=""/>
+                            {/* <img src={product.images[0].image} alt=""/> */}
+                            {product.images.map((item) => (
+                                <img src={item.image} alt=""/>
+                            ))}
                             </div>
                         </div>
                         <div className="col-md-7">

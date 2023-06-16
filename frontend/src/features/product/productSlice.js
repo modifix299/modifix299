@@ -3,7 +3,9 @@ import productService from './productService';
 
 const initialState = {
     products: [],
-    product: {},
+    product: {
+      images:[]
+    },
     isError: false,
     isAdded: false,
     isUpdated: false,

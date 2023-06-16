@@ -53,7 +53,7 @@ function Cart() {
                                     {userItems?.map((item,key) => (
                                             <tr className="table-body-row" key={key}>
                                                 <td className="product-remove"><button className="delbut" onClick={() => dispatch(removeAllItemsFromCart(item.product))}><FontAwesomeIcon icon={faTrash}/></button></td>
-                                                <td class="product-image"><img src={item.image[0].image} alt=""/></td>
+                                                <td className="product-image"><img src={item.image[0].image} alt=""/></td>
                                                 <td className="product-name">{item.name}</td>
                                                 <td className="product-price">Rs. {item.price}</td>                                             
                                                 <td className="product-total">{item.quantity}</td>                            

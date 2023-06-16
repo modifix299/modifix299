@@ -52,7 +52,7 @@ const Users = () => {
                                     <td>{user.lastname}</td>
                                     <td>{user.email}</td>
                                     <td>{user.role}</td>
-                                    <td class="button-cell">
+                                    <td className="button-cell">
                                         <Link to={`/admin/users/edit/${user._id}`} className='btn btn-md btn-dark'>Edit</Link>
                                         <Link to={`/admin/users/delete/${user._id}`} className='btn btn-md btn-warning'>Delete</Link>
                                     </td>

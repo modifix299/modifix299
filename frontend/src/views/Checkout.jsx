@@ -171,7 +171,7 @@ function validatePhoneNumber(phoneNumber) {
                     </tr>
                   </tbody>
                 </table>
-                <div class="coupon-section">
+                <div className="coupon-section">
                 <h3><span className="warningicon"><FontAwesomeIcon icon={faTriangleExclamation}/></span> Cash On Delivery Only Available</h3>
                 </div>
                 <button onClick={onFormSumbit} className="boxed-btn">Place Order</button>

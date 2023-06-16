@@ -3,7 +3,7 @@ import productService from './productService';
 
 const initialState = {
     products: [],
-    product: {},
+    product: {},  
     isError: false,
     isAdded: false,
     isUpdated: false,

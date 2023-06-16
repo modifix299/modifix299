@@ -42,7 +42,7 @@ const Products = () => {
                                     <th> Price</th>
                                     <th> Quantity</th>
                                     <th> Description</th>
-                                    <th>Product Image</th>
+                                    {/* <th>Product Image</th> */}
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -53,8 +53,8 @@ const Products = () => {
                                     <td>{product.price}</td>
                                     <td>{product.stockquantity}</td>
                                     <td>{product.description}</td>
-                                    <td>{product.image}</td>
-                                    <td class="button-cell">
+                                    {/* <td className="imgsrc"><img src = {product.images[0].image} alt=""/></td> */}
+                                    <td className="button-cell">
                                         <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-dark' >Edit</Link>
                                         <Link to={`/admin/products/delete/${product._id}`} className='btn btn-md btn-warning '>Delete</Link>
                                     </td>

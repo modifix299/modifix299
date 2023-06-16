@@ -28,24 +28,24 @@ const Home = () => {
 
             
             {/* <div style={{backgroundColor: "#dfddde"}}>
-            <div class="slider1">
-                <div class="slide-track1">
-                    <div class="slide1">
+            <div className="slider1">
+                <div className="slide-track1">
+                    <div className="slide1">
                         <img src="assets/img/modifix-pics/f11.jpg" alt="" />
                     </div>
-                    <div class="slide1">
+                    <div className="slide1">
                         <img src="assets/img/modifix-pics/f13.jpg" alt="" />
                     </div>
-                    <div class="slide1">
+                    <div className="slide1">
                         <img src="assets/img/modifix-pics/f12.jpg" alt="" />
                     </div>
-                    <div class="slide1">
+                    <div className="slide1">
                         <img src="assets/img/modifix-pics/f11.jpg" alt="" />
                     </div>
-                    <div class="slide1">
+                    <div className="slide1">
                         <img src="assets/img/modifix-pics/f13.jpg" alt="" />
                     </div>
-                    <div class="slide1">
+                    <div className="slide1">
                         <img src="assets/img/modifix-pics/f12.jpg" alt="" />
                     </div>
                 </div>
@@ -106,12 +106,9 @@ const Home = () => {
                 </div>
 
                 <div className="content-para-main">
-                    <h2 className="subtitle">Story of <span style={{ color: "orange" }}>Modifix</span>{" "}</h2>
+                    <h2 className="subtitle">Unveiling <span style={{ color: "orange" }}>Modifix</span>{" "}</h2>
                     <p className="para">
-                        Sri Lanka's economic crisis, imports have been banned or limited, and high taxes have made vehicle spare parts unreasonably priced and of poor quality.
-                        To address this, we turned our focus to manufacturing motorbike fairings using fiberglass instead of plastic. Raw materials are easily accessible in Jaffna,
-                        where we obtained quotations for manufacturing costs. The stark price difference between locally made fiberglass parts and imported ones proves our affordability.
-                        Moreover, our commitment to quality ensures customers receive a superior product. With easy online accessibility, bike enthusiasts can now purchase affordable and high-quality fairings.
+                    Welcome to Modifix, your one-stop destination for high-quality fiber-made custom modification parts for motorbikes. We offer a wide range of innovative and stylish products designed to enhance the performance and aesthetics of your ride. With our free home delivery service, you can conveniently get your hands on our top-notch parts without leaving your doorstep. We also provide expert installation services and post-sales support to ensure a seamless experience for our valued customers. Experience the thrill of customization with Modifix today and take your motorbike to the next level.
                     </p>
                 </div>
             </section>
@@ -126,49 +123,49 @@ const Home = () => {
 
 
             {/* logo carousel */}
-            <div class="slider">
-                <div class="slide-track">
-                    <div class="slide">
+            <div className="slider">
+                <div className="slide-track">
+                    <div className="slide">
                         <img src="assets/img/company-logos/1.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/2.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/3.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/4.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/5.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/6.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/7.png" alt="" />
                     </div>
 
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/8.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/1.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/2.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/3.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/4.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/5.png" alt="" />
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <img src="assets/img/company-logos/6.png" alt="" />
                     </div>
                 </div>

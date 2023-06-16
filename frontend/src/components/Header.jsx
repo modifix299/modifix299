@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux';
 import Authenticated from './Authenticated';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import logo from '../img/modifix.png';
 
 const Header = () => {
     const [fix, setFix] = useState(false);
     const cartItems = useSelector(state => state.cart.items);
-    console.log(cartItems)
 
     function setFixed() {
         if (window.scrollY >= 290) {
@@ -40,7 +40,7 @@ const Header = () => {
                             <div className="main-menu-wrap">
                                 <div className="site-logo1">
                                     <Link to="/">
-                                        <img src="img/modifix.png" alt="" />
+                                        <img src={logo} alt="" />
                                     </Link>
                                 </div>
 

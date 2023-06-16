@@ -39,7 +39,7 @@ const EditUser = () => {
         }
     
         if (isUpdated) {
-            toast.success('New User Updated Successfully.')
+            toast.success('User Updated Successfully.')
             dispatch(reset());
             navigate('/admin/users')
         }
@@ -89,7 +89,11 @@ const EditUser = () => {
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <select className="form-control" aria-label="Default select example" defaultValue={"Employee"}  onChange={(e) => onFormChange("role", e.target.value)}>
+                                        <select className="form-control" aria-label="Default select example" 
+                                        // defaultValue={"Employee"}  
+                                        onChange={(e) => onFormChange("role", e.target.value)}
+                                        >
+                                            <option value="">--Select Role--</option>
                                             <option value="Admin">Admin</option>
                                             <option value="Employee">Employee</option>
                                         </select>

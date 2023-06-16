@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 const DeleteProduct = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   const dispatch = useDispatch();
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -48,7 +48,7 @@ const DeleteProduct = () => {
                     type="button"
                     className="btn btn-danger btn-block"
                     onClick={onDelete}
-                    disabled={isDeleting}               
+                    disabled={isDeleting}
                   >
                     {isDeleting ? 'Deleting...' : 'Delete'}
                   </button>

@@ -107,7 +107,7 @@ const About = () => {
                         <div className="col-lg-4 col-md-6">
                             <div className="single-team-item">
                                 <div className="team-bg team-bg-1"></div>
-                                <h4>Achchuthan <span>XXX</span></h4>
+                                <h4>Achchuthan <span>Technical Support</span></h4>
                                 <ul className="social-link-team">
                                     {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
                                     <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
@@ -118,7 +118,7 @@ const About = () => {
                         <div className="col-lg-4 col-md-6">
                             <div className="single-team-item">
                                 <div className="team-bg team-bg-2"></div>
-                                <h4>Sarujan <span>XXX</span></h4>
+                                <h4>Sarujan <span>Business Planner</span></h4>
                                 <ul className="social-link-team">
                                     {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
                                     <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
@@ -129,7 +129,7 @@ const About = () => {
                         <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
                             <div className="single-team-item">
                                 <div className="team-bg team-bg-3"></div>
-                                <h4>Jencika <span>XXX</span></h4>
+                                <h4>Jencika <span>Designer</span></h4>
                                 <ul className="social-link-team">
                                     {/* <li><Link to="#" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
                                     <li><Link to="#" target="_blank"><i className="fab fa-twitter"></i></a></li>
