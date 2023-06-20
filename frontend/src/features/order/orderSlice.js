@@ -4,7 +4,7 @@ import orderService from './orderService';
 const initialState = {
     orders: [],
     order: {},
-    userOrders: [],
+    // userOrders: [],
     isError: false,
     isAdded: false,
     isUpdated: false,

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import {getuserOrders} from '../features/order/orderSlice'
+// import {getuserOrders} from '../features/order/orderSlice'
 
 const Profile = () => {
     const navigate = useNavigate();

@@ -66,11 +66,11 @@ const getOneOrder = (async (req, res) => {
         
     )
 
-    if (!order) {
-        return res.status(400).json({ message: 'Order not found' })
-    } else {
-        return res.status(201).json(order);
-    } 
+    // if (!order) {
+    //     return res.status(400).json({ message: 'Order not found' })
+    // } else {
+    //     return res.status(201).json(order);
+    // } 
 
 });
 
