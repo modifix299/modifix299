@@ -66,15 +66,15 @@ const getOneOrder = (async (req, res) => {
         
     )
 
-    // if (!order) {
-    //     return res.status(400).json({ message: 'Order not found' })
-    // } else {
-    //     return res.status(201).json(order);
-    // } 
+    if (!order) {
+        return res.status(400).json({ message: 'Order not found' })
+    } else {
+        return res.status(201).json(order);
+    } 
 
 });
 
-//Admin: Update Order / Order Status - api/v1/order/:id
+//Admin: Update Order
 const updateOrder = catchAsyncError(async (req, res, next) => {
     const { id, orderStatus } = req.body;
     
@@ -127,20 +127,6 @@ const updateStock = async (productId, quantity) => {
       throw error;
     }
   };
-  
-
-//Admin: Delete Order - api/v1/order/:id
-// const deleteOrder = catchAsyncError(async (req, res, next) => {
-//     const order = await Order.findById(req.params.id);
-//     if(!order) {
-//         return next(new ErrorHandler(`Order not found with this id: ${req.params.id}`, 404))
-//     }
-
-//     await order.remove();
-//     res.status(200).json({
-//         success: true
-//     })
-// })
 
 
 module.exports = {

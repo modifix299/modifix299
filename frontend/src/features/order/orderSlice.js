@@ -4,12 +4,30 @@ import orderService from './orderService';
 const initialState = {
     orders: [],
     order: {},
+    userOrders: [],
     isError: false,
     isAdded: false,
     isUpdated: false,
     isLoading: false,
     message: '',
 }
+
+// // Get One User Order reducer
+// export const getuserOrders = createAsyncThunk('orders/getAll', async (id, thunkAPI) => {
+//   try {
+//       const token = thunkAPI.getState().auth.user.token;
+//       return await orderService.getuserOrders(id, token);
+//   } catch (error) {
+//       const message =
+//       (error.response &&
+//           error.response.data &&
+//           error.response.data.message) ||
+//       error.message ||
+//       error.toString()
+//       return thunkAPI.rejectWithValue(message)
+//   }
+// }
+// );
 
 // Get All Orders reducer
 export const getAllOrders = createAsyncThunk('orders/getAll', async (_, thunkAPI) => {
@@ -79,24 +97,6 @@ export const updateOrder = createAsyncThunk('products/update',async (data, thunk
 }
 )
 
-// //Delete Product
-// export const deleteProduct = createAsyncThunk('products/delete', async (productId, thunkAPI) => {
-//   try {
-//     const token = thunkAPI.getState().auth.user.token
-//     return await orderService.deleteProduct(productId, token)
-//   } catch (error) {
-//     console.log(error)
-//     const message =
-//       (error.response &&
-//         error.response.data &&
-//         error.response.data.message) ||
-//       error.message ||
-//       'Failed to delete product.'
-//     return thunkAPI.rejectWithValue(message)
-//   }
-// })
-
-
 
 
 export const orderSlice = createSlice({
@@ -107,7 +107,20 @@ export const orderSlice = createSlice({
     },
     extraReducers: (builder) => {
       builder
-      //get all products
+      // //get all user orders
+      // .addCase(getuserOrders.pending, (state) => {
+      //   state.isLoading = true
+      // })
+      // .addCase(getuserOrders.fulfilled, (state, action) => {
+      //   state.isLoading = false
+      //   state.orders = action.payload
+      // })
+      // .addCase(getuserOrders.rejected, (state, action) => {
+      //   state.isLoading = false
+      //   state.isError = true
+      //   state.message = action.payload
+      // })
+      //get all orders
         .addCase(getAllOrders.pending, (state) => {
           state.isLoading = true
         })
@@ -120,7 +133,7 @@ export const orderSlice = createSlice({
           state.isError = true
           state.message = action.payload
         })
-      //get one product
+      //get one order
         .addCase(getOneOrder.pending, (state) => {
           state.isLoading = true
         })
@@ -160,21 +173,7 @@ export const orderSlice = createSlice({
         state.isLoading = false
         state.isError = true
         state.message = action.payload
-      })  
-    //   //delete product
-    //     .addCase(deleteProduct.pending, (state) => {
-    //       state.isLoading = true
-    //     })
-    //     .addCase(deleteProduct.fulfilled, (state, action) => {
-    //       state.isLoading = false
-    //       state.isDeleted = true
-    //       state.message = action.payload
-    //     })
-    //     .addCase(deleteProduct.rejected, (state, action) => {
-    //       state.isLoading = false
-    //       state.isError = true
-    //       state.message = action.payload
-    //     })
+      })
     },
 })
   
