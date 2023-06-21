@@ -4,7 +4,6 @@ import orderService from './orderService';
 const initialState = {
     orders: [],
     order: {},
-    // userOrders: [],
     isError: false,
     isAdded: false,
     isUpdated: false,
@@ -12,22 +11,6 @@ const initialState = {
     message: '',
 }
 
-// // Get One User Order reducer
-// export const getuserOrders = createAsyncThunk('orders/getAll', async (id, thunkAPI) => {
-//   try {
-//       const token = thunkAPI.getState().auth.user.token;
-//       return await orderService.getuserOrders(id, token);
-//   } catch (error) {
-//       const message =
-//       (error.response &&
-//           error.response.data &&
-//           error.response.data.message) ||
-//       error.message ||
-//       error.toString()
-//       return thunkAPI.rejectWithValue(message)
-//   }
-// }
-// );
 
 // Get All Orders reducer
 export const getAllOrders = createAsyncThunk('orders/getAll', async (_, thunkAPI) => {
@@ -107,19 +90,7 @@ export const orderSlice = createSlice({
     },
     extraReducers: (builder) => {
       builder
-      // //get all user orders
-      // .addCase(getuserOrders.pending, (state) => {
-      //   state.isLoading = true
-      // })
-      // .addCase(getuserOrders.fulfilled, (state, action) => {
-      //   state.isLoading = false
-      //   state.orders = action.payload
-      // })
-      // .addCase(getuserOrders.rejected, (state, action) => {
-      //   state.isLoading = false
-      //   state.isError = true
-      //   state.message = action.payload
-      // })
+      
       //get all orders
         .addCase(getAllOrders.pending, (state) => {
           state.isLoading = true

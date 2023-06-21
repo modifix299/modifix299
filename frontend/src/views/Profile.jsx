@@ -1,14 +1,7 @@
-import { useEffect } from 'react';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-// import {getuserOrders} from '../features/order/orderSlice'
 
-const Profile = () => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
 
-   
+const Profile = () => { 
 
 
     const [formData, setFormData] = useState({
@@ -150,8 +143,6 @@ const Profile = () => {
                                                             <th className="product-image">Ordered Date</th>
                                                             <th className="product-image">Order Status</th>
                                                             <th className="product-name">Products</th>
-                                                            <th className="product-price">Price</th>
-                                                            <th className="product-quantity">Quantity</th>
                                                             <th className="product-total">Total</th>
                                                         </tr>
                                                     </thead>

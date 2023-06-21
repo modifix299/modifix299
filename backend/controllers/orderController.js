@@ -38,7 +38,7 @@ const getSingleOrder = catchAsyncError(async (req, res, next) => {
     )
 })
 
-//Get Loggedin User Orders - /api/v1/myorders
+//Get Loggedin User Orders
 const myOrders = catchAsyncError(async (req, res, next) => {
     const orders = await Order.find({user: req.user.id});
 
@@ -65,12 +65,6 @@ const getOneOrder = (async (req, res) => {
         [order]
         
     )
-
-    // if (!order) {
-    //     return res.status(400).json({ message: 'Order not found' })
-    // } else {
-    //     return res.status(201).json(order);
-    // } 
 
 });
 
