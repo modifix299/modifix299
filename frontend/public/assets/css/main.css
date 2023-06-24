@@ -410,9 +410,9 @@ p:last-child {
   }
 }
 
-.pt-80 {
+/* .pt-80 {
   padding-top: 80px;
-}
+} */
 
 @media only screen and (max-width: 767.96px) {
   .pt-80 {

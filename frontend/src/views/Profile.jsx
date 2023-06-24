@@ -139,23 +139,19 @@ const Profile = () => {
                                                 <table className="cart-table">
                                                     <thead className="cart-table-head">
                                                         <tr className="table-head-row">
-                                                            <th className="product-remove">Order ID</th>
-                                                            <th className="product-image">Ordered Date</th>
+                                                            <th className="product-remove">Order ID</th>                                                            
                                                             <th className="product-image">Order Status</th>
                                                             <th className="product-name">Products</th>
                                                             <th className="product-total">Total</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        {/* {userItems?.map((item,key) => (
-                                                                <tr className="table-body-row" key={key}>
-                                                                    <td className="product-remove"><button className="delbut" onClick={() => dispatch(removeAllItemsFromCart(item.product))}><FontAwesomeIcon icon={faTrash}/></button></td>
-                                                                    <td className="product-image"><img src={item.image[0].image} alt=""/></td>
-                                                                    <td className="product-name">{item.name}</td>
-                                                                    <td className="product-price">Rs. {item.price}</td>                                             
-                                                                    <td className="product-total">{item.quantity}</td>                            
-                                                                </tr>
-                                                        ))} */}
+                                                    <tbody>                                    
+                                                            <tr>
+                                                                <td className="product-remove">1001</td>                                                            
+                                                                <td className="product-name">Processing</td>
+                                                                <td className="product-price">Visor R15 V3</td>                                             
+                                                                <td className="product-total">Rs 3000</td>                            
+                                                            </tr>                                                       
                                                     </tbody>
                                                 </table>
                                             </div>

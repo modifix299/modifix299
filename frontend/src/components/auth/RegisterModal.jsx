@@ -46,7 +46,7 @@ const handleRegister = () => {
 
     return (
         <>
-        <Button variant='primary' onClick={handleRegisterShow} >Register</Button>          
+        <Button variant='dark' onClick={handleRegisterShow} >Register</Button>          
 
         <Modal size="lg" show={registerShow}  onHide={handleRegisterClose} aria-labelledby="example-modal-sizes-title-lg" >
           <Modal.Header>
@@ -84,7 +84,7 @@ const handleRegister = () => {
                 <Form.Label for="password">Password:</Form.Label>
                 <Form.Control type="password" className="form-control" id="password" placeholder="Enter password" onChange={(e) => onRegisterFormChange("password", e.target.value)}/>
               </div>
-              <button type="submit" className="btn btn-primary" onClick={handleRegister}>Register</button>
+              <button type="submit" className="btn btn-dark" onClick={handleRegister}>Register</button>
 
             </Form>
           </Modal.Body>
