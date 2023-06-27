@@ -163,9 +163,10 @@ const Profile = () => {
                                                         <tr className="table-head-row">
                                                             <th className="product-remove">Order ID</th>                                                            
                                                             <th className="product-image">Order Status</th>
-                                                            <th className="product-name">Products</th>
-                                                            <th className="product-total">Total</th>
-                                                            <th className="product-total">Date</th>
+                                                            <th className="product-total">Ordered Date</th>
+                                                            <th className="product-name">Parts</th>
+                                                            <th className="product-total">Total Price</th>
+                                                            
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -173,9 +174,12 @@ const Profile = () => {
                                                             <tr key = {key} > 
                                                                 <td>{order._id}</td>
                                                                 <td>{order.orderStatus}</td>
-                                                                <td>{order.orderItems[0].name}</td>                         
-                                                                <td>{order.totalPrice}</td>                                
                                                                 <td>{order.createdAt}</td>
+                                                                <td>{order.orderItems.map((item, index) => (
+                                                                     <p className="orderitems" key={index}>{item.name+","}</p>
+                                                                ))}</td>                     
+                                                                <td>{order.totalPrice}</td>                                
+                                                                
                                                             </tr>
                                                             ))}
                                                     </tbody>

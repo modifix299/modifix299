@@ -2747,6 +2747,11 @@ td.product-image img {
   margin-bottom: 0;
 }
 
+
+td.orderitems {
+  border-style: double;
+}
+
 .cart-table-wrap tbody tr td {
   border: 1px solid #efefef;
   padding: 20px 0;
