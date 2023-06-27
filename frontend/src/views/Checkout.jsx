@@ -74,7 +74,7 @@ function validatePhoneNumber(phoneNumber) {
       'totalPrice': totalPrice
     };
 
-    console.log(submitFormData);
+    
     dispatch(createOrder(submitFormData));
 
   }

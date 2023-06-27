@@ -6,7 +6,7 @@ const { protect, authAdmin, authCustomer } = require('../middleware/authMiddlewa
 
 router.route('/newOrder').post(protect, orderController.newOrder);
 router.route('/getSingleOrder/:id').get(protect, authCustomer, orderController.getSingleOrder);
-router.route('/myorders').get(protect, authCustomer, orderController.myOrders);
+router.route('/myOrders').get(protect, authCustomer, orderController.myOrders);
 
 //Admin Routes
 router.route('/getAllOrders').get(protect, authAdmin, orderController.getAllOrders);

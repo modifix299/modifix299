@@ -38,6 +38,7 @@ const getSingleOrder = catchAsyncError(async (req, res, next) => {
     )
 })
 
+
 //Get Loggedin User Orders
 const myOrders = catchAsyncError(async (req, res, next) => {
     const orders = await Order.find({user: req.user.id});
@@ -47,6 +48,7 @@ const myOrders = catchAsyncError(async (req, res, next) => {
     )
 })
 
+
 //Get All Orders 
 const getAllOrders = catchAsyncError(async (req, res, next) => {
     const orders = await Order.find();
@@ -54,6 +56,7 @@ const getAllOrders = catchAsyncError(async (req, res, next) => {
         orders
         )
 })
+
 
 // Get One Order
 const getOneOrder = (async (req, res) => {

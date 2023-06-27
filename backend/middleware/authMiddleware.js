@@ -88,7 +88,7 @@ const authCustomer = asyncHandler(async (req, res, next) => {
             // Get user from the token
             const customer = await Customer.findById(decoded.id).select('-password')
 
-            if(customer.active != false){
+            if(customer.active != true){
                 res.status(401).json({
                   message: "Not authorized"
                 })

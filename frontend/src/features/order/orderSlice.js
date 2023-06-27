@@ -3,7 +3,7 @@ import orderService from './orderService';
 
 const initialState = {
     orders: [],
-    order: {},
+    order: [],
     isError: false,
     isAdded: false,
     isUpdated: false,
@@ -11,6 +11,23 @@ const initialState = {
     message: '',
 }
 
+
+// Get All myOrders reducer
+export const myOrders = createAsyncThunk('orders/myOrders', async (_, thunkAPI) => {
+  try {
+      const token = thunkAPI.getState().auth.user.token;
+      return await orderService.myOrders(token);
+  } catch (error) {
+      const message =
+      (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+      error.message ||
+      error.toString()
+      return thunkAPI.rejectWithValue(message)
+  }
+}
+);
 
 // Get All Orders reducer
 export const getAllOrders = createAsyncThunk('orders/getAll', async (_, thunkAPI) => {
@@ -91,6 +108,20 @@ export const orderSlice = createSlice({
     extraReducers: (builder) => {
       builder
       
+      //get all myOrders
+      .addCase(myOrders.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(myOrders.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.orders = action.payload
+      })
+      .addCase(myOrders.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })
+
       //get all orders
         .addCase(getAllOrders.pending, (state) => {
           state.isLoading = true

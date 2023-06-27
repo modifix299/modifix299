@@ -2,6 +2,19 @@ import axios from 'axios';
 
 const API_URL = `${process.env.REACT_APP_API_BASE_URL}orders/`;
 
+// Get All Orders action
+const myOrders = async (token) => {
+  const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+  }
+  
+  const response = await axios.get(API_URL+'myOrders', config)
+
+  return response.data;
+}
+
 
 
 // Get All Orders action
@@ -65,6 +78,7 @@ const orderService = {
     getOneOrder,
     createOrder,
     updateOrder,
+    myOrders
     }
 
 export default orderService

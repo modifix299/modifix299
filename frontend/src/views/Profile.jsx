@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {myOrders} from '../features/order/orderSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
 
 const Profile = () => { 
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { orders, isLoading, isError, message } = useSelector(
+        (state) => state.order
+    )
+    console.log(orders)
+
+    useEffect(() => {
+        if (isError) {
+            console.log(message)
+        }
+    
+        dispatch(myOrders());   
+       
+    }, [navigate, dispatch, isError, message])   
 
     const [formData, setFormData] = useState({
         name: '',
@@ -70,7 +89,7 @@ const Profile = () => {
                     <div className="row">
                         <div className="col-lg-12 mb-5 mb-lg-0">
                             <div className="form-title">
-                                <h2>Profile Update</h2>
+                                <h2>Update Profile</h2>
                             </div>
                                 <div id="form_status"></div>
                                     <div className="contact-form">
@@ -135,6 +154,9 @@ const Profile = () => {
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-lg-12 col-md-12">
+                                        <div className="form-title">
+                                            <h2>Order Details</h2>
+                                        </div>
                                             <div className="cart-table-wrap">
                                                 <table className="cart-table">
                                                     <thead className="cart-table-head">
@@ -143,15 +165,19 @@ const Profile = () => {
                                                             <th className="product-image">Order Status</th>
                                                             <th className="product-name">Products</th>
                                                             <th className="product-total">Total</th>
+                                                            <th className="product-total">Date</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>                                    
-                                                            <tr>
-                                                                <td className="product-remove">1001</td>                                                            
-                                                                <td className="product-name">Processing</td>
-                                                                <td className="product-price">Visor R15 V3</td>                                             
-                                                                <td className="product-total">Rs 3000</td>                            
-                                                            </tr>                                                       
+                                                    <tbody>
+                                                            {!isLoading && orders.map((order,key) => (
+                                                            <tr key = {key} > 
+                                                                <td>{order._id}</td>
+                                                                <td>{order.orderStatus}</td>
+                                                                <td>{order.orderItems[0].name}</td>                         
+                                                                <td>{order.totalPrice}</td>                                
+                                                                <td>{order.createdAt}</td>
+                                                            </tr>
+                                                            ))}
                                                     </tbody>
                                                 </table>
                                             </div>
