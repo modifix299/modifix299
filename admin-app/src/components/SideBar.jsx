@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
-import logo from '../img/modifix.png';
+// import logo from '../img/modifix.png';
 import { useSelector } from 'react-redux';
 
 const SideBar = () => {    
