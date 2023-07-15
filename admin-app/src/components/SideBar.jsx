@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
-import logo from '../img/modifix.png';
+// import logo from '../img/modifix.png';
 import { useSelector } from 'react-redux';
 
 const SideBar = () => {    
@@ -27,12 +27,12 @@ const SideBar = () => {
         <ul className={toggle} id="accordionSidebar">
 
 
-            <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/admin">
+            {/* <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/admin">
                 <div className="sidebar-brand-icon">
-                    {/* <img className='logo-navbar' src={logo} alt="Logo" /> */}
+                    <img className='logo-navbar' src={logo} alt="Logo" />
                 </div>
                 <div className="sidebar-brand-text mx-3">MODIFIX</div>
-            </Link>
+            </Link> */}
 
             <hr className="sidebar-divider my-0"/>
 
