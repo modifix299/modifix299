@@ -27,12 +27,12 @@ const SideBar = () => {
         <ul className={toggle} id="accordionSidebar">
 
 
-            {/* <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/admin">
-                <div className="sidebar-brand-icon">
+            <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/admin">
+                {/* <div className="sidebar-brand-icon">
                     <img className='logo-navbar' src={logo} alt="Logo" />
-                </div>
+                </div> */}
                 <div className="sidebar-brand-text mx-3">MODIFIX</div>
-            </Link> */}
+            </Link>
 
             <hr className="sidebar-divider my-0"/>
 
