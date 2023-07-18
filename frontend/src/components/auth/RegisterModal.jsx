@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { toast } from "react-toastify";
 
 const RegisterModal = () => {
   const dispatch = useDispatch();
@@ -70,11 +71,13 @@ const validateForm = () => {
 
   useEffect(() => {
     if (isError) {
+      toast.error('Registration Failed');
         console.error(message)
     }
 
     if (isSuccess || user) {
         setRegisterShow(false);
+        toast.success('Registration Success');
         navigate('/')
     }
 
