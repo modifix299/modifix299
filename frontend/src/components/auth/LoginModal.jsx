@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import RegisterModal from './RegisterModal';
+import { toast } from "react-toastify";
 
 const LoginModal = () => {
     const dispatch = useDispatch();
@@ -35,9 +36,11 @@ const LoginModal = () => {
     useEffect(() => {
         if (isError) {
             console.error(message)
+            toast.error('Login Failed');
         }
 
         if (isSuccess || user) {
+            toast.success('Login Success');
             setLoginShow(false);
             navigate('/')
         }

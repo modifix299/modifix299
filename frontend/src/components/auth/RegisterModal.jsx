@@ -28,8 +28,45 @@ const RegisterModal = () => {
 }
 
 const handleRegister = () => {
-    dispatch(register(registerformData));        
+  if (validateForm()) {
+    dispatch(register(registerformData));
+  }        
 }
+
+const validateForm = () => {
+  const { firstname, lastname, phone, shippingaddress, zipcode, email } = registerformData;
+  const nameRegex = /^[A-Za-z]+$/;
+  const mobileRegex = /^0\d{9}$/;
+  const zipcodeRegex = /^\d{5}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!firstname || !lastname || !shippingaddress || !phone || !zipcode || !email) {
+    console.error('Please fill in all the fields.');
+    return false;
+  }
+
+  if (!nameRegex.test(firstname) || !nameRegex.test(lastname)) {
+    console.error('First name and last name should contain text only.');
+    return false;
+  }
+
+  if (!mobileRegex.test(phone)) {
+    console.error('Mobile number should be 10 digits starting with 0.');
+    return false;
+  }
+
+  if (!zipcodeRegex.test(zipcode)) {
+    console.error('Zip code should be 5 digits only.');
+    return false;
+  }
+
+  if (!emailRegex.test(email)) {
+    console.error('Please enter a valid email address.');
+    return false;
+  }
+
+  return true;
+};
 
   useEffect(() => {
     if (isError) {
