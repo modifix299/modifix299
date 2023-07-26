@@ -30,8 +30,10 @@ const RegisterModal = () => {
 
 const handleRegister = () => {
   if (validateForm()) {
+    toast.success('Registration Success');
     dispatch(register(registerformData));
-  }        
+  }
+  else{toast.error('Registration Failed');}        
 }
 
 const validateForm = () => {
@@ -71,13 +73,13 @@ const validateForm = () => {
 
   useEffect(() => {
     if (isError) {
-      toast.error('Registration Failed');
+      
         console.error(message)
     }
 
     if (isSuccess || user) {
         setRegisterShow(false);
-        toast.success('Registration Success');
+        
         navigate('/')
     }
 

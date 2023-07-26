@@ -40,7 +40,7 @@ const LoginModal = () => {
         }
 
         if (isSuccess || user) {
-            toast.success('Login Success');
+            toast.success('LogOut Success');
             setLoginShow(false);
             navigate('/')
         }
